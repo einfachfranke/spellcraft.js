@@ -1,0 +1,498 @@
+.overview {
+  width: 260px;
+  height: 510px;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: $border-radius;
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.item.default-item {
+  background-color: $item-default-color;
+  border-color: $item-default-color;
+}
+
+.item.default-item:hover {
+  background-color: darken($item-default-color, 5);
+  border-color: darken($item-default-color, 5);
+}
+
+.item.active.default-item {
+  border-color: darken($item-default-color, 8);
+}
+
+.item.active.default-item:hover {
+  border-color: darken($item-default-color, 11);
+}
+
+.item.craft-item {
+  background-color: $item-craft-color;
+  border-color: $item-craft-color;
+}
+
+.item.craft-item:hover {
+  background-color: darken($item-craft-color, 10);
+  border-color: darken($item-craft-color, 10);
+}
+
+.item.active.craft-item {
+  border-color: darken($item-craft-color, 20);
+}
+
+.item.active.craft-item:hover {
+  border-color: darken($item-craft-color, 30);
+}
+
+.item.craft-item-max-imbue {
+  background-color: $item-craft-max-imbue-color;
+  border-color: $item-craft-max-imbue-color;
+}
+
+.item.craft-item-max-imbue:hover {
+  background-color: darken($item-craft-max-imbue-color, 10);
+  border-color: darken($item-craft-max-imbue-color, 10);
+}
+
+.item.active.craft-item-max-imbue {
+  border-color: darken($item-craft-max-imbue-color, 20);
+}
+
+.item.active.craft-item-max-imbue:hover {
+  border-color: darken($item-craft-max-imbue-color, 30);
+}
+
+.item.drop-item {
+  background-color: $item-drop-color;
+  border-color: $item-drop-color;
+}
+
+.item.drop-item:hover {
+  background-color: darken($item-drop-color, 10);
+  border-color: darken($item-drop-color, 10);
+}
+
+.item.active.drop-item {
+  border-color: darken($item-drop-color, 20);
+}
+
+.item.active.drop-item:hover {
+  border-color: darken($item-drop-color, 30);
+}
+
+.item.rog-item {
+  background-color: $item-rog-color;
+  border-color: $item-rog-color;
+}
+
+.item.rog-item:hover {
+  background-color: darken($item-rog-color, 10);
+  border-color: darken($item-rog-color, 10);
+}
+
+.item.active.rog-item {
+  border-color: darken($item-rog-color, 20);
+}
+
+.item.active.rog-item:hover {
+  border-color: darken($item-rog-color, 30);
+}
+
+.item.error {
+  background-color: $error-color;
+  border-color: $error-color;
+}
+
+.item.error:hover {
+  background-color: darken($error-color, 10);
+  border-color: darken($error-color, 10);
+}
+
+.item.active.error {
+  border-color: darken($error-color, 20);
+}
+
+.item.active.error:hover {
+  border-color: darken($error-color, 30);
+}
+
+.header {
+  position: absolute;
+  font-size: 10px;
+}
+
+.header.active {
+  color: lighten($text-color, 20);
+  font-weight: 500;
+}
+
+.item > .hint {
+  box-sizing: border-box;
+  position: absolute;
+  height: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.item > .hint.default-item.show {
+  background-color: darken($item-default-color, 8);
+  border-color: $item-default-color;
+}
+
+.item > .hint.craft-item.show {
+  background-color: darken($item-craft-color, 20);
+  border-color: $item-craft-color;
+}
+
+.item > .hint.craft-item-max-imbue.show {
+  background-color: darken($item-craft-max-imbue-color, 20);
+  border-color: $item-craft-max-imbue-color;
+}
+
+.item > .hint.error.show {
+  background-color: darken($error-color, 20);
+  border-color: $error-color;
+}
+
+.hint.option0 {
+  left: 0;
+  top: 0;
+  width: 25%;
+}
+
+.hint.option1 {
+  left: 25%;
+  top: 0;
+  width: 25%;
+}
+
+.hint.option2 {
+  left: 50%;
+  top: 0;
+  width: 25%;
+}
+
+.hint.option3 {
+  left: 75%;
+  top: 0;
+  width: 25%;
+}
+
+.hint.bonus {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.item.chest {
+  top: 10px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.chest {
+  top: 61px;
+  left: 0;
+}
+
+.item.neck {
+  top: 10px;
+  left: 65px;
+  width: 35px;
+  height: 35px;
+}
+
+.header.neck {
+  top: 46px;
+  left: 65px;
+}
+
+.item.mythical {
+  top: 10px;
+  left: 113px;
+  width: 35px;
+  height: 35px;
+}
+
+.header.mythical {
+  top: 46px;
+  left: 111px;
+}
+
+.item.cloak {
+  top: 10px;
+  right: 65px;
+  width: 35px;
+  height: 35px;
+}
+
+.header.cloak {
+  top: 46px;
+  right: 65px;
+}
+
+.item.head {
+  top: 10px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.head {
+  top: 61px;
+  right: 0;
+}
+
+.item.arms {
+  top: 80px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.arms {
+  top: 131px;
+  left: 0;
+}
+
+.item.hands {
+  top: 80px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.hands {
+  top: 131px;
+  right: 0;
+}
+
+.item.jewel {
+  top: 150px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.jewel {
+  top: 186px;
+  left: 0;
+}
+
+.item.belt {
+  top: 150px;
+  right: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.belt {
+  top: 186px;
+  right: 0;
+}
+
+.item.leftRing {
+  top: 205px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.leftRing {
+  top: 241px;
+  left: 0;
+}
+
+.item.rightRing {
+  top: 205px;
+  right: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.rightRing {
+  top: 241px;
+  right: 0;
+}
+
+.item.leftWrist {
+  top: 260px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.leftWrist {
+  top: 296px;
+  left: 0;
+}
+
+.item.rightWrist {
+  top: 260px;
+  right: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.header.rightWrist {
+  top: 296px;
+  right: 0;
+}
+
+.item.legs {
+  top: 315px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.legs {
+  top: 366px;
+  left: 0;
+}
+
+.item.feet {
+  top: 315px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.feet {
+  top: 366px;
+  right: 0;
+}
+
+.item.rightHand {
+  top: 385px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.rightHand {
+  top: 436px;
+  left: 0;
+}
+
+.item.leftHand {
+  top: 385px;
+  left: 70px;
+  width: 50px;
+  height: 50px;
+}
+
+.header.leftHand {
+  top: 436px;
+  left: 70px;
+}
+
+.item.twoHand {
+  top: 385px;
+  right: 70px;
+  width: 50px;
+  height: 50px;
+}
+
+.header.twoHand {
+  top: 436px;
+  right: 70px;
+}
+
+.item.ranged {
+  top: 385px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.header.ranged {
+  top: 436px;
+  right: 0;
+}
+
+.template {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.template.price {
+  left: 60px;
+  right: 60px;
+  top: 150px;
+}
+
+.template.utility {
+  left: 60px;
+  right: 60px;
+  top: 205px;
+}
+
+.template.useless {
+  left: 60px;
+  right: 60px;
+  top: 260px;
+}
+
+.weapon {
+  position: absolute;
+  background-color: darken($item-default-color, 8);
+  color: darken($item-default-color, 8);
+  height: 20px;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weapon.active {
+  background-color: $item-default-color;
+  color: $item-default-color;
+}
+
+.weapon:hover {
+  color: $text-color;
+}
+
+.rightAndLeftHand {
+  left: 0;
+  bottom: 30px;
+  width: 120px;
+}
+
+.twoHand {
+  bottom: 30px;
+  right: 70px;
+  width: 50px;
+}
+
+.ranged {
+  bottom: 30px;
+  right: 0;
+  width: 50px;
+}
+
+.leftAndTwoHand {
+  bottom: 0;
+  left: 70px;
+  width: 120px;
+}

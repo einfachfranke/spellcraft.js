@@ -1,0 +1,181 @@
+@import 'variables';
+@import 'overview';
+@import 'summary';
+@import "edit";
+@import '../../node_modules/@fontsource/roboto/300.css';
+@import '../../node_modules/@fontsource/roboto/500.css';
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $body-bg-color;
+  color: $text-color;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: $item-header-color;
+}
+
+.app {
+  margin: 0 auto;
+  padding: 10px 10px;
+  max-width: 1150px;
+  display: flex;
+}
+
+.menu {
+  width: 260px;
+  box-sizing: border-box;
+  margin-right: 16px;
+}
+
+.content {
+  width: 100%;
+}
+
+.imbue-error {
+  color: $error-color;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -2px;
+  margin-right: -2px;
+  align-items: center;
+}
+
+.col-6 {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  padding: 2px;
+}
+
+.col-12 {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  padding: 2px;
+}
+
+@media (width > 768px) {
+  .col-md-05 {
+    box-sizing: border-box;
+    flex: 0 0 4.16666667%;
+    padding: 2px;
+  }
+
+  .col-md-1 {
+    box-sizing: border-box;
+    flex: 0 0 8.33333333%;
+    padding: 2px;
+  }
+
+  .col-md-105 {
+    box-sizing: border-box;
+    flex: 0 0 12.5%;
+    padding: 2px;
+  }
+
+  .col-md-2 {
+    box-sizing: border-box;
+    flex: 0 0 16.6666667%;
+    padding: 2px;
+  }
+
+  .col-md-3 {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    padding: 2px;
+  }
+
+  .col-md-4 {
+    box-sizing: border-box;
+    flex: 0 0 33.3333333%;
+    padding: 2px;
+  }
+
+  .col-md-6 {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    padding: 2px;
+  }
+
+  .col-md-9 {
+    box-sizing: border-box;
+    flex: 0 0 75%;
+    padding: 2px;
+  }
+
+  .col-md-12 {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    padding: 2px;
+  }
+}
+
+@media (width > 992px) {
+  .col-lg-05 {
+    box-sizing: border-box;
+    flex: 0 0 4.16666667%;
+    padding: 2px;
+  }
+
+  .col-lg-1 {
+    box-sizing: border-box;
+    flex: 0 0 8.33333333%;
+    padding: 2px;
+  }
+
+  .col-lg-105 {
+    box-sizing: border-box;
+    flex: 0 0 12.5%;
+    padding: 2px;
+  }
+
+  .col-lg-2 {
+    box-sizing: border-box;
+    flex: 0 0 16.6666667%;
+    padding: 2px;
+  }
+
+  .col-lg-3 {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    padding: 2px;
+  }
+
+  .col-lg-4 {
+    box-sizing: border-box;
+    flex: 0 0 33.3333333%;
+    padding: 2px;
+  }
+
+  .col-lg-6 {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    padding: 2px;
+  }
+
+  .col-lg-12 {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    padding: 2px;
+  }
+}
+

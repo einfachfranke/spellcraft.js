@@ -1,0 +1,89 @@
+.summary label {
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+  color: $summary-label-color;
+}
+
+.summary.row {
+  margin-left: -8px;
+  margin-right: -8px;
+  align-items: start;
+}
+
+.summary .col-lg-3 {
+  padding: 3px 8px 8px 8px;
+}
+
+.summary-item.summary-default:hover {
+  color: darken($text-color, 20);
+}
+
+.summary-item.summary-default .summary-bar {
+  background-color: $summary-value-color;
+}
+
+.summary-item.summary-value .summary-bar {
+  background-color: $summary-value-color;
+}
+
+.summary-item.summary-value:hover {
+  color: $summary-value-color;
+}
+
+.summary-item.summary-max-value .summary-bar {
+  background-color: $summary-max-value-color;
+}
+
+.summary-item.summary-max-value:hover {
+  color: $summary-max-value-color;
+}
+
+.summary-item.summary-warning .summary-bar {
+  background-color: $summary-warning-color;
+}
+
+.summary-item.summary-warning:hover {
+  color: $summary-warning-color;
+}
+
+.summary-item.error .summary-bar {
+  background-color: $error-color;
+}
+
+.summary-item.error:hover {
+  color: $error-color;
+}
+
+.summary-item .summary-text-value.summary-warning span {
+  color: $summary-warning-color;
+}
+
+.summary-text {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.summary-text-effect {
+  flex-grow: 1;
+  cursor: default;
+}
+
+.summary-text-value {
+  flex-grow: 0;
+  padding-left: 5px;
+  cursor: default;
+}
+
+.summary-bar-bg {
+  height: 4px;
+  background-color: $default-color;
+}
+
+.summary-bar {
+  position: relative;
+  bottom: 4px;
+  height: 4px;
+  transition: width 1s ease 0s;
+}

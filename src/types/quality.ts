@@ -1,0 +1,1 @@
+export type Quality = 100 | 99 | 98 | 97 | 96 | 95 | 94
