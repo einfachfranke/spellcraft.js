@@ -11,13 +11,10 @@ import {itemLevels} from "./data/levels";
 import {ItemLevel} from "./types/levels";
 import {itemType} from "./data/items";
 import {useStore} from "./store/store";
-import {useParams} from "react-router-dom";
 
 export const Edit: React.FC = (): React.ReactElement => {
     const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
     const item: Item = useStore((state: Store) => state.activeItem)
-    const params = useParams()
-    console.log(params)
 
     return (
         <div className={`edit`}>
@@ -83,7 +80,12 @@ export const Edit: React.FC = (): React.ReactElement => {
                 </div>
                 <div className={`col-md-2 col-lg-1`}>
                     <label>&nbsp;</label>
-                    <button onClick={() => itemManager.clear()}>Clear</button>
+                    <button
+                        disabled={!itemManager.clearable()}
+                        onClick={(): void => itemManager.clear()}
+                    >
+                        Clear
+                    </button>
                 </div>
                 <div className={`col-md-12 col-lg-6`}>
                     <label htmlFor={'item-name-input'}>Name</label>

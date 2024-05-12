@@ -176,6 +176,19 @@ export class ItemManager {
         }
     }
 
+    clearable(): boolean {
+        const item: Item = this.getActiveItem()
+
+        for(let i:number = 0; i < item.options.length; i++) {
+            const option: Option = item.options[i]
+            if (option.effectValue.value > 0) {
+                return true
+            }
+        }
+
+        return false
+    }
+
     clear(): void {
         const item: Item = this.getActiveItem()
         item.level = 51

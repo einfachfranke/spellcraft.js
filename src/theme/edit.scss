@@ -11,7 +11,13 @@ select, input, input[type=number], button {
   cursor: pointer;
 }
 
-select:not(:disabled):hover, input:not(:disabled):hover, button:hover {
+select:disabled, input:disabled, input[type=number]:disabled, button:disabled {
+  background-color: darken($item-default-color, 5);
+  border-color: darken($item-default-color, 5);
+  opacity: .8;
+}
+
+select:not(:disabled):hover, input:not(:disabled):hover, button:not(:disabled):hover {
   border: 4px solid darken($item-default-color, 5);
   background-color: darken($item-default-color, 5);
 }
@@ -31,6 +37,6 @@ select:not(:disabled):hover, input:not(:disabled):hover, button:hover {
   color: lighten($text-color, 100);
 }
 
-select:disabled, input:disabled {
+select:disabled, input:disabled, button:disabled {
   cursor: not-allowed;
 }
