@@ -19,22 +19,30 @@
   color: black;
 }
 
+.item.active {
+  cursor: default;
+}
+
+.item.disabled {
+  opacity: .5;
+}
+
 .item.default-item {
   background-color: $item-default-color;
   border-color: $item-default-color;
 }
 
 .item.default-item:hover {
-  background-color: darken($item-default-color, 5);
-  border-color: darken($item-default-color, 5);
+  border-color: darken($item-default-color, 10);
 }
 
 .item.active.default-item {
-  border-color: darken($item-default-color, 8);
+  border-color: darken($item-default-color, 10);
 }
 
-.item.active.default-item:hover {
-  border-color: darken($item-default-color, 11);
+.item > .hint.default-item.show {
+  background-color: darken($item-default-color, 10);
+  border-color: $item-default-color;
 }
 
 .item.craft-item {
@@ -43,16 +51,16 @@
 }
 
 .item.craft-item:hover {
-  background-color: darken($item-craft-color, 10);
-  border-color: darken($item-craft-color, 10);
+  border-color: darken($item-craft-color, 20);
 }
 
 .item.active.craft-item {
   border-color: darken($item-craft-color, 20);
 }
 
-.item.active.craft-item:hover {
-  border-color: darken($item-craft-color, 30);
+.item > .hint.craft-item.show {
+  background-color: darken($item-craft-color, 20);
+  border-color: $item-craft-color;
 }
 
 .item.craft-item-max-imbue {
@@ -61,16 +69,16 @@
 }
 
 .item.craft-item-max-imbue:hover {
-  background-color: darken($item-craft-max-imbue-color, 10);
-  border-color: darken($item-craft-max-imbue-color, 10);
+  border-color: darken($item-craft-max-imbue-color, 20);
 }
 
 .item.active.craft-item-max-imbue {
   border-color: darken($item-craft-max-imbue-color, 20);
 }
 
-.item.active.craft-item-max-imbue:hover {
-  border-color: darken($item-craft-max-imbue-color, 30);
+.item > .hint.craft-item-max-imbue.show {
+  background-color: darken($item-craft-max-imbue-color, 20);
+  border-color: $item-craft-max-imbue-color;
 }
 
 .item.drop-item {
@@ -79,16 +87,11 @@
 }
 
 .item.drop-item:hover {
-  background-color: darken($item-drop-color, 10);
-  border-color: darken($item-drop-color, 10);
+  border-color: darken($item-drop-color, 20);
 }
 
 .item.active.drop-item {
   border-color: darken($item-drop-color, 20);
-}
-
-.item.active.drop-item:hover {
-  border-color: darken($item-drop-color, 30);
 }
 
 .item.rog-item {
@@ -97,16 +100,11 @@
 }
 
 .item.rog-item:hover {
-  background-color: darken($item-rog-color, 10);
-  border-color: darken($item-rog-color, 10);
+  border-color: darken($item-rog-color, 20);
 }
 
 .item.active.rog-item {
   border-color: darken($item-rog-color, 20);
-}
-
-.item.active.rog-item:hover {
-  border-color: darken($item-rog-color, 30);
 }
 
 .item.error {
@@ -115,16 +113,16 @@
 }
 
 .item.error:hover {
-  background-color: darken($error-color, 10);
-  border-color: darken($error-color, 10);
+  border-color: darken($error-color, 20);
 }
 
 .item.active.error {
   border-color: darken($error-color, 20);
 }
 
-.item.active.error:hover {
-  border-color: darken($error-color, 30);
+.item > .hint.error.show {
+  background-color: darken($error-color, 20);
+  border-color: $error-color;
 }
 
 .header {
@@ -144,26 +142,6 @@
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
-}
-
-.item > .hint.default-item.show {
-  background-color: darken($item-default-color, 8);
-  border-color: $item-default-color;
-}
-
-.item > .hint.craft-item.show {
-  background-color: darken($item-craft-color, 20);
-  border-color: $item-craft-color;
-}
-
-.item > .hint.craft-item-max-imbue.show {
-  background-color: darken($item-craft-max-imbue-color, 20);
-  border-color: $item-craft-max-imbue-color;
-}
-
-.item > .hint.error.show {
-  background-color: darken($error-color, 20);
-  border-color: $error-color;
 }
 
 .hint.option0 {
@@ -453,8 +431,8 @@
 
 .weapon {
   position: absolute;
-  background-color: darken($item-default-color, 8);
-  color: darken($item-default-color, 8);
+  background-color: $item-default-color;
+  color: $item-default-color;
   height: 20px;
   border-radius: $border-radius;
   cursor: pointer;
@@ -462,15 +440,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: .5;
 }
 
 .weapon.active {
-  background-color: $item-default-color;
-  color: $item-default-color;
+  opacity: 1;
 }
 
 .weapon:hover {
   color: $text-color;
+  opacity: 1;
+}
+
+.weapon.active:hover {
+  color: $item-default-color;
+  cursor: default;
 }
 
 .rightAndLeftHand {

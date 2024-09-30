@@ -168,6 +168,8 @@ type EffectTypeBonusCode =
     | 'meleeCombatSpeed'
     | 'resistPierce'
     | 'arcaneSyphon'
+    | 'spellLevel'
+    | 'realmPoints'
 
 export type EffectCode =
     '00'

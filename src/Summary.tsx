@@ -26,7 +26,7 @@ export const Summary: React.FC = (): React.ReactElement => {
 
     return (
         <div className={`row summary`}>
-            <div className={`col-md-6 col-lg-3`}>
+            <div className={`col-md-6 col-lg-3 col-12`}>
                 <label>Stats</label>
                 {summaries.stats.map((summaryData: SummaryItem) => (
                     <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
@@ -41,7 +41,7 @@ export const Summary: React.FC = (): React.ReactElement => {
                 )}
 
             </div>
-            <div className={`col-md-6 col-lg-3`}>
+            <div className={`col-md-6 col-lg-3 col-12`}>
                 <label>Resists</label>
                 {summaries.resists.map((summaryData: SummaryItem) => (
                     <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
@@ -55,7 +55,7 @@ export const Summary: React.FC = (): React.ReactElement => {
                     </>
                 )}
             </div>
-            <div className={`col-md-6 col-lg-3`}>
+            <div className={`col-md-6 col-lg-3 col-12`}>
                 <label>Skills</label>
                 {summaries.skills.map((summaryData: SummaryItem) => (
                     <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
@@ -69,7 +69,7 @@ export const Summary: React.FC = (): React.ReactElement => {
                     </>
                 )}
             </div>
-            <div className={`col-md-6 col-lg-3`}>
+            <div className={`col-md-6 col-lg-3 col-12`}>
                 {summaries.bonus.length > 0 && (
                     <>
                         <label>Bonus</label>

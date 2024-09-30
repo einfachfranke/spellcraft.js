@@ -9867,6 +9867,34 @@ export const effectTypes: EffectTypes = {
                 ],
                 values: {},
                 type: 'bonus'
+            },
+            spellLevel: {
+                name: 'Spell Level',
+                code: 'bo',
+                craft: false,
+                utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            realmPoints: {
+                name: 'Realm Points',
+                code: 'bm',
+                craft: false,
+                utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
             }
         }
     }

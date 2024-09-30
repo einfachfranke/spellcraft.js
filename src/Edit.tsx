@@ -15,22 +15,29 @@ import {useStore} from "./store/store";
 export const Edit: React.FC = (): React.ReactElement => {
     const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
     const item: Item = useStore((state: Store) => state.activeItem)
+    const [showDialog, setShowDialog] = useState<boolean>(false)
 
     return (
         <div className={`edit`}>
+            {showDialog && (
+                <Dialog
+                    onChange={() => alert('huhu')}
+                    onClose={() => setShowDialog(false)}
+                />
+            )}
             <h2>{item.name}</h2>
             <div className={`row`}>
-                <div className={`col-lg-2`}>
+                <div className={`col-4 col-lg-2`}>
                     Utility: {item.utility.toFixed(2)}
                 </div>
                 {item.itemType.isCraftItem && (
-                    <div className={`col-lg-2 ${item.imbue.value > (item.imbue.max + 5.5) ? 'imbue-error' : ''}`}>
+                    <div className={`col-8 col-lg-2 ${item.imbue.value > (item.imbue.max + 5.5) ? 'imbue-error' : ''}`}>
                         Imbue: {item.imbue.value} / {item.imbue.max + 5.5}
                     </div>
                 )}
             </div>
             <div className={`row`}>
-                <div className={`col-md-2 col-lg-1`}>
+                <div className={`col-2 col-lg-1`}>
                     <label htmlFor={'item-level-select'}>Level</label>
                     <select
                         id={'item-level-select'}
@@ -44,7 +51,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-md-2 col-lg-1`}>
+                <div className={`col-2 col-lg-1`}>
                     <label htmlFor={'quality-select'}>Quality</label>
                     <select
                         id={'quality-select'}
@@ -58,7 +65,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-md-4 col-lg-2`}>
+                <div className={`col-3 col-lg-2`}>
                     <label htmlFor={'item-type-select'}>Type</label>
                     <select
                         id={'item-type-select'}
@@ -74,11 +81,17 @@ export const Edit: React.FC = (): React.ReactElement => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-md-2 col-lg-1`}>
+                <div className={`col-3 col-lg-1`}>
                     <label>&nbsp;</label>
-                    <button>Import</button>
+                    <button
+                        onClick={(): void => {
+                            setShowDialog(true)
+                        }}
+                    >
+                        Import
+                    </button>
                 </div>
-                <div className={`col-md-2 col-lg-1`}>
+                <div className={`col-2 col-lg-1`}>
                     <label>&nbsp;</label>
                     <button
                         disabled={!itemManager.clearable()}
@@ -87,7 +100,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                         Clear
                     </button>
                 </div>
-                <div className={`col-md-12 col-lg-6`}>
+                <div className={`col-12 col-lg-6`}>
                     <label htmlFor={'item-name-input'}>Name</label>
                     <input
                         id={'item-name-input'}
@@ -99,24 +112,24 @@ export const Edit: React.FC = (): React.ReactElement => {
                 </div>
             </div>
             <div className={`row`}>
-                <div className={`col-md-3 col-lg-2`}>
+                <div className={`col-3 col-lg-2`}>
                     <label>Type</label>
                 </div>
-                <div className={`col-md-6 col-lg-3`}>
+                <div className={`col-6 col-lg-3`}>
                     <label>Effect</label>
                 </div>
-                <div className={`col-md-3 col-lg-1`}>
+                <div className={`col-3 col-lg-1`}>
                     <label>Value</label>
                 </div>
                 {item.itemType.isCraftItem && (
                     <>
-                        <div className={`col-md-1 col-lg-05`}>
+                        <div className={`col-1 col-lg-05`}>
                             <label>IP</label>
                         </div>
-                        <div className={`col-md-2 col-lg-105`}>
+                        <div className={`col-2 col-lg-105`}>
                             <label>Price</label>
                         </div>
-                        <div className={`col-md-9 col-lg-4`}>
+                        <div className={`col-9 col-lg-4`}>
                             <label>Gem</label>
                         </div>
                     </>
@@ -154,7 +167,7 @@ const OptionView: React.FC<{
 
     return (
         <div className={`row`}>
-            <div className={`col-md-3 col-lg-2 ${option.color}`}>
+            <div className={`col-3 col-lg-2 ${option.color}`}>
                 <select
                     value={effectTypes.indexOf(option.effectType)}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -169,7 +182,7 @@ const OptionView: React.FC<{
                     ))}
                 </select>
             </div>
-            <div className={`col-md-6 col-lg-3 ${option.color}`}>
+            <div className={`col-6 col-lg-3 ${option.color}`}>
                 <select
                     value={effects.indexOf(option.effect)}
                     disabled={option.effectType.default}
@@ -185,7 +198,7 @@ const OptionView: React.FC<{
                     ))}
                 </select>
             </div>
-            <div className={`col-md-3 col-lg-1 ${option.color}`}>
+            <div className={`col-3 col-lg-1 ${option.color}`}>
                 {craft && (
                     <select
                         value={effectValues.indexOf(option.effectValue)}
@@ -215,15 +228,15 @@ const OptionView: React.FC<{
             </div>
             {craft && (
                 <>
-                    <div className={`col-md-1 col-lg-05`}>
+                    <div className={`col-1 col-lg-05`}>
                         {option.effectValue.imbue !== 0 ? option.effectValue.imbue : ''}
                     </div>
-                    <div className={`col-md-2 col-lg-105`}>
+                    <div className={`col-2 col-lg-105`}>
                         {option.effectValue.price > 0 && (
                             <Price price={option.effectValue.price}/>
                         )}
                     </div>
-                    <div className={`col-md-9 col-lg-4 ellipsis`}>
+                    <div className={`col-9 col-lg-4 ellipsis`}>
                         <Gem option={option}/>
                     </div>
                 </>
@@ -234,8 +247,8 @@ const OptionView: React.FC<{
 
 const Gem: React.FC<{
     option: Option
-}> = ({option}) => {
-    const split: string[] = option.effectValue.gem.split(' ')
+}> = (props) => {
+    const split: string[] = props.option.effectValue.gem.split(' ')
 
     return (
         <>
@@ -243,6 +256,31 @@ const Gem: React.FC<{
                 {split.shift()}
             </span>{' '}
             {split.join(' ')}
+        </>
+    )
+}
+
+export const Dialog: React.FC<{
+    onChange: () => void,
+    onClose: () => void
+}> = (props) => {
+    return (
+        <>
+            <div
+                className={'backdrop'}
+                onClick={(): void => {
+                    props.onClose()
+                }}
+            />
+            <dialog open>
+                <p></p>
+                <input
+                    autoFocus
+                    type={'text'}
+                    placeholder={'Paste import string'}
+                    onChange={() => alert('huhu')}
+                />
+            </dialog>
         </>
     )
 }

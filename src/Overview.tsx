@@ -14,7 +14,7 @@ const Overview: React.FC = () => {
     return (
         <div className={`overview`}>
             {items.map((item: Item) => (
-                <OverviewEntry key={item.code} code={item.code} item={item}/>
+                <OverviewEntry key={item.code} item={item}/>
             ))}
             <Template/>
             <WeaponSelect/>
@@ -69,9 +69,8 @@ export const Price: React.FC<{
 export default Overview
 
 const OverviewEntry: React.FC<{
-    code: string
     item: Item
-}> = ({code, item}) => {
+}> = ({item}) => {
     const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
     const activeItem: Item = useStore((state: Store) => state.activeItem)
     const activeWeapon: Weapon = useStore((state: Store) => state.activeWeapon)
@@ -92,10 +91,12 @@ const OverviewEntry: React.FC<{
         setHighlight(highlight)
     }, [highlightEffects]);
 
+    const disabled = item.weapon && activeWeapon.itemCodes.indexOf(item.code) === -1 ? `disabled`: ``
+
     return (
         <>
             <div
-                className={`item ${code} ${activeItem === item ? `active` : ``} ${item.color}`}
+                className={`item ${item.code} ${activeItem === item ? `active` : ``} ${item.color} ${disabled}`}
                 onClick={(): void => {
                     if (activeItem !== item) itemManager.setActiveItem(item)
                 }}
@@ -103,7 +104,7 @@ const OverviewEntry: React.FC<{
                 <OverviewEntryHint item={item}/>
                 {highlight > 0 && <span>{highlight}</span>}
             </div>
-            <div className={`header ${code} ${activeItem === item ? `active` : ``}`}>
+            <div className={`header ${item.code} ${activeItem === item ? `active` : ``}`}>
                 {item.name}
             </div>
         </>
