@@ -1,6 +1,7 @@
 import imbuePoints from "./imbuePoints";
 import {Color} from "./color";
 import {Item, ItemType, ItemTypeCode} from "../types/items";
+import {config} from "../config";
 
 export const itemType: Record<ItemTypeCode, ItemType> = {
     craft: {
@@ -36,7 +37,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -54,7 +55,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -72,7 +73,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -90,7 +91,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -108,7 +109,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -126,7 +127,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -144,7 +145,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -162,7 +163,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -180,7 +181,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -198,7 +199,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -216,7 +217,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -234,7 +235,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -252,7 +253,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -270,7 +271,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -288,7 +289,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -306,7 +307,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -324,7 +325,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -343,7 +344,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],
@@ -361,7 +362,7 @@ export const items: Item[] = [
         color: Color.itemDefault,
         imbue: {
             value: 0,
-            max: imbuePoints['51']['100']
+            max: imbuePoints[51][config.qualityEffectsImbuePoints ? 99 : 100]
         },
         itemName: '',
         options: [],

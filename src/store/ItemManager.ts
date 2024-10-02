@@ -10,6 +10,7 @@ import {Item, ItemType, Option} from "../types/items";
 import {StoreGet, StoreSet} from "../types/store";
 import {ItemLevel} from "../types/levels";
 import {itemType} from "../data/items";
+import {config} from "../config";
 
 export class ItemManager {
     private readonly set: StoreSet
@@ -82,7 +83,7 @@ export class ItemManager {
     set level(level: ItemLevel) {
         const item: Item = this.getActiveItem()
         item.level = level
-        item.imbue.max = imbuePoints[item.level]['100']
+        item.imbue.max = imbuePoints[item.level][config.qualityEffectsImbuePoints ? item.quality : 100]
 
         this.update(item)
         this.setActiveItem(item)
@@ -91,7 +92,7 @@ export class ItemManager {
     set quality(quality: Quality) {
         const item: Item = this.getActiveItem()
         item.quality = quality
-        item.imbue.max = imbuePoints[item.level]['100']
+        item.imbue.max = imbuePoints[item.level][config.qualityEffectsImbuePoints ? quality : 100]
 
         this.update(item)
         this.setActiveItem(item)
