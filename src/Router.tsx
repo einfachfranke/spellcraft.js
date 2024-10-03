@@ -65,7 +65,7 @@ export const Router: React.FC = (): null => {
 
                 if (effect.code === effectCode) {
                     const option: Option = {
-                        bonus: item.itemType.isCraftItem && index === 4,
+                        SCBonus: item.itemType.isCraftItem && index === 4,
                         color: Color.itemDefault,
                         showHint: false,
                         effectType: effectType,

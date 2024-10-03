@@ -55,7 +55,7 @@ export type Imbue = {
 }
 
 export type Option = {
-    bonus: boolean
+    SCBonus: boolean
     color: Color
     showHint: boolean
     effectType: EffectType

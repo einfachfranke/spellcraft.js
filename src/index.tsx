@@ -9,6 +9,7 @@ import {Router} from "./Router";
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {items} from "./data/items";
 import {Item} from "./types/items";
+import {config} from "./config";
 
 const root: Root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -17,7 +18,7 @@ const root: Root = ReactDOM.createRoot(
 let url: string = '/Albion/Armsman/none/50/none'
 
 items.forEach((item: Item): void => {
-    url += item.craft ? '/0/51/99/1/000-000-000-000-000' : '/0/51/99/2/000'
+    url += item.craft ? `/0/51/99/1/000-000-000-000${config.spellcraftItemBonus ? '-000' : ''}` : '/0/51/99/2/000'
 })
 
 const path: string[] = [':realm', ':realmClass', ':race', ':level', ':name']

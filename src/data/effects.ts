@@ -1,4 +1,5 @@
 import {Effect, EffectType, EffectTypes, IncreaseType} from "../types/effects";
+import {config} from "../config";
 
 export const effectTypes: EffectTypes = {
     unused: {
@@ -2102,7 +2103,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryAlbion: {
-                name: 'Archery',
+                name: config.useArchery ? 'Archery' : 'Longbows',
                 code: '31',
                 craft: true,
                 utility: 5,
@@ -2175,7 +2176,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryHibernia: {
-                name: 'Archery',
+                name: config.useArchery ? 'Archery' : 'Recurve Bow',
                 code: '56',
                 craft: true,
                 utility: 5,
@@ -2248,7 +2249,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryMidgard: {
-                name: 'Archery',
+                name: config.useArchery ? 'Archery' : 'Composite Bow',
                 code: '78',
                 craft: true,
                 utility: 5,

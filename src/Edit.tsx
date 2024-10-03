@@ -160,7 +160,7 @@ const OptionView: React.FC<{
     const [effectValues, setEffectValues] = useState<EffectValue[]>([])
 
     useEffect((): void => {
-        setEffectTypes(itemManager.findEffectTypes(item, option.bonus))
+        setEffectTypes(itemManager.findEffectTypes(item, option.SCBonus))
         setEffects(itemManager.findEffects(option))
         setEffectValues(itemManager.findEffectValues(option))
     }, [item, realmClass])

@@ -369,3 +369,11 @@ export const items: Item[] = [
         bonusOption: null
     }
 ]
+
+if (!config.showMythical) {
+    const item: Item | undefined = items.find((item: Item): boolean => item.code === 'mythical')
+    if (item !== undefined) {
+        const index: number = items.indexOf(item)
+        items.splice(index, 1)
+    }
+}

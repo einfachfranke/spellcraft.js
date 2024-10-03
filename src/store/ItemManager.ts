@@ -123,7 +123,9 @@ export class ItemManager {
                 }
             })
 
-            item.bonusOption = this.createOption(item, true)
+            if (config.spellcraftItemBonus) {
+                item.bonusOption = this.createOption(item, true)
+            }
         } else {
             item.options = item.options.filter((option: Option): boolean => (
                 !option.effectType.default
@@ -166,7 +168,7 @@ export class ItemManager {
 
     private createOption(item: Item, bonus: boolean): Option {
         return {
-            bonus: bonus,
+            SCBonus: bonus,
             color: Color.itemDefault,
             showHint: false,
             effectType: effectTypes.unused,
@@ -215,7 +217,7 @@ export class ItemManager {
 
         option.effect = this.findEffects(option)[0]
 
-        if (!option.bonus && item.itemType.isCraftItem) {
+        if (!option.SCBonus && item.itemType.isCraftItem) {
             option.effectValue = this.findEffectValues(option)[0]
         } else {
             option.effectValue = {
@@ -242,7 +244,7 @@ export class ItemManager {
     changeEffect(option: Option): void {
         const item: Item = this.getActiveItem()
 
-        if (!option.bonus && item.itemType.isCraftItem) {
+        if (!option.SCBonus && item.itemType.isCraftItem) {
             option.effectValue = this.findEffectValues(option)[0]
         } else {
             option.effectValue = {
@@ -345,17 +347,24 @@ export class ItemManager {
         })
     }
 
-    findEffectTypes(item: Item, bonus: boolean): EffectType[] {
+    findEffectTypes(item: Item, scBonus: boolean): EffectType[] {
         const typesOptions: EffectType[] = []
 
         Object.values(effectTypes).forEach((type: EffectType): void => {
-            if (item.code === 'mythical' && (type.code === 'mythStatCaps' || type.code === 'resistCaps')) {
+            if (type.code === 'statCaps' && !config.useStatCaps) {
+                return
+            } else if (type.code === 'mythStatCaps' && !config.useMythicalStatCaps) {
+                return
+            } else if (type.code === 'resistCaps' && !config.useResistCaps) {
+                return
+            } else if (type.code === 'bonus' && !config.useBonus) {
+                return
+            } else if (item.code === 'mythical' && (type.code === 'mythStatCaps' || type.code === 'resistCaps')) {
                 typesOptions.push(type)
             } else if (type.code === 'focus' && item.code === 'twoHand') {
                 typesOptions.push(type)
             } else if (
-                (!item.itemType.isCraftItem || bonus)
-                && (type.code === 'statCaps' || type.code === 'bonus')) {
+                (!item.itemType.isCraftItem || scBonus) && (type.code === 'statCaps' || type.code === 'bonus')) {
                 typesOptions.push(type)
             } else if (type.code === 'unused' || type.code === 'stats' || type.code === 'resists' || type.code === 'skills') {
                 typesOptions.push(type)
@@ -392,7 +401,7 @@ export class ItemManager {
         const realm: Realm = this.get().realm
 
         Object.values(option.effectType.effects).forEach((effect: Effect): void => {
-            if (!option.bonus && activeItem.itemType.isCraftItem && !effect.craft) return
+            if (!option.SCBonus && activeItem.itemType.isCraftItem && !effect.craft) return
             if (effect.realm.indexOf(realm.name) === -1) return
             if (effects.indexOf(effect) !== -1) return
 
