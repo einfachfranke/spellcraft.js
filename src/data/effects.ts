@@ -2103,7 +2103,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryAlbion: {
-                name: config.useArchery ? 'Archery' : 'Longbows',
+                name: config.useArcheryAsSkillName ? 'Archery' : 'Longbows',
                 code: '31',
                 craft: true,
                 utility: 5,
@@ -2176,7 +2176,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryHibernia: {
-                name: config.useArchery ? 'Archery' : 'Recurve Bow',
+                name: config.useArcheryAsSkillName ? 'Archery' : 'Recurve Bow',
                 code: '56',
                 craft: true,
                 utility: 5,
@@ -2249,7 +2249,7 @@ export const effectTypes: EffectTypes = {
                 type: 'skills'
             },
             archeryMidgard: {
-                name: config.useArchery ? 'Archery' : 'Composite Bow',
+                name: config.useArcheryAsSkillName ? 'Archery' : 'Composite Bow',
                 code: '78',
                 craft: true,
                 utility: 5,

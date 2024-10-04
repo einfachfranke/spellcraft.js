@@ -6,5 +6,5 @@ export type Config = {
     useMythicalStatCaps: boolean
     useResistCaps: boolean
     useBonus: boolean
-    useArchery: boolean
+    useArcheryAsSkillName: boolean
 }
