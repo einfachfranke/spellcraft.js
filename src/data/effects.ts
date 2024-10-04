@@ -9790,7 +9790,7 @@ export const effectTypes: EffectTypes = {
                 code: 'bc',
                 craft: false,
                 utility: 2,
-                maxValue: 50,
+                maxValue: 25,
                 realm: [
                     'Albion',
                     'Hibernia',
@@ -9869,11 +9869,11 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'bonus'
             },
-            spellLevel: {
-                name: 'Spell Level',
-                code: 'bo',
+            spellFocus: {
+                name: 'Spell Focus',
+                code: 'bs',
                 craft: false,
-                utility: 5,
+                utility: 0,
                 maxValue: 10,
                 realm: [
                     'Albion',
@@ -9885,7 +9885,21 @@ export const effectTypes: EffectTypes = {
             },
             realmPoints: {
                 name: 'Realm Points',
-                code: 'bm',
+                code: 'bx',
+                craft: false,
+                utility: 2,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            armorAbsorption: {
+                name: 'Armor Absorption',
+                code: 'bp',
                 craft: false,
                 utility: 5,
                 maxValue: 10,
@@ -9896,7 +9910,105 @@ export const effectTypes: EffectTypes = {
                 ],
                 values: {},
                 type: 'bonus'
-            }
+            },
+            blockChance: {
+                name: 'Block Chance',
+                code: 'bq',
+                craft: false,
+                utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            bonusCoin: {
+                name: 'Bonus Coin',
+                code: 'bw',
+                craft: false,
+                utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            enduranceRegeneration: {
+                name: 'Endurance Regeneration',
+                code: 'bv',
+                craft: false,
+                utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            evadeChance: {
+                name: 'Evade Chance',
+                code: 'by',
+                craft: false,
+                utility: 2,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            healthRegeneration: {
+                name: 'Health Regeneration',
+                code: 'bt',
+                craft: false,
+                utility: 2,
+                maxValue: 50,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            parryChance: {
+                name: 'Parry Chance',
+                code: 'br',
+                craft: false,
+                utility: 2,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            powerRegeneration: {
+                name: 'Power Regeneration',
+                code: 'bu',
+                craft: false,
+                utility: 2,
+                maxValue: 15,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
         }
     }
 }

@@ -596,7 +596,7 @@ export const edenImport: EdenImport = {
     },
     "218": {
         "name": "ToA: Spell Level",
-        "effect": effectTypes.bonus.effects.spellLevel
+        "effect": effectTypes.bonus.effects.spellFocus
     },
     "221": {
         "name": "Cap Bonus: Body Resist",

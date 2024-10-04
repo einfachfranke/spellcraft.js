@@ -154,7 +154,13 @@ type EffectTypeFocusCode =
 
 type EffectTypeBonusCode =
     'armorFactor'
+    | 'armorAbsorption'
+    | 'blockChance'
+    | 'bonusCoin'
+    | 'enduranceRegeneration'
+    | 'evadeChance'
     | 'fatigue'
+    | 'healthRegeneration'
     | 'powerPool'
     | 'debuffEffectivness'
     | 'buffEffectivness'
@@ -168,8 +174,10 @@ type EffectTypeBonusCode =
     | 'meleeCombatSpeed'
     | 'resistPierce'
     | 'arcaneSyphon'
-    | 'spellLevel'
+    | 'spellFocus'
     | 'realmPoints'
+    | 'parryChance'
+    | 'powerRegeneration'
 
 export type EffectCode =
     '00'
@@ -348,6 +356,16 @@ export type EffectCode =
     | 'bm'
     | 'bn'
     | 'bo'
+    | 'bs'
+    | 'bx'
+    | 'bp'
+    | 'bq'
+    | 'bw'
+    | 'bv'
+    | 'by'
+    | 'bt'
+    | 'br'
+    | 'bu'
 
 export type EffectTypes = {
     unused: EffectTypeUnused
