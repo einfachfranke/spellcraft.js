@@ -359,12 +359,12 @@ export class ItemManager {
                 return
             } else if (type.code === 'bonus' && !config.useBonus) {
                 return
-            } else if (item.code === 'mythical' && (type.code === 'mythStatCaps' || type.code === 'resistCaps')) {
+            } else if (item.code === 'mythical' && (type.code === 'mythStatCaps')) {
                 typesOptions.push(type)
             } else if (type.code === 'focus' && item.code === 'twoHand') {
                 typesOptions.push(type)
             } else if (
-                (!item.itemType.isCraftItem || scBonus) && (type.code === 'statCaps' || type.code === 'bonus')) {
+                (!item.itemType.isCraftItem || scBonus) && (type.code === 'statCaps' || type.code === 'bonus' || type.code === 'resistCaps')) {
                 typesOptions.push(type)
             } else if (type.code === 'unused' || type.code === 'stats' || type.code === 'resists' || type.code === 'skills') {
                 typesOptions.push(type)
