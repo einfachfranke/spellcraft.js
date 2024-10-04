@@ -18,7 +18,7 @@ export const Summary: React.FC = (): React.ReactElement => {
     const race: Race = useStore((state: Store) => state.race)
     const level: number = useStore((state: Store) => state.level)
     const activeWeapon: Weapon = useStore((state: Store) => state.activeWeapon)
-    const summaries: SummaryData = useStore((state: Store) => state.summaryData)
+    const summaryData: SummaryData = useStore((state: Store) => state.summaryData)
     const summaryManager: SummaryManager = useStore((state: Store) => state.summaryManager)
 
     useEffect((): void => {
@@ -31,21 +31,21 @@ export const Summary: React.FC = (): React.ReactElement => {
         <div className={`row summary`}>
             <div className={col}>
                 <label>Stats</label>
-                {summaries.stats.map((summaryData: SummaryItem) => (
+                {summaryData.stats.map((summaryData: SummaryItem) => (
                     <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                 ))}
-                {summaries.statCaps.length > 0 && (
+                {summaryData.statCaps.length > 0 && (
                     <>
                         <label>Stat Caps</label>
-                        {summaries.statCaps.map((summaryData: SummaryItem) => (
+                        {summaryData.statCaps.map((summaryData: SummaryItem) => (
                             <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                         ))}
                     </>
                 )}
-                {summaries.mythStatCaps.length > 0 && (
+                {summaryData.mythStatCaps.length > 0 && (
                     <>
                         <label>Mythical Stat Caps</label>
-                        {summaries.mythStatCaps.map((summaryData: SummaryItem) => (
+                        {summaryData.mythStatCaps.map((summaryData: SummaryItem) => (
                             <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                         ))}
                     </>
@@ -53,37 +53,37 @@ export const Summary: React.FC = (): React.ReactElement => {
             </div>
             <div className={col}>
                 <label>Resists</label>
-                {summaries.resists.map((summaryData: SummaryItem) => (
+                {summaryData.resists.map((summaryData: SummaryItem) => (
                     <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                 ))}
-                {summaries.resistCaps.length > 0 && (
+                {summaryData.resistCaps.length > 0 && (
                     <>
                         <label>Resist Caps</label>
-                        {summaries.resistCaps.map((summaryData: SummaryItem) => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}3
-                    </>
-                )}
-            </div>
-            <div className={col}>
-                <label>Skills</label>
-                {summaries.skills.map((summaryData: SummaryItem) => (
-                    <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                ))}
-                {summaries.focus.length > 0 && (
-                    <>
-                        <label>Focus</label>
-                        {summaries.focus.map((summaryData: SummaryItem) => (
+                        {summaryData.resistCaps.map((summaryData: SummaryItem) => (
                             <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                         ))}
                     </>
                 )}
             </div>
             <div className={col}>
-                {summaries.bonus.length > 0 && (
+                <label>Skills</label>
+                {summaryData.skills.map((summaryData: SummaryItem) => (
+                    <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
+                ))}
+                {summaryData.focus.length > 0 && (
+                    <>
+                        <label>Focus</label>
+                        {summaryData.focus.map((summaryData: SummaryItem) => (
+                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
+                        ))}
+                    </>
+                )}
+            </div>
+            <div className={col}>
+                {summaryData.bonus.length > 0 && (
                     <>
                         <label>Bonus</label>
-                        {summaries.bonus.map((summaryData: SummaryItem) => (
+                        {summaryData.bonus.map((summaryData: SummaryItem) => (
                             <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
                         ))}
                     </>
