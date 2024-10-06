@@ -444,7 +444,7 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "25": {
         name: "Melee: Crushing",
-        Albion: effectTypes.skills.effects.crush,
+        Albion: effectTypes.skills.effects.crushing,
         Hibernia: undefined,
         Midgard: undefined
     },
@@ -486,7 +486,7 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "44": {
         name: "Melee: Slashing",
-        Albion: effectTypes.skills.effects.slash,
+        Albion: effectTypes.skills.effects.slashing,
         Hibernia: undefined,
         Midgard: undefined
     },
@@ -498,7 +498,7 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "50": {
         name: "Melee: Thrusting",
-        Albion: effectTypes.skills.effects.thrust,
+        Albion: effectTypes.skills.effects.thrusting,
         Hibernia: undefined,
         Midgard: undefined
     },

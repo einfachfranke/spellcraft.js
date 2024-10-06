@@ -118,9 +118,9 @@ type EffectTypeSkillCode =
     | 'stealth'
     | 'envenom'
     | 'criticalStrike'
-    | 'slash'
-    | 'crush'
-    | 'thrust'
+    | 'slashing'
+    | 'crushing'
+    | 'thrusting'
 
 type EffectTypeFocusCode =
     'earthMagic'

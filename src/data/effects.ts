@@ -3418,8 +3418,8 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
-            crush: {
-                name: 'Crush',
+            crushing: {
+                name: 'Crushing',
                 code: '08',
                 craft: true,
                 utility: 5,
@@ -6198,8 +6198,8 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
-            slash: {
-                name: 'Slash',
+            slashing: {
+                name: 'Slashing',
                 code: '07',
                 craft: true,
                 utility: 5,
@@ -7222,8 +7222,8 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
-            thrust: {
-                name: 'Thrust',
+            thrusting: {
+                name: 'Thrusting',
                 code: '09',
                 craft: true,
                 utility: 5,
@@ -10113,9 +10113,9 @@ effectTypes.skills.effects.allMeleeAlbion.increase = {
     type: IncreaseType.value,
     realm: {
         Albion: [
-            effectTypes.skills.effects.crush,
-            effectTypes.skills.effects.slash,
-            effectTypes.skills.effects.thrust,
+            effectTypes.skills.effects.crushing,
+            effectTypes.skills.effects.slashing,
+            effectTypes.skills.effects.thrusting,
             effectTypes.skills.effects.polearm,
             effectTypes.skills.effects.twoHanded,
             effectTypes.skills.effects.staff,
