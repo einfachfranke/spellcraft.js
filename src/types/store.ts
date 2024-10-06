@@ -11,7 +11,7 @@ import {PlayerLevel} from "./levels";
 
 export type StoreSet = (partial: (Partial<Store> | ((state: Store) => (Partial<Store> | Store)) | Store), replace?: (boolean | undefined)) => void
 
-export type StoreGet = () => any
+export type StoreGet = () => Store
 
 export type Init = {
     realm: Realm,

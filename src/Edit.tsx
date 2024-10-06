@@ -11,21 +11,32 @@ import {itemLevels} from "./data/levels";
 import {ItemLevel} from "./types/levels";
 import {itemType} from "./data/items";
 import {useStore} from "./store/store";
+import {config} from "./config";
+import {EdenImport} from "./edenImport";
 
 export const Edit: React.FC = (): React.ReactElement => {
     const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
     const item: Item = useStore((state: Store) => state.activeItem)
-    const [showDialog, setShowDialog] = useState<boolean>(false)
 
     return (
         <div className={`edit`}>
-            {showDialog && (
-                <Dialog
-                    onChange={() => alert('huhu')}
-                    onClose={() => setShowDialog(false)}
-                />
-            )}
-            <h2>{item.name}</h2>
+            <div className={`row`}>
+                <div className={`col-lg-2`}>
+                    <h2>{item.name}</h2>
+                </div>
+                {config.useEdenImport && (
+                    <EdenImport/>
+                )}
+                {itemManager.clearable() && (
+                    <div className={`col-lg-2`}>
+                        <button
+                            onClick={(): void => itemManager.clear()}
+                        >
+                            Clear
+                        </button>
+                    </div>
+                )}
+            </div>
             <div className={`row`}>
                 <div className={`col-4 col-lg-2`}>
                     Utility: {item.utility.toFixed(2)}
@@ -37,7 +48,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                 )}
             </div>
             <div className={`row`}>
-                <div className={`col-2 col-lg-1`}>
+                <div className={`col-2 col-lg-2`}>
                     <label htmlFor={'item-level-select'}>Level</label>
                     <select
                         id={'item-level-select'}
@@ -51,7 +62,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-2 col-lg-1`}>
+                <div className={`col-2 col-lg-2`}>
                     <label htmlFor={'quality-select'}>Quality</label>
                     <select
                         id={'quality-select'}
@@ -80,25 +91,6 @@ export const Edit: React.FC = (): React.ReactElement => {
                             </option>
                         ))}
                     </select>
-                </div>
-                <div className={`col-3 col-lg-1`}>
-                    <label>&nbsp;</label>
-                    <button
-                        onClick={(): void => {
-                            setShowDialog(true)
-                        }}
-                    >
-                        Import
-                    </button>
-                </div>
-                <div className={`col-2 col-lg-1`}>
-                    <label>&nbsp;</label>
-                    <button
-                        disabled={!itemManager.clearable()}
-                        onClick={(): void => itemManager.clear()}
-                    >
-                        Clear
-                    </button>
                 </div>
                 <div className={`col-12 col-lg-6`}>
                     <label htmlFor={'item-name-input'}>Name</label>
@@ -256,31 +248,6 @@ const Gem: React.FC<{
                 {split.shift()}
             </span>{' '}
             {split.join(' ')}
-        </>
-    )
-}
-
-export const Dialog: React.FC<{
-    onChange: () => void,
-    onClose: () => void
-}> = (props) => {
-    return (
-        <>
-            <div
-                className={'backdrop'}
-                onClick={(): void => {
-                    props.onClose()
-                }}
-            />
-            <dialog open>
-                <p></p>
-                <input
-                    autoFocus
-                    type={'text'}
-                    placeholder={'Paste import string'}
-                    onChange={() => alert('huhu')}
-                />
-            </dialog>
         </>
     )
 }

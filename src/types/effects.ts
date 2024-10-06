@@ -174,10 +174,16 @@ type EffectTypeBonusCode =
     | 'meleeCombatSpeed'
     | 'resistPierce'
     | 'arcaneSyphon'
-    | 'spellFocus'
+    | 'spellLevel'
     | 'realmPoints'
     | 'parryChance'
     | 'powerRegeneration'
+    | 'dps'
+    | 'mesmerizeReduction'
+    | 'stunReduction'
+    | 'snareReduction'
+    | 'safeFall'
+    | 'encumberance'
 
 export type EffectCode =
     '00'
@@ -356,16 +362,23 @@ export type EffectCode =
     | 'bm'
     | 'bn'
     | 'bo'
-    | 'bs'
-    | 'bx'
     | 'bp'
     | 'bq'
-    | 'bw'
-    | 'bv'
-    | 'by'
-    | 'bt'
     | 'br'
+    | 'bs'
+    | 'bt'
     | 'bu'
+    | 'bv'
+    | 'bw'
+    | 'bx'
+    | 'by'
+    | 'bz'
+    | 'ca'
+    | 'cb'
+    | 'cc'
+    | 'cd'
+    | 'ce'
+
 
 export type EffectTypes = {
     unused: EffectTypeUnused
@@ -422,7 +435,7 @@ export type Effect = {
     code: EffectCode
     craft: boolean
     utility: number
-    maxValue: number
+    maxValue:  0 | 11 | 10 | 25 | 26 | 50 | 75 | 200
     realm: RealmName[]
     increase?: Increase
     values: Record<string, EffectValue>

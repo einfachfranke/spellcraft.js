@@ -166,7 +166,7 @@ export class ItemManager {
         this.setActiveItem(activeItem)
     }
 
-    private createOption(item: Item, bonus: boolean): Option {
+    createOption(item: Item, bonus: boolean): Option {
         return {
             SCBonus: bonus,
             color: Color.itemDefault,

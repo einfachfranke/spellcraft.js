@@ -8,6 +8,7 @@ export const config: Config = {
     useMythicalStatCaps: true,
     useResistCaps: true,
     useBonus: true,
-    useArcheryAsSkillName: true
+    useArcheryAsSkillName: true,
+    useEdenImport: true
 }
 

@@ -9771,11 +9771,39 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'bonus'
             },
+            dps: {
+                name: 'DPS',
+                code: 'bz',
+                craft: false,
+                utility: 0,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            encumberance: {
+                name: 'Encumberance',
+                code: 'ce',
+                craft: false,
+                utility: 0,
+                maxValue: 50,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
             enduranceRegeneration: {
                 name: 'Endurance Regeneration',
                 code: 'bv',
                 craft: false,
-                utility: 5,
+                utility: 0,
                 maxValue: 10,
                 realm: [
                     'Albion',
@@ -9831,7 +9859,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Health Regeneration',
                 code: 'bt',
                 craft: false,
-                utility: 2,
+                utility: 0,
                 maxValue: 50,
                 realm: [
                     'Albion',
@@ -9860,6 +9888,20 @@ export const effectTypes: EffectTypes = {
                 code: 'bl',
                 craft: false,
                 utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            mesmerizeReduction: {
+                name: 'Mesmerize Reduction',
+                code: 'ca',
+                craft: false,
+                utility: 0,
                 maxValue: 10,
                 realm: [
                     'Albion',
@@ -9901,8 +9943,8 @@ export const effectTypes: EffectTypes = {
                 name: 'Power Regeneration',
                 code: 'bu',
                 craft: false,
-                utility: 2,
-                maxValue: 15,
+                utility: 0,
+                maxValue: 50,
                 realm: [
                     'Albion',
                     'Hibernia',
@@ -9939,6 +9981,20 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'bonus'
             },
+            safeFall: {
+                name: 'Safe Fall',
+                code: 'cd',
+                craft: false,
+                utility: 0,
+                maxValue: 50,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
             spellDamage: {
                 name: 'Spell Damage',
                 code: 'bj',
@@ -9967,8 +10023,8 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'bonus'
             },
-            spellFocus: {
-                name: 'Spell Focus',
+            spellLevel: {
+                name: 'Spell Level',
                 code: 'bs',
                 craft: false,
                 utility: 0,
@@ -9986,6 +10042,34 @@ export const effectTypes: EffectTypes = {
                 code: 'bi',
                 craft: false,
                 utility: 5,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            snareReduction: {
+                name: 'Snare Reduction',
+                code: 'cb',
+                craft: false,
+                utility: 0,
+                maxValue: 10,
+                realm: [
+                    'Albion',
+                    'Hibernia',
+                    'Midgard'
+                ],
+                values: {},
+                type: 'bonus'
+            },
+            stunReduction: {
+                name: 'Stun Reduction',
+                code: 'cc',
+                craft: false,
+                utility: 0,
                 maxValue: 10,
                 realm: [
                     'Albion',

@@ -7,4 +7,5 @@ export type Config = {
     useResistCaps: boolean
     useBonus: boolean
     useArcheryAsSkillName: boolean
+    useEdenImport: boolean
 }

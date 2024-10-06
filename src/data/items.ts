@@ -331,7 +331,6 @@ export const items: Item[] = [
         options: [],
         bonusOption: null
     },
-
     {
         name: 'L. Wrist',
         code: 'leftWrist',
