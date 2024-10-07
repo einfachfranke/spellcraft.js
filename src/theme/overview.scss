@@ -24,7 +24,7 @@
 }
 
 .item.disabled {
-  opacity: .5;
+  opacity: .3;
 }
 
 .item.default-item {
@@ -440,7 +440,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: .5;
+  opacity: .3;
 }
 
 .weapon.active {
@@ -453,7 +453,6 @@
 }
 
 .weapon.active:hover {
-  color: $item-default-color;
   cursor: default;
 }
 

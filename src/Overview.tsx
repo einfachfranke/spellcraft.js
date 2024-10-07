@@ -147,7 +147,7 @@ const WeaponSelect: React.FC = (): React.JSX.Element => {
                          itemManager.setActiveWeapon(weapon)
                      }}
                 >
-                    {weapon.name}
+                    {activeWeapon !== weapon && weapon.name}
                 </div>
             ))}
         </>
