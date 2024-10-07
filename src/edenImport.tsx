@@ -1048,10 +1048,10 @@ const edenItemMapping: Record<string, ItemCode[]> = {
     "37": ['mythical']
 }
 
-export const EdenImport: React.FC = () => {
-    const realm: Realm = useStore((state: Store) => state.realm)
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const activeItem: Item = useStore((state: Store) => state.activeItem)
+export const EdenImport: React.FC = (): React.JSX.Element => {
+    const realm: Realm = useStore((state: Store): Realm => state.realm)
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const activeItem: Item = useStore((state: Store): Item => state.activeItem)
     const [show, setShow] = useState<boolean>(false)
     const [message, setMessage] = useState<string>('')
 

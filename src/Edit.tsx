@@ -14,9 +14,9 @@ import {useStore} from "./store/store";
 import {config} from "./config";
 import {EdenImport} from "./edenImport";
 
-export const Edit: React.FC = (): React.ReactElement => {
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const item: Item = useStore((state: Store) => state.activeItem)
+export const Edit: React.FC = (): React.JSX.Element => {
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const item: Item = useStore((state: Store): Item => state.activeItem)
 
     return (
         <div className={`edit`}>
@@ -57,7 +57,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                             itemManager.level = Number(e.target.value) as ItemLevel
                         }}
                     >
-                        {itemLevels.map((level: ItemLevel) => (
+                        {itemLevels.map((level: ItemLevel): React.JSX.Element => (
                             <option key={level} value={level}>{level}</option>
                         ))}
                     </select>
@@ -71,7 +71,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                             itemManager.quality = Number(e.target.value) as Quality
                         }}
                     >
-                        {quality.map((quality: number) => (
+                        {quality.map((quality: number): React.JSX.Element => (
                             <option key={quality} value={quality}>{quality}</option>
                         ))}
                     </select>
@@ -85,7 +85,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                             itemManager.itemType = itemType[e.target.value as ItemTypeCode]
                         }}
                     >
-                        {itemManager.itemTypes.map((itemType: ItemType) => (
+                        {itemManager.itemTypes.map((itemType: ItemType): React.JSX.Element => (
                             <option key={itemType.value} value={itemType.code}>
                                 {itemType.name}
                             </option>
@@ -127,7 +127,7 @@ export const Edit: React.FC = (): React.ReactElement => {
                     </>
                 )}
             </div>
-            {item.options.map((option: Option, index: number) => (
+            {item.options.map((option: Option, index: number): React.JSX.Element => (
                 <OptionView key={index} item={item} option={option} craft={item.itemType.isCraftItem}/>
             ))}
             {item.bonusOption !== null && (
@@ -140,96 +140,98 @@ export const Edit: React.FC = (): React.ReactElement => {
     )
 }
 
-const OptionView: React.FC<{
+interface OptionViewProps {
     item: Item,
     option: Option
     craft: boolean
-}> = ({item, option, craft}): React.ReactElement => {
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const realmClass: RealmClass = useStore((state: Store) => state.realmClass)
+}
+
+const OptionView: React.FC<OptionViewProps> = (props: OptionViewProps): React.JSX.Element => {
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const realmClass: RealmClass = useStore((state: Store): RealmClass => state.realmClass)
     const [effectTypes, setEffectTypes] = useState<EffectType[]>([])
     const [effects, setEffects] = useState<Effect[]>([])
     const [effectValues, setEffectValues] = useState<EffectValue[]>([])
 
     useEffect((): void => {
-        setEffectTypes(itemManager.findEffectTypes(item, option.SCBonus))
-        setEffects(itemManager.findEffects(option))
-        setEffectValues(itemManager.findEffectValues(option))
-    }, [item, realmClass])
+        setEffectTypes(itemManager.findEffectTypes(props.item, props.option.scBonus))
+        setEffects(itemManager.findEffects(props.option))
+        setEffectValues(itemManager.findEffectValues(props.option))
+    }, [props.item, realmClass])
 
     return (
         <div className={`row`}>
-            <div className={`col-3 col-lg-2 ${option.color}`}>
+            <div className={`col-3 col-lg-2 ${props.option.color}`}>
                 <select
-                    value={effectTypes.indexOf(option.effectType)}
+                    value={effectTypes.indexOf(props.option.effectType)}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>): void => {
-                        option.effectType = effectTypes[Number(e.target.value)]
-                        itemManager.changeType(option)
+                        props.option.effectType = effectTypes[Number(e.target.value)]
+                        itemManager.changeType(props.option)
                     }}
                 >
-                    {effectTypes.map((effectType: EffectType, index: number) => (
+                    {effectTypes.map((effectType: EffectType, index: number): React.JSX.Element => (
                         <option key={effectType.name} value={index}>
                             {effectType.name}
                         </option>
                     ))}
                 </select>
             </div>
-            <div className={`col-6 col-lg-3 ${option.color}`}>
+            <div className={`col-6 col-lg-3 ${props.option.color}`}>
                 <select
-                    value={effects.indexOf(option.effect)}
-                    disabled={option.effectType.default}
+                    value={effects.indexOf(props.option.effect)}
+                    disabled={props.option.effectType.default}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>): void => {
-                        option.effect = effects[Number(e.target.value)]
-                        itemManager.changeEffect(option)
+                        props.option.effect = effects[Number(e.target.value)]
+                        itemManager.changeEffect(props.option)
                     }}
                 >
-                    {effects.map((effect: Effect, index: number) => (
+                    {effects.map((effect: Effect, index: number): React.JSX.Element => (
                         <option key={effect.name} value={index} disabled={effect.name === ''}>
                             {effect.name}
                         </option>
                     ))}
                 </select>
             </div>
-            <div className={`col-3 col-lg-1 ${option.color}`}>
-                {craft && (
+            <div className={`col-3 col-lg-1 ${props.option.color}`}>
+                {props.craft && (
                     <select
-                        value={effectValues.indexOf(option.effectValue)}
-                        disabled={option.effectType.default}
+                        value={effectValues.indexOf(props.option.effectValue)}
+                        disabled={props.option.effectType.default}
                         onChange={(e: React.ChangeEvent<HTMLSelectElement>): void => {
-                            itemManager.changeSelectValue(option, e.target.value)
+                            itemManager.changeSelectValue(props.option, e.target.value)
                         }}
                     >
-                        {effectValues.map((value: EffectValue, index: number) => (
+                        {effectValues.map((value: EffectValue, index: number): React.JSX.Element => (
                             <option key={value.value} value={index}>
                                 {value.value}
                             </option>
                         ))}
                     </select>
                 )}
-                {!craft && (
+                {!props.craft && (
                     <input
                         type={`number`}
-                        value={option.effectValue.value}
+                        value={props.option.effectValue.value}
                         min={1}
-                        disabled={option.effectType.default}
+                        disabled={props.option.effectType.default}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-                            itemManager.changeInputValue(option, e.target.value)
+                            itemManager.changeInputValue(props.option, e.target.value)
                         }}
                     />
                 )}
             </div>
-            {craft && (
+            {props.craft && (
                 <>
                     <div className={`col-1 col-lg-05`}>
-                        {option.effectValue.imbue !== 0 ? option.effectValue.imbue : ''}
+                        {props.option.effectValue.imbue !== 0 ? props.option.effectValue.imbue : ''}
                     </div>
                     <div className={`col-2 col-lg-105`}>
-                        {option.effectValue.price > 0 && (
-                            <Price price={option.effectValue.price}/>
+                        {props.option.effectValue.price > 0 && (
+                            <Price price={props.option.effectValue.price}/>
                         )}
                     </div>
                     <div className={`col-9 col-lg-4 ellipsis`}>
-                        <Gem option={option}/>
+                        <Gem option={props.option}/>
                     </div>
                 </>
             )}
@@ -237,9 +239,11 @@ const OptionView: React.FC<{
     )
 }
 
-const Gem: React.FC<{
+interface GemProps {
     option: Option
-}> = (props) => {
+}
+
+const Gem: React.FC<GemProps> = (props: GemProps): React.JSX.Element => {
     const split: string[] = props.option.effectValue.gem.split(' ')
 
     return (

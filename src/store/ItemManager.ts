@@ -168,7 +168,7 @@ export class ItemManager {
 
     createOption(item: Item, bonus: boolean): Option {
         return {
-            SCBonus: bonus,
+            scBonus: bonus,
             color: Color.itemDefault,
             showHint: false,
             effectType: effectTypes.unused,
@@ -217,7 +217,7 @@ export class ItemManager {
 
         option.effect = this.findEffects(option)[0]
 
-        if (!option.SCBonus && item.itemType.isCraftItem) {
+        if (!option.scBonus && item.itemType.isCraftItem) {
             option.effectValue = this.findEffectValues(option)[0]
         } else {
             option.effectValue = {
@@ -244,7 +244,7 @@ export class ItemManager {
     changeEffect(option: Option): void {
         const item: Item = this.getActiveItem()
 
-        if (!option.SCBonus && item.itemType.isCraftItem) {
+        if (!option.scBonus && item.itemType.isCraftItem) {
             option.effectValue = this.findEffectValues(option)[0]
         } else {
             option.effectValue = {
@@ -401,7 +401,7 @@ export class ItemManager {
         const realm: Realm = this.get().realm
 
         Object.values(option.effectType.effects).forEach((effect: Effect): void => {
-            if (!option.SCBonus && activeItem.itemType.isCraftItem && !effect.craft) return
+            if (!option.scBonus && activeItem.itemType.isCraftItem && !effect.craft) return
             if (effect.realm.indexOf(realm.name) === -1) return
             if (effects.indexOf(effect) !== -1) return
 

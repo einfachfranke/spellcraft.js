@@ -29,7 +29,7 @@ export type ItemTypeCode = 'craft' | 'drop' | 'rog'
 export type ItemType = {
     name: string
     code: string
-    value: string
+    value: '1' | '2' | '3'
     isCraftItem: boolean
 }
 
@@ -55,7 +55,7 @@ export type Imbue = {
 }
 
 export type Option = {
-    SCBonus: boolean
+    scBonus: boolean
     color: Color
     showHint: boolean
     effectType: EffectType

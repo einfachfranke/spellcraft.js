@@ -1,10 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {
-    NavigateFunction,
-    Params,
-    useNavigate,
-    useParams
-} from "react-router-dom";
+import {NavigateFunction, Params, useNavigate, useParams} from "react-router-dom";
 import {useStore} from "./store/store";
 import {realms} from "./data/realms";
 import {effectByCode, effectTypeByCode} from "./data/effects";
@@ -14,7 +9,7 @@ import {Effect, EffectType} from "./types/effects";
 import {Realm, RealmClass} from "./types/realm";
 import {Race} from "./types/race";
 import {Item, ItemType, Option} from "./types/items";
-import {Init, Store} from "./types/store";
+import {FromUrl, Init, Store} from "./types/store";
 import {ParamCodes} from "./types/paramCodes";
 import {ItemLevel, PlayerLevel} from "./types/levels";
 import {itemType} from "./data/items";
@@ -24,17 +19,17 @@ export const Router: React.FC = (): null => {
 
     const navigate: NavigateFunction = useNavigate()
 
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const initial: boolean = useStore((state: Store) => state.initial)
-    const fromUrl = useStore((state: Store) => state.fromUrl)
-    const activeItem: Item = useStore((state: Store) => state.activeItem)
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const initial: boolean = useStore((state: Store): boolean => state.initial)
+    const fromUrl: FromUrl = useStore((state: Store): FromUrl => state.fromUrl)
+    const activeItem: Item = useStore((state: Store): Item => state.activeItem)
 
-    const realm: Realm = useStore((state: Store) => state.realm)
-    const realmClass: RealmClass = useStore((state: Store) => state.realmClass)
-    const race: Race = useStore((state: Store) => state.race)
-    const level: number = useStore((state: Store) => state.level)
-    const name: string = useStore((state: Store) => state.name)
-    const items: Item[] = useStore((state: Store) => state.items)
+    const realm: Realm = useStore((state: Store): Realm => state.realm)
+    const realmClass: RealmClass = useStore((state: Store): RealmClass => state.realmClass)
+    const race: Race = useStore((state: Store): Race => state.race)
+    const level: PlayerLevel = useStore((state: Store): PlayerLevel => state.level)
+    const name: string = useStore((state: Store): string => state.name)
+    const items: Item[] = useStore((state: Store): Item[] => state.items)
 
     const [location, setLocation] = useState<string>('')
 
@@ -65,7 +60,7 @@ export const Router: React.FC = (): null => {
 
                 if (effect.code === effectCode) {
                     const option: Option = {
-                        SCBonus: item.itemType.isCraftItem && index === 4,
+                        scBonus: item.itemType.isCraftItem && index === 4,
                         color: Color.itemDefault,
                         showHint: false,
                         effectType: effectType,

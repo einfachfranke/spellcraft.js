@@ -238,7 +238,7 @@ export class SummaryManager {
         if (!targetIncrease) return false
 
         const targetOption: Option = {
-            SCBonus: option.SCBonus,
+            scBonus: option.scBonus,
             color: option.color,
             effect: effect,
             effectType: option.effectType,

@@ -8,22 +8,22 @@ import {Item, Option} from "./types/items";
 import {Store} from "./types/store";
 import {TemplateInfo} from "./types/summary";
 
-const Overview: React.FC = () => {
-    const items: Item[] = useStore((state: Store) => state.items)
+const Overview: React.FC = (): React.JSX.Element => {
+    const items: Item[] = useStore((state: Store): Item[] => state.items)
 
     return (
         <div className={`overview`}>
-            {items.map((item: Item) => (
+            {items.map((item: Item): React.JSX.Element => (
                 <OverviewEntry key={item.code} item={item}/>
             ))}
-            <Template/>
+            <TemplateOverview/>
             <WeaponSelect/>
         </div>
     )
 }
 
-const Template: React.FC = () => {
-    const templateInfo: TemplateInfo = useStore((state: Store) => state.templateInfo)
+const TemplateOverview: React.FC = (): React.JSX.Element => {
+    const templateInfo: TemplateInfo = useStore((state: Store): TemplateInfo => state.templateInfo)
 
     return (
         <>
@@ -43,9 +43,11 @@ const Template: React.FC = () => {
     )
 }
 
-export const Price: React.FC<{
+interface PriceProps {
     price: number
-}> = (props) => {
+}
+
+export const Price: React.FC<PriceProps> = (props: PriceProps): React.JSX.Element => {
     let price: string = ''
 
     const gold: number = Number(String(props.price).slice(-6, -4));
@@ -68,22 +70,24 @@ export const Price: React.FC<{
 
 export default Overview
 
-const OverviewEntry: React.FC<{
+interface OverviewEntryProps {
     item: Item
-}> = ({item}) => {
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const activeItem: Item = useStore((state: Store) => state.activeItem)
-    const activeWeapon: Weapon = useStore((state: Store) => state.activeWeapon)
-    const highlightEffects: Effect[] = useStore((state: Store) => state.highlightEffects)
+}
+
+const OverviewEntry: React.FC<OverviewEntryProps> = (props: OverviewEntryProps): React.JSX.Element => {
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const activeItem: Item = useStore((state: Store): Item => state.activeItem)
+    const activeWeapon: Weapon = useStore((state: Store): Weapon => state.activeWeapon)
+    const highlightEffects: Effect[] = useStore((state: Store): Effect[] => state.highlightEffects)
     const [highlight, setHighlight] = useState<number>(0)
 
     useEffect((): void => {
-        if (item.weapon && activeWeapon.itemCodes.indexOf(item.code) === -1) {
+        if (props.item.weapon && activeWeapon.itemCodes.indexOf(props.item.code) === -1) {
             return
         }
 
         let highlight: number = 0
-        itemManager.getAllOptions(item).forEach((option: Option): void => {
+        itemManager.getAllOptions(props.item).forEach((option: Option): void => {
             if (highlightEffects.indexOf(option.effect) === -1) return
 
             highlight += option.effectValue.value
@@ -91,50 +95,52 @@ const OverviewEntry: React.FC<{
         setHighlight(highlight)
     }, [highlightEffects]);
 
-    const disabled = item.weapon && activeWeapon.itemCodes.indexOf(item.code) === -1 ? `disabled`: ``
+    const disabled: string = props.item.weapon && activeWeapon.itemCodes.indexOf(props.item.code) === -1 ? `disabled`: ``
 
     return (
         <>
             <div
-                className={`item ${item.code} ${activeItem === item ? `active` : ``} ${item.color} ${disabled}`}
+                className={`item ${props.item.code} ${activeItem === props.item ? `active` : ``} ${props.item.color} ${disabled}`}
                 onClick={(): void => {
-                    if (activeItem !== item) itemManager.setActiveItem(item)
+                    if (activeItem !== props.item) itemManager.setActiveItem(props.item)
                 }}
             >
-                <OverviewEntryHint item={item}/>
+                <OverviewEntryHint item={props.item}/>
                 {highlight > 0 && <span>{highlight}</span>}
             </div>
-            <div className={`header ${item.code} ${activeItem === item ? `active` : ``}`}>
-                {item.name}
+            <div className={`header ${props.item.code} ${activeItem === props.item ? `active` : ``}`}>
+                {props.item.name}
             </div>
         </>
     )
 }
 
-const OverviewEntryHint: React.FC<{
+interface OverviewEntryHintProps {
     item: Item
-}> = ({item}): null | React.ReactElement => {
-    if (!item.craft) {
+}
+
+const OverviewEntryHint: React.FC<OverviewEntryHintProps> = (props: OverviewEntryHintProps): null | React.JSX.Element => {
+    if (!props.item.craft) {
         return null
     }
 
     return (
         <>
-            {item.options.map((option: Option, index: number) => (
-                <div key={index} className={`hint option${index} ${option.showHint ? 'show' : ''} ${item.color}`}/>
+            {props.item.options.map((option: Option, index: number): React.JSX.Element => (
+                <div key={index} className={`hint option${index} ${option.showHint ? 'show' : ''} ${props.item.color}`}/>
             ))}
-            <div className={`hint bonus ${item.color} ${item.bonusOption !== null && !item.bonusOption.effectType.default ? 'show' : ''}`}/>
+            <div className={`hint bonus ${props.item.color} ${props.item.bonusOption !== null && !props.item.bonusOption.effectType.default ? 'show' : ''}`}/>
         </>
     )
 }
 
-const WeaponSelect: React.FC = () => {
-    const itemManager: ItemManager = useStore((state: Store) => state.itemManager)
-    const activeWeapon: Weapon = useStore((state: Store) => state.activeWeapon)
+const WeaponSelect: React.FC = (): React.JSX.Element => {
+    const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
+    const activeWeapon: Weapon = useStore((state: Store): Weapon => state.activeWeapon)
 
     return (
         <>
-            {Object.values(weapon).map((weapon: Weapon) => (
+            {Object.values(weapon).map((weapon: Weapon): React.JSX.Element => (
                 <div key={weapon.code}
                      className={`weapon ${weapon.code} ${activeWeapon === weapon ? 'active' : ''}`}
                      onClick={(): void => {

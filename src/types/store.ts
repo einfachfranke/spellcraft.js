@@ -13,6 +13,8 @@ export type StoreSet = (partial: (Partial<Store> | ((state: Store) => (Partial<S
 
 export type StoreGet = () => Store
 
+export type FromUrl = (init: Init) => void
+
 export type Init = {
     realm: Realm,
     realmClass: RealmClass
@@ -26,7 +28,7 @@ export type Init = {
 
 export interface Store {
     initial: boolean,
-    fromUrl: (init: Init) => void,
+    fromUrl: FromUrl,
     setupManager: SetupManager,
     realm: Realm,
     realmClass: RealmClass,

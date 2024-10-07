@@ -8,13 +8,13 @@ import {Store} from "./types/store";
 import {playerLevels} from "./data/levels";
 import {PlayerLevel} from "./types/levels";
 
-const Setup: React.FC = () => {
-    const setupManager: SetupManager = useStore((state: Store) => state.setupManager)
-    const realm: Realm = useStore((state: Store) => state.realm)
-    const realmClass: RealmClass = useStore((state: Store) => state.realmClass)
-    const race: Race = useStore((state: Store) => state.race)
-    const level: number = useStore((state: Store) => state.level)
-    const name: string = useStore((state: Store) => state.name)
+const Setup: React.FC = (): React.JSX.Element => {
+    const setupManager: SetupManager = useStore((state: Store): SetupManager => state.setupManager)
+    const realm: Realm = useStore((state: Store): Realm => state.realm)
+    const realmClass: RealmClass = useStore((state: Store): RealmClass => state.realmClass)
+    const race: Race = useStore((state: Store): Race => state.race)
+    const level: PlayerLevel = useStore((state: Store): PlayerLevel => state.level)
+    const name: string = useStore((state: Store): string => state.name)
 
     return (
         <div className={`setup row`}>
@@ -29,7 +29,7 @@ const Setup: React.FC = () => {
                         ))
                         if (realm !== undefined) setupManager.setRealm(realm)
                     }}>
-                    {realms.map((realm: Realm) => (
+                    {realms.map((realm: Realm): React.JSX.Element => (
                         <option key={realm.name}>
                             {realm.name}
                         </option>
@@ -48,7 +48,7 @@ const Setup: React.FC = () => {
                         ))
                         if (realmClass !== undefined) setupManager.setRealmClass(realmClass)
                     }}>
-                    {realm.realmClasses.map((realmClass: RealmClass) => (
+                    {realm.realmClasses.map((realmClass: RealmClass): React.JSX.Element => (
                         <option key={realmClass.name}>
                             {realmClass.name}
                         </option>
@@ -67,7 +67,7 @@ const Setup: React.FC = () => {
                         ))
                         if (race !== undefined) setupManager.setRace(race)
                     }}>
-                    {realmClass.races.map((race: Race) => (
+                    {realmClass.races.map((race: Race): React.JSX.Element => (
                         <option key={race.name}>
                             {race.name}
                         </option>
@@ -83,7 +83,7 @@ const Setup: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>): void => {
                         setupManager.setLevel(Number(e.target.value) as PlayerLevel)
                     }}>
-                    {playerLevels.map((level: PlayerLevel) => (
+                    {playerLevels.map((level: PlayerLevel): React.JSX.Element => (
                         <option key={level}>
                             {level}
                         </option>
@@ -96,7 +96,7 @@ const Setup: React.FC = () => {
                 <input
                     id={'name-input'}
                     value={name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setupManager.setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setupManager.setName(e.target.value)}
                 />
             </div>
         </div>

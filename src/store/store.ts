@@ -5,9 +5,9 @@ import {ItemManager} from "./ItemManager";
 import {items} from "../data/items";
 import {SummaryManager} from "./SummaryManager";
 import {weapon} from "../data/weapon";
-import {Init, Store} from "../types/store";
+import {Init, Store, StoreGet, StoreSet} from "../types/store";
 
-export const useStore = create<Store>((set, get) => ({
+export const useStore = create<Store>((set: StoreSet, get: StoreGet) => ({
     initial: true,
     fromUrl: (init: Init): void => {
         set({initial: false, ...init})
