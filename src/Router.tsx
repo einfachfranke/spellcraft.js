@@ -124,7 +124,7 @@ export const Router: React.FC = (): null => {
         paramValues[paramKeys.indexOf(`realmClass`)] = realmClass.name
         paramValues[paramKeys.indexOf(`race`)] = race.name
         paramValues[paramKeys.indexOf(`level`)] = String(level)
-        paramValues[paramKeys.indexOf(`name`)] = name
+        paramValues[paramKeys.indexOf(`name`)] = name === '' ? 'none' : name
 
         items.forEach((item: Item): void => {
             paramValues[paramKeys.indexOf(`${item.code}Level`)] = String(item.level)
