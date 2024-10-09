@@ -7,7 +7,7 @@ import {useStore} from "./store/store";
 import {Store} from "./types/store";
 import {Effect} from "./types/effects";
 import {Color} from "./data/color";
-import {Realm} from "./types/realm";
+import {Realm, RealmClass, RealmClassName, RealmName} from "./types/realm";
 
 type EffectMapping = {
     name: string,
@@ -1026,6 +1026,57 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
 }
 
+const edenRealmMapping: Record<string, RealmName> = {
+    '1': 'Albion',
+    '2': 'Midgard',
+    '3': 'Hibernia'
+}
+
+const edenClassMapping: Record<string, RealmClassName> = {
+    "1": "Paladin",
+    "2": "Armsman",
+    "3": "Scout",
+    "4": "Minstrel",
+    "5": "Theurgist",
+    "6": "Cleric",
+    "7": "Wizard",
+    "8": "Sorcerer",
+    "9": "Infiltrator",
+    "10": "Friar",
+    "11": "Mercenary",
+    "12": "Necromancer",
+    "13": "Cabalist",
+    "19": "Reaver",
+    "21": "Thane",
+    "22": "Warrior",
+    "23": "Shadowblade",
+    "24": "Skald",
+    "25": "Hunter",
+    "26": "Healer",
+    "27": "Spiritmaster",
+    "28": "Shaman",
+    "29": "Runemaster",
+    "30": "Bonedancer",
+    "31": "Berserker",
+    "32": "Savage",
+    "33": "Heretic",
+    "34": "Valkyrie",
+    "39": "Bainshee",
+    "40": "Eldritch",
+    "41": "Enchanter",
+    "42": "Mentalist",
+    "43": "Blademaster",
+    "44": "Hero",
+    "45": "Champion",
+    "46": "Warden",
+    "47": "Druid",
+    "48": "Bard",
+    "49": "Nightshade",
+    "50": "Ranger",
+    "55": "Animist",
+    "56": "Valewalker"
+}
+
 const edenItemMapping: Record<string, ItemCode[]> = {
     "10": ['rightHand', 'twoHand'],
     "11": ['leftHand', 'rightHand', 'twoHand'],
@@ -1045,11 +1096,13 @@ const edenItemMapping: Record<string, ItemCode[]> = {
     "34": ['rightWrist', 'leftWrist'],
     "35": ['leftRing', 'rightRing'],
     "36": ['rightRing', 'leftRing'],
-    "37": ['mythical']
+    "37": ['mythical'],
+    "instrument": ['twoHand', 'ranged']
 }
 
 export const EdenImport: React.FC = (): React.JSX.Element => {
     const realm: Realm = useStore((state: Store): Realm => state.realm)
+    const realmClass: RealmClass = useStore((state: Store): RealmClass => state.realmClass)
     const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
     const activeItem: Item = useStore((state: Store): Item => state.activeItem)
     const [show, setShow] = useState<boolean>(false)
@@ -1069,10 +1122,30 @@ export const EdenImport: React.FC = (): React.JSX.Element => {
             return
         }
 
-        if (undefined === edenItemMapping[json['item_type']].find((itemCode: string): boolean => (
+        const edenRealm: string = edenRealmMapping[json['realm']]
+        if (json['realm'] !== '0' && edenRealm !== realm.name) {
+            setMessage(`This item is for ${edenRealm} only`)
+            return
+        }
+
+        let allowedClasses: string = json['allowed_classes']
+        if (allowedClasses !== ';;') {
+            const classCodes: string[] = allowedClasses.substring(1, allowedClasses.length-1).split(';')
+            if (undefined === classCodes.find((classCode: string): boolean => (
+                edenClassMapping[classCode] === realmClass.name
+            ))) {
+                setMessage(`This item is only for ${classCodes.map((classCode: string): string => (
+                    edenClassMapping[classCode]
+                )).join(', ')}`)
+                return
+            }
+        }
+
+        let mappingCode: string = json['instrument_type'] !== '0' ? 'instrument' : json['item_type']
+        if (undefined === edenItemMapping[mappingCode].find((itemCode: string): boolean => (
             itemCode === activeItem.code
         ))) {
-            setMessage(`Item doesn't fit in ${activeItem.name}`)
+            setMessage(`This item doesn't fit in ${activeItem.name}`)
             return
         }
 
@@ -1109,7 +1182,7 @@ export const EdenImport: React.FC = (): React.JSX.Element => {
     }
 
     return (
-        <div className={`col-lg-2`}>
+        <div className={`col-4 col-lg-2`}>
             <button
                 onClick={(): void => setShow(true)}
             >

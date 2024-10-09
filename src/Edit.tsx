@@ -21,14 +21,14 @@ export const Edit: React.FC = (): React.JSX.Element => {
     return (
         <div className={`edit`}>
             <div className={`row`}>
-                <div className={`col-lg-2`}>
+                <div className={`col-4 col-lg-2`}>
                     <h2>{item.name}</h2>
                 </div>
                 {config.useEdenImport && (
                     <EdenImport/>
                 )}
                 {itemManager.clearable() && (
-                    <div className={`col-lg-2`}>
+                    <div className={`col-4 col-lg-2`}>
                         <button
                             onClick={(): void => itemManager.clear()}
                         >
@@ -48,7 +48,7 @@ export const Edit: React.FC = (): React.JSX.Element => {
                 )}
             </div>
             <div className={`row`}>
-                <div className={`col-2 col-lg-2`}>
+                <div className={`col-4 col-lg-2`}>
                     <label htmlFor={'item-level-select'}>Level</label>
                     <select
                         id={'item-level-select'}
@@ -62,7 +62,7 @@ export const Edit: React.FC = (): React.JSX.Element => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-2 col-lg-2`}>
+                <div className={`col-4 col-lg-2`}>
                     <label htmlFor={'quality-select'}>Quality</label>
                     <select
                         id={'quality-select'}
@@ -76,7 +76,7 @@ export const Edit: React.FC = (): React.JSX.Element => {
                         ))}
                     </select>
                 </div>
-                <div className={`col-3 col-lg-2`}>
+                <div className={`col-4 col-lg-2`}>
                     <label htmlFor={'item-type-select'}>Type</label>
                     <select
                         id={'item-type-select'}
@@ -97,6 +97,7 @@ export const Edit: React.FC = (): React.JSX.Element => {
                     <input
                         id={'item-name-input'}
                         value={item.itemName}
+                        autoComplete={'off'}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
                             itemManager.itemName = e.target.value
                         }}

@@ -27,7 +27,7 @@ export type RealmClassName =
     | 'Blademaster'
     | 'Champion'
     | 'Druid'
-    | 'Eldrich'
+    | 'Eldritch'
     | 'Enchanter'
     | 'Hero'
     | 'Mentalist'

@@ -96,6 +96,7 @@ const Setup: React.FC = (): React.JSX.Element => {
                 <input
                     id={'name-input'}
                     value={name}
+                    autoComplete={'off'}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setupManager.setName(e.target.value)}
                 />
             </div>

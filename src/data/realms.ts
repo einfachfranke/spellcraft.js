@@ -793,7 +793,7 @@ export const realms: Realm[] = [
                     focus: []
                 }
             }, {
-                name: 'Eldrich',
+                name: 'Eldritch',
                 defaultWeapons: weapon.twoHand,
                 races: [
                     race.none,
