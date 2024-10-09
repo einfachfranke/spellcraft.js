@@ -102,7 +102,7 @@ export const Router: React.FC = (): null => {
             realmClass: realmClas,
             race: race,
             level: Number(params[`level`]) as PlayerLevel,
-            name: String(params[`name`]),
+            name: String(params[`name`] === 'none' ? '' : params[`name`]),
             items: [...items],
             activeItem: item
         }

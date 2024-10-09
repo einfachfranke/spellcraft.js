@@ -65,7 +65,7 @@ export class SetupManager {
     }
 
     updateTitle(): void {
-        const name: string = this.get().name !== '' ? ` :${this.get().name}` : ''
-        document.title = `DAoC ${this.get().realmClass.name} template${name}`;
+        const name: string = this.get().name !== '' ? ` - ${this.get().name}` : ''
+        document.title = `DAoC ${this.get().realmClass.name} Template${name}`;
     }
 }

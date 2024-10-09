@@ -11,6 +11,7 @@ export const useStore = create<Store>((set: StoreSet, get: StoreGet) => ({
     initial: true,
     fromUrl: (init: Init): void => {
         set({initial: false, ...init})
+        get().setupManager.updateTitle()
     },
     setupManager: new SetupManager(set, get),
     realm: realms[0],
