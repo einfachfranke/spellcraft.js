@@ -26,7 +26,7 @@ export class SetupManager {
             race: race,
             activeWeapon: realmClass.defaultWeapons,
             activeItem: itemManager.spreadActiveItem(this.get().activeItem),
-            items: {...this.get().items}
+            items: [...this.get().items]
         })
 
         this.updateTitle()
