@@ -7,6 +7,7 @@ import {Race} from "./types/race";
 import {Store} from "./types/store";
 import {playerLevels} from "./data/levels";
 import {PlayerLevel} from "./types/levels";
+import {config} from "./config";
 
 const Setup: React.FC = (): React.JSX.Element => {
     const setupManager: SetupManager = useStore((state: Store): SetupManager => state.setupManager)
@@ -48,7 +49,9 @@ const Setup: React.FC = (): React.JSX.Element => {
                         ))
                         if (realmClass !== undefined) setupManager.setRealmClass(realmClass)
                     }}>
-                    {realm.realmClasses.map((realmClass: RealmClass): React.JSX.Element => (
+                    {realm.realmClasses.filter((realmClass: RealmClass): boolean => (
+                        config.excludeClasses.indexOf(realmClass.name) === -1
+                    )).map((realmClass: RealmClass): React.JSX.Element => (
                         <option key={realmClass.name}>
                             {realmClass.name}
                         </option>

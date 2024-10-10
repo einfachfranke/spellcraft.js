@@ -9,6 +9,7 @@ export const config: Config = {
     useResistCaps: true,
     useBonus: true,
     useArcheryAsSkillName: true,
-    useEdenImport: true
+    useEdenImport: true,
+    excludeClasses: []
 }
 

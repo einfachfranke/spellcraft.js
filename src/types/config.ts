@@ -1,3 +1,5 @@
+import {RealmClassName} from "./realm";
+
 export type Config = {
     qualityEffectsImbuePoints: boolean
     spellcraftItemBonus: boolean
@@ -8,4 +10,5 @@ export type Config = {
     useBonus: boolean
     useArcheryAsSkillName: boolean
     useEdenImport: boolean
+    excludeClasses: RealmClassName[]
 }
