@@ -26,7 +26,9 @@ export const Summary: React.FC = (): React.JSX.Element => {
         summaryManager.setItems(items)
     }, [items, realm, realmClass, race, level, activeWeapon])
 
-    const col: string = config.useBonus ? `col-12 col-md-6 col-lg-3` : `col-12 col-md-6 col-lg-4`
+    const col: string = config.excludeEffectTypes.indexOf('bonus') !== -1
+        ? `col-12 col-md-6 col-lg-4`
+        : `col-12 col-md-6 col-lg-3`
 
     return (
         <div className={`row summary`}>

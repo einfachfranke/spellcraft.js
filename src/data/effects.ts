@@ -10099,13 +10099,16 @@ export const effectTypes: EffectTypes = {
 
 export const effectByCode: Record<string, Effect> = {}
 Object.values(effectTypes).forEach((effectType: EffectType): void => {
+    if (config.excludeEffectTypes.indexOf(effectType.code) !== -1) return
     Object.values(effectType.effects).forEach((effect: Effect): void => {
+        if (config.excludeEffects.indexOf(effect.code) !== -1) return
         effectByCode[effect.code] = effect
     })
 })
 
 export const effectTypeByCode: Record<string, EffectType> = {}
 Object.values(effectTypes).forEach((effectType: EffectType): void => {
+    if (config.excludeEffectTypes.indexOf(effectType.code) !== -1) return
     effectTypeByCode[effectType.code] = effectType
 })
 

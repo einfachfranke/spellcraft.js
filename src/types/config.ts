@@ -1,14 +1,13 @@
 import {RealmClassName} from "./realm";
+import {EffectCode, EffectTypeCode} from "./effects";
 
 export type Config = {
     qualityEffectsImbuePoints: boolean
     spellcraftItemBonus: boolean
     showMythical:boolean
-    useStatCaps:boolean
-    useMythicalStatCaps: boolean
-    useResistCaps: boolean
-    useBonus: boolean
     useArcheryAsSkillName: boolean
     useEdenImport: boolean
+    excludeEffectTypes: EffectTypeCode[]
     excludeClasses: RealmClassName[]
+    excludeEffects: EffectCode[]
 }

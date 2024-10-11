@@ -1,8 +1,7 @@
 import imbuePoints from "../data/imbuePoints";
 import {effectTypes} from "../data/effects";
 import {Color} from "../data/color";
-
-import {Effect, EffectType, EffectValue} from "../types/effects";
+import {Effect, EffectType, EffectTypeCode, EffectValue} from "../types/effects";
 import {Realm} from "../types/realm";
 import {Weapon} from "../types/weapon";
 import {Quality} from "../types/quality";
@@ -166,9 +165,9 @@ export class ItemManager {
         this.setActiveItem(activeItem)
     }
 
-    createOption(item: Item, bonus: boolean): Option {
+    createOption(item: Item, scBonus: boolean): Option {
         return {
-            scBonus: bonus,
+            scBonus: scBonus,
             color: Color.itemDefault,
             showHint: false,
             effectType: effectTypes.unused,
@@ -348,30 +347,28 @@ export class ItemManager {
     }
 
     findEffectTypes(item: Item, scBonus: boolean): EffectType[] {
-        const typesOptions: EffectType[] = []
+        const typeOptions: EffectType[] = []
+        const effectTypeCodes: EffectTypeCode[] = ['unused', 'stats', 'resists', 'skills']
+
+        if (item.code === 'twoHand') {
+            effectTypeCodes.push('focus')
+        }
+        if (item.code === 'mythical') {
+            effectTypeCodes.push('mythStatCaps')
+        }
+        if (!item.itemType.isCraftItem || scBonus) {
+            effectTypeCodes.push('statCaps')
+            effectTypeCodes.push('bonus')
+            effectTypeCodes.push('resistCaps')
+        }
 
         Object.values(effectTypes).forEach((type: EffectType): void => {
-            if (type.code === 'statCaps' && !config.useStatCaps) {
-                return
-            } else if (type.code === 'mythStatCaps' && !config.useMythicalStatCaps) {
-                return
-            } else if (type.code === 'resistCaps' && !config.useResistCaps) {
-                return
-            } else if (type.code === 'bonus' && !config.useBonus) {
-                return
-            } else if (item.code === 'mythical' && (type.code === 'mythStatCaps')) {
-                typesOptions.push(type)
-            } else if (type.code === 'focus' && item.code === 'twoHand') {
-                typesOptions.push(type)
-            } else if (
-                (!item.itemType.isCraftItem || scBonus) && (type.code === 'statCaps' || type.code === 'bonus' || type.code === 'resistCaps')) {
-                typesOptions.push(type)
-            } else if (type.code === 'unused' || type.code === 'stats' || type.code === 'resists' || type.code === 'skills') {
-                typesOptions.push(type)
-            }
+            if (config.excludeEffectTypes.indexOf(type.code) !== -1) return
+            if (effectTypeCodes.indexOf(type.code) === -1) return
+            typeOptions.push(type)
         })
 
-        return typesOptions
+        return typeOptions
     }
 
     findEffects(option: Option): Effect[] {
@@ -380,6 +377,7 @@ export class ItemManager {
         const activeItem: Item = this.getActiveItem()
 
         this.get().realmClass.effects[option.effectType.code]?.forEach((effect: Effect): void => {
+            if (config.excludeEffects.indexOf(effect.code) !== -1) return
             if (activeItem.itemType.isCraftItem && !effect.craft) return
 
             effects.push(effect)
@@ -401,6 +399,7 @@ export class ItemManager {
         const realm: Realm = this.get().realm
 
         Object.values(option.effectType.effects).forEach((effect: Effect): void => {
+            if (config.excludeEffects.indexOf(effect.code) !== -1) return
             if (!option.scBonus && activeItem.itemType.isCraftItem && !effect.craft) return
             if (effect.realm.indexOf(realm.name) === -1) return
             if (effects.indexOf(effect) !== -1) return

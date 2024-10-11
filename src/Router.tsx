@@ -3,7 +3,6 @@ import {NavigateFunction, Params, useNavigate, useParams} from "react-router-dom
 import {useStore} from "./store/store";
 import {realms} from "./data/realms";
 import {effectByCode, effectTypeByCode} from "./data/effects";
-import {Color} from "./data/color";
 import {ItemManager} from "./store/ItemManager";
 import {Effect, EffectType} from "./types/effects";
 import {Realm, RealmClass} from "./types/realm";
@@ -13,6 +12,7 @@ import {FromUrl, Init, Store} from "./types/store";
 import {ParamCodes} from "./types/paramCodes";
 import {ItemLevel, PlayerLevel} from "./types/levels";
 import {itemType} from "./data/items";
+import {config} from "./config";
 
 export const Router: React.FC = (): null => {
     const params: Readonly<Params<ParamCodes>> = useParams()
@@ -50,35 +50,48 @@ export const Router: React.FC = (): null => {
             item.options = []
             item.bonusOption = null
 
-            const values: string = String(params[`${item.code}Values`])
-            values.split('-').forEach((block: string, index: number): void => {
+            if (item.itemType.isCraftItem) {
+                item.options.push(itemManager.createOption(item, false))
+                item.options.push(itemManager.createOption(item, false))
+                item.options.push(itemManager.createOption(item, false))
+                item.options.push(itemManager.createOption(item, false))
+                if (config.spellcraftItemBonus) {
+                    item.bonusOption = itemManager.createOption(item, true)
+                }
+            }
+
+            const values: string[] = String(params[`${item.code}Values`]).split('-')
+            values.forEach((block: string, index: number): void => {
+                if (item.itemType.isCraftItem && typeof item.options[index] === 'undefined') return
+
                 const effectCode: string = block.substring(0, 2);
                 const value: number = Number(block.substring(2));
+
+                if (!effectByCode.hasOwnProperty(effectCode)) return
 
                 const effect: Effect = effectByCode[effectCode]
                 const effectType: EffectType = effectTypeByCode[effect.type]
 
-                if (effect.code === effectCode) {
-                    const option: Option = {
-                        scBonus: item.itemType.isCraftItem && index === 4,
-                        color: Color.itemDefault,
-                        showHint: false,
-                        effectType: effectType,
-                        effect: effect,
-                        effectValue: item.itemType.isCraftItem && index < 4
-                            ? effect.values[value]
-                            : {value: value, imbue: 0, gem: '', price: 0},
-                    }
+                if (item.itemType.isCraftItem && !effect.craft) return
+                if (item.itemType.isCraftItem && !effect.values.hasOwnProperty(value)) return
 
-                    if (item.itemType.isCraftItem && index === 4) {
-                        item.bonusOption = option
-                    } else {
-                        item.options.push(option)
-                    }
+                let option: Option
+                if (item.bonusOption && index === 4) {
+                    option = item.bonusOption
+                } else if (item.itemType.isCraftItem) {
+                    option = item.options[index]
+                } else {
+                    option = itemManager.createOption(item, false)
+                    item.options.push(option)
                 }
 
-                itemManager.update(item)
+                option.effectType = effectType
+                option.effect = effect
+                option.effectValue = item.itemType.isCraftItem && index < 4
+                    ? effect.values[value]
+                    : {value: value, imbue: 0, gem: '', price: 0}
             })
+            itemManager.update(item)
         })
 
         const realm: Realm = realms.find((realm: Realm): boolean => (
