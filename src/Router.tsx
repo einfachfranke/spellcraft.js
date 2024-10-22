@@ -62,7 +62,7 @@ export const Router: React.FC = (): null => {
 
             const values: string[] = String(params[`${item.code}Values`]).split('-')
             values.forEach((block: string, index: number): void => {
-                if (item.itemType.isCraftItem && typeof item.options[index] === 'undefined') return
+                if (item.itemType.isCraftItem && index !== 4 && typeof item.options[index] === 'undefined') return
 
                 const effectCode: string = block.substring(0, 2);
                 const value: number = Number(block.substring(2));
