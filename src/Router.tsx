@@ -72,8 +72,8 @@ export const Router: React.FC = (): null => {
                 const effect: Effect = effectByCode[effectCode]
                 const effectType: EffectType = effectTypeByCode[effect.type]
 
-                if (item.itemType.isCraftItem && !effect.craft) return
-                if (item.itemType.isCraftItem && !effect.values.hasOwnProperty(value)) return
+                if (item.itemType.isCraftItem && index !== 4 && !effect.craft) return
+                if (item.itemType.isCraftItem && index !== 4 && !effect.values.hasOwnProperty(value)) return
 
                 let option: Option
                 if (item.bonusOption && index === 4) {

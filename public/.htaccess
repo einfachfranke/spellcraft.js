@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+# Caching
+# 1 Jahr (der maximale unterstützte Wert) für Grafik-/Multimediadateien
+<FilesMatch "\.(html|js|css|map)$">
+Header set Cache-Control "no-store, max-age=0"
+</FilesMatch>
+# 2 Stunden für Textdateien
+<FilesMatch "\.(woff)$">
+Header set Cache-Control "public, max-age=31536000, no-transform"
+</FilesMatch>
+</IfModule>
