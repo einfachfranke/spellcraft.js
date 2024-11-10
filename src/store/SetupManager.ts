@@ -87,6 +87,10 @@ export class SetupManager {
         document.title = this.getTitle()
     }
 
+    initLoadSaveParamString(): void {
+        this.set({loadSaveParamString: this.createParamString()})
+    }
+
     private getParams(): Record<string, string> {
         const store: Store = this.get()
         const content: Record<string, string> = {}
@@ -132,7 +136,7 @@ export class SetupManager {
             const text: string = await file.text()
             const init: Init = this.createInit(JSON.parse(text), true)
             this.setInit(init)
-            this.set({loadSaveParamString: this.createParamString()})
+            this.initLoadSaveParamString()
         } catch (error) {}
     }
 
@@ -145,7 +149,7 @@ export class SetupManager {
             if (typeof result === 'string') {
                 const init: Init = this.createInit(JSON.parse(result), true)
                 this.setInit(init)
-                this.set({loadSaveParamString: this.createParamString()})
+                this.initLoadSaveParamString()
             }
         }, false)
 
@@ -177,7 +181,7 @@ export class SetupManager {
             const fileSystemWritableFileStream: FileSystemWritableFileStream = await this.fileSystemFileHandle.createWritable()
             await fileSystemWritableFileStream.write(JSON.stringify(content))
             await fileSystemWritableFileStream.close()
-            this.set({loadSaveParamString: this.get().paramString})
+            this.initLoadSaveParamString()
         } catch (error) {}
     }
 
@@ -190,6 +194,7 @@ export class SetupManager {
         link.download = `${this.getTitle()}.sct`
         link.click()
         URL.revokeObjectURL(link.href)
+        this.initLoadSaveParamString()
     }
 
     createParamString(): string {

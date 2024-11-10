@@ -26,6 +26,7 @@ const Setup: React.FC = (): React.JSX.Element => {
         if ('showOpenFilePicker' in window) {
             setFileSystemAPI(true)
         }
+        setupManager.initLoadSaveParamString()
     }, []);
 
     useEffect((): void => {
