@@ -230,7 +230,10 @@ export class ItemManager {
         if (!option.scBonus && item.itemType.isCraftItem) {
             const effectValues: EffectValue[] = this.findEffectValues(option)
             for (let i: number = effectValues.length - 1; i >= 0; i--) {
-                if (option.effectValue.value >= effectValues[i].value) {
+                if (option.effectValue.value === 0) {
+                    option.effectValue = effectValues[0]
+                    break
+                } else if (option.effectValue.value >= effectValues[i].value) {
                     option.effectValue = effectValues[i]
                     break
                 }
