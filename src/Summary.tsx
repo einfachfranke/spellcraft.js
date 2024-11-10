@@ -1,104 +1,58 @@
-import React, {useEffect} from "react";
-import {useStore} from "./store/store";
-import {SummaryManager} from "./store/SummaryManager";
-import {Color} from "./data/color";
-import {ItemManager} from "./store/ItemManager";
-import {Realm, RealmClass} from "./types/realm";
-import {Weapon} from "./types/weapon";
-import {Race} from "./types/race";
-import {Item} from "./types/items";
-import {Store} from "./types/store";
-import {SummaryData, SummaryItem} from "./types/summary";
-import {config} from "./config";
-import {PlayerLevel} from "./types/levels";
+import React, {useEffect} from "react"
+import {useStore} from "./store/store"
+import {SummaryManager} from "./store/SummaryManager"
+import {Color} from "./data/color"
+import {ItemManager} from "./store/ItemManager"
+import {Realm, RealmClass} from "./types/realm"
+import {Weapon} from "./types/weapon"
+import {Item} from "./types/items"
+import {Store} from "./types/store"
+import {SummaryItem, SummaryType} from "./types/summary"
+import {PlayerLevel} from "./types/levels"
+import {Race} from "./data/race"
 
-export const Summary: React.FC = (): React.JSX.Element => {
+export const Summary: React.FC = (): React.JSX.Element | null => {
     const items: Item[] = useStore((state: Store): Item[] => state.items)
     const realm: Realm = useStore((state: Store): Realm => state.realm)
     const realmClass: RealmClass = useStore((state: Store): RealmClass => state.realmClass)
     const race: Race = useStore((state: Store): Race => state.race)
     const level: PlayerLevel = useStore((state: Store): PlayerLevel => state.level)
     const activeWeapon: Weapon = useStore((state: Store): Weapon => state.activeWeapon)
-    const summaryData: SummaryData = useStore((state: Store): SummaryData => state.summaryData)
+    const summaryTypes: SummaryType[][] = useStore((state: Store): SummaryType[][] => state.summaryTypes)
     const summaryManager: SummaryManager = useStore((state: Store): SummaryManager => state.summaryManager)
 
     useEffect((): void => {
         summaryManager.setItems(items)
-    }, [items, realm, realmClass, race, level, activeWeapon])
+    }, [realm, realmClass, race, level, items, activeWeapon])
 
-    const col: string = config.excludeEffectTypes.indexOf('bonus') !== -1
-        ? `col-12 col-md-6 col-lg-4`
-        : `col-12 col-md-6 col-lg-3`
+    if (summaryTypes.length === 0) return null
+
+    let col: string = `col-12 col-md-6 col-lg-${summaryTypes.length > 1 ? 12 / summaryTypes.length : 12}`
 
     return (
         <div className={`row summary`}>
-            <div className={col}>
-                <label>Stats</label>
-                {summaryData.stats.map((summaryData: SummaryItem): React.JSX.Element => (
-                    <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                ))}
-                {summaryData.statCaps.length > 0 && (
-                    <>
-                        <label>Stat Caps</label>
-                        {summaryData.statCaps.map((summaryData: SummaryItem): React.JSX.Element => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}
-                    </>
-                )}
-                {summaryData.mythStatCaps.length > 0 && (
-                    <>
-                        <label>Mythical Stat Caps</label>
-                        {summaryData.mythStatCaps.map((summaryData: SummaryItem): React.JSX.Element => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}
-                    </>
-                )}
-            </div>
-            <div className={col}>
-                <label>Resists</label>
-                {summaryData.resists.map((summaryData: SummaryItem): React.JSX.Element => (
-                    <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                ))}
-                {summaryData.resistCaps.length > 0 && (
-                    <>
-                        <label>Resist Caps</label>
-                        {summaryData.resistCaps.map((summaryData: SummaryItem): React.JSX.Element => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}
-                    </>
-                )}
-            </div>
-            <div className={col}>
-                <label>Skills</label>
-                {summaryData.skills.map((summaryData: SummaryItem): React.JSX.Element => (
-                    <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                ))}
-                {summaryData.focus.length > 0 && (
-                    <>
-                        <label>Focus</label>
-                        {summaryData.focus.map((summaryData: SummaryItem): React.JSX.Element => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}
-                    </>
-                )}
-            </div>
-            <div className={col}>
-                {summaryData.bonus.length > 0 && (
-                    <>
-                        <label>Bonus</label>
-                        {summaryData.bonus.map((summaryData: SummaryItem): React.JSX.Element => (
-                            <SummaryEntry key={summaryData.name} summaryItem={summaryData}/>
-                        ))}
-                    </>
-                )}
-            </div>
+            {summaryTypes.map((summaryTypes: SummaryType[], index: number): React.JSX.Element => (
+                <div key={index} className={col}>
+                    {summaryTypes.map((summaryType: SummaryType): React.JSX.Element => (
+                        <React.Fragment key={summaryType.name}>
+                            <label>{summaryType.name}</label>
+                            {summaryType.summaryItems.map((summaryItem: SummaryItem): React.JSX.Element => (
+                                <SummaryEntry key={summaryItem.name} summaryItem={summaryItem}/>
+                            ))}
+                        </React.Fragment>
+
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }
 
-const SummaryEntry: React.FC<{
+interface SummaryEntryProps {
     summaryItem: SummaryItem
-}> = (props): React.ReactElement => {
+}
+
+const SummaryEntry: React.FC<SummaryEntryProps> = (props: SummaryEntryProps): React.ReactElement => {
     const itemManager: ItemManager = useStore((state: Store): ItemManager => state.itemManager)
 
     return (

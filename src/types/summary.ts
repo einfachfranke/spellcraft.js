@@ -1,13 +1,17 @@
-import {Effect, EffectTypeCode} from "./effects";
+import {Effect} from "./effects";
 import {Color} from "../data/color";
 
-export type SummaryData = Record<EffectTypeCode, SummaryItem[]>
+export type SummaryData = Record<string, SummaryItem[]>
+
+export type SummaryType = {
+    name: string
+    summaryItems: SummaryItem[]
+}
 
 export type SummaryItem = {
     name: string
     effects: Effect[]
     color: Color
-    removeOnZero: boolean
     value: number
     maxValue: number
     percent: number

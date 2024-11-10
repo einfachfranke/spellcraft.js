@@ -5,12 +5,16 @@ export const effectTypes: EffectTypes = {
     unused: {
         name: 'Unused',
         code: 'unused',
+        column: 1,
         default: true,
+        craft: true,
+        onlyOnItem: [],
         effects: {
             unused: {
                 name: '',
                 code: '00',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 0,
                 realm: [
@@ -33,12 +37,16 @@ export const effectTypes: EffectTypes = {
     stats: {
         name: 'Stats',
         code: 'stats',
+        column: 1,
         default: false,
+        craft: true,
+        onlyOnItem: [],
         effects: {
             strength: {
                 name: 'Strength',
                 code: 'sa',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -114,6 +122,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Constitution',
                 code: 'sb',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -189,6 +198,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Dexterity',
                 code: 'sc',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -264,6 +274,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Quickness',
                 code: 'sd',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -339,6 +350,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Acuity',
                 code: 'si',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -353,6 +365,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Charisma',
                 code: 'sg',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -428,6 +441,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Empathy',
                 code: 'sh',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -503,6 +517,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Intelligence',
                 code: 'se',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -578,6 +593,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Piety',
                 code: 'sf',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.6666667,
                 maxValue: 75,
                 realm: [
@@ -653,6 +669,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Hits',
                 code: 'sj',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0.25,
                 maxValue: 200,
                 realm: [
@@ -728,6 +745,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Power',
                 code: 'sk',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -804,12 +822,16 @@ export const effectTypes: EffectTypes = {
     statCaps: {
         name: 'Stat Caps',
         code: 'statCaps',
+        column: 1,
         default: false,
+        craft: false,
+        onlyOnItem: [],
         effects: {
             strength: {
                 name: 'Strength Cap',
                 code: 'sl',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -824,6 +846,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Constitution Cap',
                 code: 'sm',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -838,6 +861,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Dexterity Cap',
                 code: 'sn',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -852,6 +876,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Quickness Cap',
                 code: 'so',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -866,6 +891,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Acuity Cap',
                 code: 'sv',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -880,6 +906,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Charisma Cap',
                 code: 'sr',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -894,6 +921,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Empathy Cap',
                 code: 'ss',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -908,6 +936,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Intelligence Cap',
                 code: 'sp',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -922,6 +951,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Piety Cap',
                 code: 'sq',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -936,6 +966,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Hits Cap',
                 code: 'st',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0.25,
                 maxValue: 200,
                 realm: [
@@ -950,6 +981,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Power Cap',
                 code: 'su',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 50,
                 realm: [
@@ -965,12 +997,16 @@ export const effectTypes: EffectTypes = {
     mythStatCaps: {
         name: 'Mythical Stat Caps',
         code: 'mythStatCaps',
+        column: 1,
         default: false,
+        craft: false,
+        onlyOnItem: ['mythical'],
         effects: {
             strength: {
                 name: 'Strength Cap',
                 code: 'ma',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -985,6 +1021,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Constitution Cap',
                 code: 'mb',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -999,6 +1036,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Dexterity Cap',
                 code: 'mc',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1013,6 +1051,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Quickness Cap',
                 code: 'md',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1027,6 +1066,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Acuity Cap',
                 code: 'mi',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1041,6 +1081,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Charisma Cap',
                 code: 'mg',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1055,6 +1096,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Empathy Cap',
                 code: 'mh',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1069,6 +1111,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Intelligence Cap',
                 code: 'me',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1083,6 +1126,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Piety Cap',
                 code: 'mf',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1098,12 +1142,16 @@ export const effectTypes: EffectTypes = {
     resists: {
         name: 'Resists',
         code: 'resists',
+        column: 2,
         default: false,
+        craft: true,
+        onlyOnItem: [],
         effects: {
             crush: {
                 name: 'Crush',
                 code: 'ra',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1179,6 +1227,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Slash',
                 code: 'rb',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1254,6 +1303,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Thrust',
                 code: 'rc',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1329,6 +1379,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Heat',
                 code: 'rd',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1404,6 +1455,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Cold',
                 code: 're',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1479,6 +1531,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Matter',
                 code: 'rf',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1554,6 +1607,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Body',
                 code: 'rg',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1629,6 +1683,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spirit',
                 code: 'rh',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1704,6 +1759,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Energy',
                 code: 'ri',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 2,
                 maxValue: 26,
                 realm: [
@@ -1780,12 +1836,16 @@ export const effectTypes: EffectTypes = {
     resistCaps: {
         name: 'Resist Caps',
         code: 'resistCaps',
+        column: 2,
         default: false,
+        craft: false,
+        onlyOnItem: [],
         effects: {
             crush: {
                 name: 'Crush Cap',
                 code: 'rj',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1800,6 +1860,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Slash Cap',
                 code: 'rk',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1814,6 +1875,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Thrust Cap',
                 code: 'rl',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1828,6 +1890,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Heat Cap',
                 code: 'rm',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1842,6 +1905,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Cold Cap',
                 code: 'rn',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1856,6 +1920,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Matter Cap',
                 code: 'ro',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1870,6 +1935,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Body Cap',
                 code: 'rp',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1884,6 +1950,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spirit Cap',
                 code: 'rq',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1898,6 +1965,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Energy Cap',
                 code: 'rr',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 4,
                 maxValue: 26,
                 realm: [
@@ -1913,12 +1981,16 @@ export const effectTypes: EffectTypes = {
     skills: {
         name: 'Skills',
         code: 'skills',
+        column: 3,
         default: false,
+        craft: true,
+        onlyOnItem: [],
         effects: {
             allMagicAlbion: {
                 name: 'All Magic',
                 code: '33',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -1938,6 +2010,7 @@ export const effectTypes: EffectTypes = {
                 name: 'All Magic',
                 code: '58',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -1957,6 +2030,7 @@ export const effectTypes: EffectTypes = {
                 name: 'All Magic',
                 code: '81',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -1976,6 +2050,7 @@ export const effectTypes: EffectTypes = {
                 name: 'All Melee',
                 code: '32',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -1995,6 +2070,7 @@ export const effectTypes: EffectTypes = {
                 name: 'All Melee',
                 code: '57',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2014,6 +2090,7 @@ export const effectTypes: EffectTypes = {
                 name: 'All Melee',
                 code: '80',
                 craft: true,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2033,6 +2110,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Arboreal Path',
                 code: '53',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2106,6 +2184,7 @@ export const effectTypes: EffectTypes = {
                 name: config.useArcheryAsSkillName ? 'Archery' : 'Longbows',
                 code: '31',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2179,6 +2258,7 @@ export const effectTypes: EffectTypes = {
                 name: config.useArcheryAsSkillName ? 'Archery' : 'Recurve Bow',
                 code: '56',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2252,6 +2332,7 @@ export const effectTypes: EffectTypes = {
                 name: config.useArcheryAsSkillName ? 'Archery' : 'Composite Bow',
                 code: '78',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2325,6 +2406,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Augmentation',
                 code: '73',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2398,6 +2480,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Axe',
                 code: '62',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2471,6 +2554,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Battlesongs',
                 code: '66',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2544,6 +2628,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Beastcraft',
                 code: '65',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2617,6 +2702,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Blades',
                 code: '36',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2690,6 +2776,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Blunt',
                 code: '37',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2763,6 +2850,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Body Magic',
                 code: '22',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2836,6 +2924,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Bone Army',
                 code: '76',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2909,6 +2998,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Celtic Dual',
                 code: '41',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -2982,6 +3072,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Celtic Spear',
                 code: '40',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3055,6 +3146,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Chants',
                 code: '16',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3128,6 +3220,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Cold Magic',
                 code: '19',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3201,6 +3294,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Creeping Path',
                 code: '54',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3274,6 +3368,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Critical Strike',
                 code: '06',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3349,6 +3444,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Crossbow',
                 code: '35',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3422,6 +3518,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Crushing',
                 code: '08',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3495,6 +3592,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Darkness',
                 code: '68',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3568,6 +3666,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Death Servant',
                 code: '29',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3641,6 +3740,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Deathsight',
                 code: '27',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3714,6 +3814,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Dual Wield',
                 code: '12',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3787,6 +3888,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Earth Magic',
                 code: '18',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3860,6 +3962,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Enchantments',
                 code: '49',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -3933,6 +4036,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Enhancements',
                 code: '14',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4006,6 +4110,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Envenom',
                 code: '05',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4081,6 +4186,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Ethereal Shriek',
                 code: '85',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4154,6 +4260,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Fire Magic',
                 code: '20',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4227,6 +4334,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Flexible',
                 code: '26',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4300,6 +4408,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Hammer',
                 code: '61',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4373,6 +4482,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Hand to Hand',
                 code: '75',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4446,6 +4556,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Instruments',
                 code: '17',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4519,6 +4630,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Large Weapons',
                 code: '39',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4592,6 +4704,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Left Axe',
                 code: '64',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4665,6 +4778,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Light Magic',
                 code: '47',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4738,6 +4852,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mana Magic',
                 code: '48',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4811,6 +4926,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Matter Magic',
                 code: '23',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4884,6 +5000,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mending',
                 code: '72',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -4957,6 +5074,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mentalism',
                 code: '51',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5030,6 +5148,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mind Magic',
                 code: '25',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5103,6 +5222,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Music',
                 code: '45',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5176,6 +5296,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Nature',
                 code: '44',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5249,6 +5370,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Nurture',
                 code: '42',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5322,6 +5444,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Odins Will',
                 code: '77',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5395,6 +5518,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Pacification',
                 code: '82',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5468,6 +5592,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Painworking',
                 code: '28',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5541,6 +5666,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Parry',
                 code: '01',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5616,6 +5742,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Phantasmal Wail',
                 code: '84',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5689,6 +5816,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Piercing',
                 code: '38',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5762,6 +5890,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Polearm',
                 code: '11',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5835,6 +5964,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Regrowth',
                 code: '43',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5908,6 +6038,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Rejuvenation',
                 code: '15',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -5981,6 +6112,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Runecarving',
                 code: '70',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6054,6 +6186,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Scythe',
                 code: '52',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6127,6 +6260,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Shield',
                 code: '02',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6202,6 +6336,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Slashing',
                 code: '07',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6275,6 +6410,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Smite',
                 code: '13',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6348,6 +6484,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Soulrending',
                 code: '30',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6421,6 +6558,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spear',
                 code: '63',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6494,6 +6632,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spectral Guard',
                 code: '83',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6567,6 +6706,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spirit Magic',
                 code: '24',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6640,6 +6780,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Staff',
                 code: '03',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6713,6 +6854,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Stealth',
                 code: '04',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6788,6 +6930,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Stormcalling',
                 code: '67',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6861,6 +7004,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Subterranean',
                 code: '74',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -6934,6 +7078,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Summoning',
                 code: '71',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7007,6 +7152,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Suppression',
                 code: '69',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7080,6 +7226,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Sword',
                 code: '60',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7153,6 +7300,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Thrown Weapons',
                 code: '79',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7226,6 +7374,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Thrusting',
                 code: '09',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7299,6 +7448,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Two Handed',
                 code: '10',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7372,6 +7522,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Valor',
                 code: '46',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7445,6 +7596,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Verdant Path',
                 code: '55',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7518,6 +7670,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Void Magic',
                 code: '50',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7591,6 +7744,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Wind Magic',
                 code: '21',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 5,
                 maxValue: 11,
                 realm: [
@@ -7665,12 +7819,16 @@ export const effectTypes: EffectTypes = {
     focus: {
         name: 'Focus',
         code: 'focus',
+        column: 3,
         default: false,
+        craft: true,
+        onlyOnItem: ['twoHand'],
         effects: {
             allFocus: {
                 name: 'All focus',
                 code: 'fy',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -7685,6 +7843,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Arboreal focus',
                 code: 'fl',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -7758,6 +7917,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Body Magic focus',
                 code: 'fe',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -7831,6 +7991,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Bonedancing focus',
                 code: 'ft',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -7904,6 +8065,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Cold Magic focus',
                 code: 'fb',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -7977,6 +8139,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Creeping focus',
                 code: 'fm',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8050,6 +8213,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Darkness focus',
                 code: 'fu',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8123,6 +8287,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Deathservant focus',
                 code: 'fk',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8196,6 +8361,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Deathsight focus',
                 code: 'fi',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8269,6 +8435,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Earth Magic focus',
                 code: 'fa',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8342,6 +8509,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Enchantments focus',
                 code: 'fn',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8415,6 +8583,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Ethereal Shriek focus',
                 code: 'gb',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8488,6 +8657,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Fire Magic focus',
                 code: 'fc',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8561,6 +8731,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Light focus',
                 code: 'fo',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8634,6 +8805,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mana focus',
                 code: 'fp',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8707,6 +8879,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Matter Magic focus',
                 code: 'ff',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8780,6 +8953,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mentalism focus',
                 code: 'fq',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8853,6 +9027,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mind Magic focus',
                 code: 'fh',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8926,6 +9101,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Painworking focus',
                 code: 'fj',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -8999,6 +9175,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Phantasmal Wail focus',
                 code: 'ga',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9072,6 +9249,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Runecarving focus',
                 code: 'fv',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9145,6 +9323,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spectral Guard focus',
                 code: 'fz',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9218,6 +9397,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spirit Magic focus',
                 code: 'fg',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9291,6 +9471,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Summoning focus',
                 code: 'fw',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9364,6 +9545,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Suppression focus',
                 code: 'fx',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9437,6 +9619,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Verdant focus',
                 code: 'fr',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9510,6 +9693,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Void focus',
                 code: 'fs',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9583,6 +9767,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Wind Magic focus',
                 code: 'fd',
                 craft: true,
+                hideIfNoValue: false,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9657,12 +9842,16 @@ export const effectTypes: EffectTypes = {
     bonus: {
         name: 'Bonus',
         code: 'bonus',
+        column: 4,
         default: false,
+        craft: false,
+        onlyOnItem: [],
         effects: {
             arcaneSyphon: {
                 name: 'Arcane Syphon',
                 code: 'bo',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 26,
                 realm: [
@@ -9677,6 +9866,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Armor Absorption',
                 code: 'bp',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9691,6 +9881,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Armor Factor',
                 code: 'ba',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 1,
                 maxValue: 50,
                 realm: [
@@ -9705,6 +9896,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Block Chance',
                 code: 'bq',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9719,6 +9911,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Bonus Coin',
                 code: 'bw',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9733,6 +9926,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Buff Effectivness',
                 code: 'be',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -9747,6 +9941,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Casting Speed',
                 code: 'bh',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9761,6 +9956,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Debuff Effectivness',
                 code: 'bd',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -9775,6 +9971,7 @@ export const effectTypes: EffectTypes = {
                 name: 'DPS',
                 code: 'bz',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -9789,6 +9986,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Encumberance',
                 code: 'ce',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9803,6 +10001,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Endurance Regeneration',
                 code: 'bv',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -9817,6 +10016,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Evade Chance',
                 code: 'by',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 10,
                 realm: [
@@ -9831,6 +10031,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Fatigue',
                 code: 'bb',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -9845,6 +10046,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Healing Effectivness',
                 code: 'bf',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -9859,6 +10061,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Health Regeneration',
                 code: 'bt',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9873,6 +10076,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Melee Combat Speed',
                 code: 'bm',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9887,6 +10091,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Melee Damage',
                 code: 'bl',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9901,6 +10106,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Mesmerize Reduction',
                 code: 'ca',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -9915,6 +10121,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Parry Chance',
                 code: 'br',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 10,
                 realm: [
@@ -9929,6 +10136,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Power Pool',
                 code: 'bc',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -9943,6 +10151,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Power Regeneration',
                 code: 'bu',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9957,6 +10166,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Realm Points',
                 code: 'bx',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 10,
                 realm: [
@@ -9971,6 +10181,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Resist Pierce',
                 code: 'bn',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -9985,6 +10196,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Safe Fall',
                 code: 'cd',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 50,
                 realm: [
@@ -9999,6 +10211,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spell Damage',
                 code: 'bj',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -10013,6 +10226,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spell Duration',
                 code: 'bg',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 2,
                 maxValue: 25,
                 realm: [
@@ -10027,6 +10241,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spell Level',
                 code: 'bs',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -10041,6 +10256,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Spell Range',
                 code: 'bi',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [
@@ -10055,6 +10271,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Snare Reduction',
                 code: 'cb',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -10069,6 +10286,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Stun Reduction',
                 code: 'cc',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 10,
                 realm: [
@@ -10083,6 +10301,7 @@ export const effectTypes: EffectTypes = {
                 name: 'Style Damage',
                 code: 'bk',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 5,
                 maxValue: 10,
                 realm: [

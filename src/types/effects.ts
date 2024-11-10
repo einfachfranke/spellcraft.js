@@ -1,4 +1,5 @@
 import {RealmClassName, RealmName} from './realm';
+import {ItemCode} from "./items";
 
 export type EffectTypeCode =
     'unused'
@@ -392,10 +393,13 @@ export type EffectTypes = {
     bonus: EffectTypeBonus
 }
 
-type Type = {
+export type Type = {
     name: string
     code: EffectTypeCode
+    column: 1 | 2 | 3 | 4
     default: boolean
+    craft: boolean
+    onlyOnItem: ItemCode[]
 }
 
 export type EffectType = Type & {
@@ -434,6 +438,7 @@ export type Effect = {
     name: string
     code: EffectCode
     craft: boolean
+    hideIfNoValue: boolean
     utility: number
     maxValue:  0 | 11 | 10 | 25 | 26 | 50 | 75 | 200
     realm: RealmName[]

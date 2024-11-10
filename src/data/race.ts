@@ -1,13 +1,43 @@
-import {Race, RaceCode} from "../types/race";
 import {effectTypes} from "./effects";
+import {EffectCode} from "../types/effects";
+
+export type RaceCode =
+    'none'
+    | 'avalonian'
+    | 'briton'
+    | 'halfOgre'
+    | 'highlander'
+    | 'inconnu'
+    | 'saracen'
+    | 'shar'
+    | 'celt'
+    | 'elf'
+    | 'firbolg'
+    | 'lurikeen'
+    | 'sylvan'
+    | 'dwarf'
+    | 'frostalf'
+    | 'kobold'
+    | 'troll'
+    | 'norseman'
+    | 'valkyn'
+    | 'minotaur'
+
+export type Race = {
+    name: string,
+    code: RaceCode
+    resists: Partial<Record<EffectCode, number>>
+}
 
 export const race: Record<RaceCode, Race> = {
     none: {
         name: 'none',
+        code: 'none',
         resists: {}
     },
     avalonian: {
         name: 'Avalonian',
+        code: 'avalonian',
         resists: {
             [effectTypes.resists.effects.crush.code]: 2,
             [effectTypes.resists.effects.slash.code]: 3,
@@ -16,6 +46,7 @@ export const race: Record<RaceCode, Race> = {
     },
     briton: {
         name: 'Briton',
+        code: 'briton',
         resists: {
             [effectTypes.resists.effects.crush.code]: 2,
             [effectTypes.resists.effects.slash.code]: 3,
@@ -24,6 +55,7 @@ export const race: Record<RaceCode, Race> = {
     },
     halfOgre: {
         name: 'Half Ogre',
+        code: 'halfOgre',
         resists: {
             [effectTypes.resists.effects.thrust.code]: 2,
             [effectTypes.resists.effects.slash.code]: 3,
@@ -32,6 +64,7 @@ export const race: Record<RaceCode, Race> = {
     },
     highlander: {
         name: 'Highlander',
+        code: 'highlander',
         resists: {
             [effectTypes.resists.effects.crush.code]: 3,
             [effectTypes.resists.effects.slash.code]: 2,
@@ -40,6 +73,7 @@ export const race: Record<RaceCode, Race> = {
     },
     inconnu: {
         name: 'Inconnu',
+        code: 'inconnu',
         resists: {
             [effectTypes.resists.effects.crush.code]: 2,
             [effectTypes.resists.effects.thrust.code]: 3,
@@ -49,6 +83,7 @@ export const race: Record<RaceCode, Race> = {
     },
     saracen: {
         name: 'Saracen',
+        code: 'saracen',
         resists: {
             [effectTypes.resists.effects.slash.code]: 2,
             [effectTypes.resists.effects.thrust.code]: 3,
@@ -57,6 +92,7 @@ export const race: Record<RaceCode, Race> = {
     },
     shar: {
         name: 'Shar',
+        code: 'shar',
         resists: {
             [effectTypes.resists.effects.crush.code]: 5,
             [effectTypes.resists.effects.energy.code]: 5
@@ -64,6 +100,7 @@ export const race: Record<RaceCode, Race> = {
     },
     celt: {
         name: 'Celt',
+        code: 'celt',
         resists: {
             [effectTypes.resists.effects.crush.code]: 2,
             [effectTypes.resists.effects.slash.code]: 3,
@@ -72,6 +109,7 @@ export const race: Record<RaceCode, Race> = {
     },
     elf: {
         name: 'Elf',
+        code: 'elf',
         resists: {
             [effectTypes.resists.effects.slash.code]: 2,
             [effectTypes.resists.effects.thrust.code]: 3,
@@ -80,6 +118,7 @@ export const race: Record<RaceCode, Race> = {
     },
     firbolg: {
         name: 'Firbolg',
+        code: 'firbolg',
         resists: {
             [effectTypes.resists.effects.crush.code]: 3,
             [effectTypes.resists.effects.slash.code]: 2,
@@ -88,6 +127,7 @@ export const race: Record<RaceCode, Race> = {
     },
     lurikeen: {
         name: 'Lurikeen',
+        code: 'lurikeen',
         resists: {
             [effectTypes.resists.effects.crush.code]: 5,
             [effectTypes.resists.effects.energy.code]: 5
@@ -95,6 +135,7 @@ export const race: Record<RaceCode, Race> = {
     },
     sylvan: {
         name: 'Sylvan',
+        code: 'sylvan',
         resists: {
             [effectTypes.resists.effects.crush.code]: 3,
             [effectTypes.resists.effects.thrust.code]: 2,
@@ -104,6 +145,7 @@ export const race: Record<RaceCode, Race> = {
     },
     dwarf: {
         name: 'Dwarf',
+        code: 'dwarf',
         resists: {
             [effectTypes.resists.effects.slash.code]: 2,
             [effectTypes.resists.effects.thrust.code]: 3,
@@ -112,6 +154,7 @@ export const race: Record<RaceCode, Race> = {
     },
     frostalf: {
         name: 'Frostalf',
+        code: 'frostalf',
         resists: {
             [effectTypes.resists.effects.slash.code]: 3,
             [effectTypes.resists.effects.thrust.code]: 2,
@@ -120,6 +163,7 @@ export const race: Record<RaceCode, Race> = {
     },
     kobold: {
         name: 'Kobold',
+        code: 'kobold',
         resists: {
             [effectTypes.resists.effects.crush.code]: 5,
             [effectTypes.resists.effects.energy.code]: 5
@@ -127,6 +171,7 @@ export const race: Record<RaceCode, Race> = {
     },
     troll: {
         name: 'Troll',
+        code: 'troll',
         resists: {
             [effectTypes.resists.effects.slash.code]: 3,
             [effectTypes.resists.effects.thrust.code]: 2,
@@ -135,6 +180,7 @@ export const race: Record<RaceCode, Race> = {
     },
     norseman: {
         name: 'Norseman',
+        code: 'norseman',
         resists: {
             [effectTypes.resists.effects.crush.code]: 2,
             [effectTypes.resists.effects.slash.code]: 3,
@@ -143,11 +189,21 @@ export const race: Record<RaceCode, Race> = {
     },
     valkyn: {
         name: 'Valkyn',
+        code: 'valkyn',
         resists: {
             [effectTypes.resists.effects.slash.code]: 3,
             [effectTypes.resists.effects.thrust.code]: 2,
             [effectTypes.resists.effects.cold.code]: 5,
             [effectTypes.resists.effects.body.code]: 5
+        }
+    },
+    minotaur: {
+        name: 'Minotaur',
+        code: 'minotaur',
+        resists: {
+            [effectTypes.resists.effects.crush.code]: 4,
+            [effectTypes.resists.effects.heat.code]: 3,
+            [effectTypes.resists.effects.cold.code]: 3
         }
     },
 }

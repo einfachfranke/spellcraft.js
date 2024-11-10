@@ -1,14 +1,14 @@
 import imbuePoints from "../data/imbuePoints";
 import {effectTypes} from "../data/effects";
 import {Color} from "../data/color";
-import {Effect, EffectType, EffectTypeCode, EffectValue} from "../types/effects";
+import {Effect, EffectType, EffectValue} from "../types/effects";
 import {Realm} from "../types/realm";
 import {Weapon} from "../types/weapon";
 import {Quality} from "../types/quality";
 import {Item, ItemType, Option} from "../types/items";
 import {StoreGet, StoreSet} from "../types/store";
 import {ItemLevel} from "../types/levels";
-import {itemType} from "../data/items";
+import {items, itemType} from "../data/items";
 import {config} from "../config";
 
 export class ItemManager {
@@ -18,6 +18,17 @@ export class ItemManager {
     constructor(set: StoreSet, get: StoreGet) {
         this.set = set
         this.get = get
+
+        items.forEach((item: Item): void => {
+            if (item.itemType.isCraftItem) {
+                for (let i: number = 0; i < 4; i++) {
+                    item.options.push(this.createOption(item))
+                }
+                if (config.spellcraftItemBonus) item.bonusOption = this.createOption(item, true)
+            } else {
+                item.options.push(this.createOption(item))
+            }
+        })
     }
 
     removeRealmEffects(realm: Realm): void {
@@ -165,7 +176,7 @@ export class ItemManager {
         this.setActiveItem(activeItem)
     }
 
-    createOption(item: Item, scBonus: boolean): Option {
+    createOption(item: Item, scBonus: boolean = false): Option {
         return {
             scBonus: scBonus,
             color: Color.itemDefault,
@@ -185,7 +196,7 @@ export class ItemManager {
             return true
         }
 
-        for(let i:number = 0; i < item.options.length; i++) {
+        for (let i: number = 0; i < item.options.length; i++) {
             const option: Option = item.options[i]
             if (option.effectValue.value > 0) {
                 return true
@@ -217,7 +228,13 @@ export class ItemManager {
         option.effect = this.findEffects(option)[0]
 
         if (!option.scBonus && item.itemType.isCraftItem) {
-            option.effectValue = this.findEffectValues(option)[0]
+            const effectValues: EffectValue[] = this.findEffectValues(option)
+            for (let i: number = effectValues.length - 1; i >= 0; i--) {
+                if (option.effectValue.value >= effectValues[i].value) {
+                    option.effectValue = effectValues[i]
+                    break
+                }
+            }
         } else {
             option.effectValue = {
                 value: option.effectValue.value > 0 ? option.effectValue.value : 1,
@@ -244,7 +261,13 @@ export class ItemManager {
         const item: Item = this.getActiveItem()
 
         if (!option.scBonus && item.itemType.isCraftItem) {
-            option.effectValue = this.findEffectValues(option)[0]
+            const effectValues: EffectValue[] = this.findEffectValues(option)
+            for (let i: number = effectValues.length - 1; i >= 0; i--) {
+                if (option.effectValue.value >= effectValues[i].value) {
+                    option.effectValue = effectValues[i]
+                    break
+                }
+            }
         } else {
             option.effectValue = {
                 value: option.effectValue.value,
@@ -346,29 +369,20 @@ export class ItemManager {
         })
     }
 
-    findEffectTypes(item: Item, scBonus: boolean): EffectType[] {
-        const typeOptions: EffectType[] = []
-        const effectTypeCodes: EffectTypeCode[] = ['unused', 'stats', 'resists', 'skills']
+    findEffectTypes(scBonus: boolean): EffectType[] {
+        const types: EffectType[] = []
 
-        if (item.code === 'twoHand') {
-            effectTypeCodes.push('focus')
-        }
-        if (item.code === 'mythical') {
-            effectTypeCodes.push('mythStatCaps')
-        }
-        if (!item.itemType.isCraftItem || scBonus) {
-            effectTypeCodes.push('statCaps')
-            effectTypeCodes.push('bonus')
-            effectTypeCodes.push('resistCaps')
-        }
+        const activeItem: Item = this.getActiveItem()
 
         Object.values(effectTypes).forEach((type: EffectType): void => {
             if (config.excludeEffectTypes.indexOf(type.code) !== -1) return
-            if (effectTypeCodes.indexOf(type.code) === -1) return
-            typeOptions.push(type)
+            if (type.onlyOnItem.length && type.onlyOnItem.indexOf(activeItem.code) === -1) return
+            const isCraft: boolean = scBonus ? false : activeItem.itemType.isCraftItem
+            if (isCraft && isCraft !== type.craft) return
+            types.push(type)
         })
 
-        return typeOptions
+        return types
     }
 
     findEffects(option: Option): Effect[] {
@@ -388,6 +402,7 @@ export class ItemManager {
                 name: '',
                 code: '00',
                 craft: false,
+                hideIfNoValue: true,
                 utility: 0,
                 maxValue: 0,
                 realm: [],

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {SetupManager} from "./store/SetupManager";
 import {useStore} from "./store/store";
 import {realms} from "./data/realms";
 import {Realm, RealmClass} from "./types/realm";
-import {Race} from "./types/race";
 import {Store} from "./types/store";
 import {playerLevels} from "./data/levels";
 import {PlayerLevel} from "./types/levels";
 import {config} from "./config";
+import {Race} from "./data/race";
+import {Item} from "./types/items";
 
 const Setup: React.FC = (): React.JSX.Element => {
     const setupManager: SetupManager = useStore((state: Store): SetupManager => state.setupManager)
@@ -16,6 +17,20 @@ const Setup: React.FC = (): React.JSX.Element => {
     const race: Race = useStore((state: Store): Race => state.race)
     const level: PlayerLevel = useStore((state: Store): PlayerLevel => state.level)
     const name: string = useStore((state: Store): string => state.name)
+    const items: Item[] = useStore((state: Store): Item[] => state.items)
+    const paramString: string = useStore((state: Store): string => state.paramString)
+    const loadSaveParamString: string = useStore((state: Store): string => state.loadSaveParamString)
+    const [fileSystemAPI, setFileSystemAPI] = useState<boolean>(false)
+
+    useEffect(() => {
+        if ('showOpenFilePicker' in window) {
+            setFileSystemAPI(true)
+        }
+    }, []);
+
+    useEffect((): void => {
+        setupManager.createParamString()
+    }, [realm, realmClass, race, level, name, items])
 
     return (
         <div className={`setup row`}>
@@ -37,7 +52,6 @@ const Setup: React.FC = (): React.JSX.Element => {
                     ))}
                 </select>
             </div>
-
             <div className={`col-6`}>
                 <label htmlFor={'realm-class-select'}>Class</label>
                 <select
@@ -58,7 +72,6 @@ const Setup: React.FC = (): React.JSX.Element => {
                     ))}
                 </select>
             </div>
-
             <div className={`col-6`}>
                 <label htmlFor={'race-select'}>Race</label>
                 <select
@@ -70,14 +83,15 @@ const Setup: React.FC = (): React.JSX.Element => {
                         ))
                         if (race !== undefined) setupManager.setRace(race)
                     }}>
-                    {realmClass.races.map((race: Race): React.JSX.Element => (
+                    {realmClass.races.filter((race: Race): boolean => (
+                        config.excludeRaces.indexOf(race.code) === -1
+                    )).map((race: Race): React.JSX.Element => (
                         <option key={race.name}>
                             {race.name}
                         </option>
                     ))}
                 </select>
             </div>
-
             <div className={`col-6`}>
                 <label htmlFor={'level-select'}>Level</label>
                 <select
@@ -93,16 +107,61 @@ const Setup: React.FC = (): React.JSX.Element => {
                     ))}
                 </select>
             </div>
-
             <div className={`col-12`}>
                 <label htmlFor={'name-input'}>Name</label>
                 <input
                     id={'name-input'}
                     value={name}
                     autoComplete={'off'}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setupManager.setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+                        setupManager.setName(e.target.value.replace(/[^A-Za-z0-9\s]/g, '').replace(/^\s*/gm, ''))
+                    }}
                 />
             </div>
+            {fileSystemAPI && (
+                <>
+                    <div className={`col-6`}>
+                        <button onClick={(): Promise<void> => setupManager.load()}>
+                            Load
+                        </button>
+                    </div>
+                    <div className={`col-4`}>
+                        <button disabled={paramString === loadSaveParamString}
+                                onClick={(): Promise<void> => setupManager.save()}>
+                            Save
+                        </button>
+                    </div>
+                    <div className={`col-2`}>
+                        <button disabled={!setupManager.fileSystemFileHandleExist()}
+                                onClick={(): Promise<void> => setupManager.save(true)}>
+                            As
+                        </button>
+                    </div>
+                </>
+            )}
+            {!fileSystemAPI && (
+                <>
+                    <div className={`col-6`}>
+                        <label className={'button'}
+                               htmlFor="upload-cover">
+                            Load
+                        </label>
+                        <input
+                            style={{display: 'none'}}
+                            id="upload-cover"
+                            name="upload-cover"
+                            type="file"
+                            accept=".sct"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setupManager.loadOldSchool(e)}
+                        />
+                    </div>
+                    <div className={`col-6`}>
+                        <button onClick={(): void => setupManager.saveOldSchool()}>
+                            Save
+                        </button>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

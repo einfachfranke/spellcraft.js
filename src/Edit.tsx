@@ -99,7 +99,7 @@ export const Edit: React.FC = (): React.JSX.Element => {
                         value={item.itemName}
                         autoComplete={'off'}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-                            itemManager.itemName = e.target.value
+                            itemManager.itemName = e.target.value.replace(/[^A-Za-z0-9\s]/g,'').replace(/^\s*/gm, '')
                         }}
                     />
                 </div>
@@ -155,7 +155,7 @@ const OptionView: React.FC<OptionViewProps> = (props: OptionViewProps): React.JS
     const [effectValues, setEffectValues] = useState<EffectValue[]>([])
 
     useEffect((): void => {
-        setEffectTypes(itemManager.findEffectTypes(props.item, props.option.scBonus))
+        setEffectTypes(itemManager.findEffectTypes(props.option.scBonus))
         setEffects(itemManager.findEffects(props.option))
         setEffectValues(itemManager.findEffectValues(props.option))
     }, [props.item, realmClass])

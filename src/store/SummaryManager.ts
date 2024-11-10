@@ -1,12 +1,12 @@
 import {effectTypes} from "../data/effects";
 import {Color} from "../data/color";
-import {Effect, EffectTypeCode, Increase, IncreaseType} from "../types/effects";
+import {Effect, EffectTypeCode, Increase, IncreaseType, Type} from "../types/effects";
 import {Realm, RealmClass} from "../types/realm";
 import {Weapon} from "../types/weapon";
 import {Item, Option} from "../types/items";
 import {StoreGet, StoreSet} from "../types/store";
-import {SummaryData, SummaryDetail, SummaryItem, TemplateInfo} from "../types/summary";
-import {Race} from "../types/race";
+import {SummaryData, SummaryDetail, SummaryItem, SummaryType, TemplateInfo} from "../types/summary";
+import {Race} from "../data/race";
 
 export class SummaryManager {
     private readonly set: StoreSet
@@ -42,15 +42,15 @@ export class SummaryManager {
             }
         })
 
-        this.finish(summaryData, templateInfo)
+        const summaryTypes: SummaryType[][] = this.finish(summaryData, templateInfo)
 
         this.set({
-            summaryData: summaryData,
+            summaryTypes: summaryTypes,
             templateInfo: templateInfo
         })
     }
 
-    private finish(summaryData: SummaryData, templateInfo: TemplateInfo): void {
+    private finish(summaryData: SummaryData, templateInfo: TemplateInfo): SummaryType[][] {
         Object.values(summaryData).forEach((summaryItems: SummaryItem[]): void => {
             summaryItems.forEach((summaryItem: SummaryItem): void => {
                 const detail: SummaryDetail = summaryItem.summaryDetail
@@ -84,11 +84,25 @@ export class SummaryManager {
             })
         })
 
-        Object.entries(summaryData).forEach(([key, summaryItems]): void => {
-            summaryData[key as EffectTypeCode] = summaryItems.filter((summaryItem: SummaryItem) => (
-                !summaryItem.removeOnZero || summaryItem.value > 0
+        const cols: Record<string, SummaryType[]> = {}
+
+        Object.entries(summaryData).forEach(([key, summaryItems]: [string, SummaryItem[]]): void => {
+            summaryData[key as EffectTypeCode] = summaryItems.filter((summaryItem: SummaryItem): boolean => (
+                !summaryItem.summaryDetail.effect.hideIfNoValue || summaryItem.value > 0
             ))
+            const hasItems: boolean = summaryData[key as EffectTypeCode].length > 0
+            if (hasItems && !cols[effectTypes[key as EffectTypeCode].column]) {
+                cols[effectTypes[key as EffectTypeCode].column] = []
+            }
+            if (hasItems) {
+                cols[effectTypes[key as EffectTypeCode].column].push({
+                    name: effectTypes[key as EffectTypeCode].name,
+                    summaryItems: summaryData[key as EffectTypeCode]
+                })
+            }
         })
+
+        return Object.values(cols)
     }
 
     private handleOption(option: Option, summaryData: SummaryData): void {
@@ -190,7 +204,7 @@ export class SummaryManager {
             ))
 
             if (!summaryItem) {
-                summaryItem = this.createSummaryItem(effect, option.color === Color.error, true)
+                summaryItem = this.createSummaryItem(effect, option.color === Color.error)
                 summaryItem.summaryDetail.notFound = true
                 summaryData[effect.type].push(summaryItem)
             }
@@ -250,68 +264,32 @@ export class SummaryManager {
     }
 
     private getSummaries(): SummaryData {
-        const summaryData: SummaryData = {
-            unused: [],
-            stats: [],
-            statCaps: [],
-            mythStatCaps: [],
-            resists: [],
-            resistCaps: [],
-            skills: [],
-            focus: [],
-            bonus: []
-        }
+        const summaryData: SummaryData = {}
 
-        const race: Race = this.get().race
-
-        Object.values(effectTypes.resists.effects).forEach((effect: Effect): void => {
-            const summaryItem: SummaryItem = this.createSummaryItem(effect)
-            const bonus: number | undefined = race.resists[effect.code]
-            if (bonus) summaryItem.summaryDetail.value += bonus
-            summaryData.resists.push(summaryItem)
-        })
-
-        Object.values(effectTypes.bonus.effects).forEach((effect: Effect): void => {
-            summaryData.bonus.push(this.createSummaryItem(effect, false, true))
+        Object.values(effectTypes).map((type: Type): void => {
+            summaryData[type.code] = []
         })
 
         const realmClass: RealmClass = this.get().realmClass
+        const race: Race = this.get().race
 
-        realmClass.effects.stats.forEach((effect: Effect): void => {
-            if (effect.increase) return
-
-            summaryData.stats.push(this.createSummaryItem(effect))
-        })
-
-        realmClass.effects.statCaps.forEach((effect: Effect): void => {
-            summaryData.statCaps.push(this.createSummaryItem(effect, false, true))
-        })
-
-        realmClass.effects.mythStatCaps.forEach((effect: Effect): void => {
-            summaryData.mythStatCaps.push(this.createSummaryItem(effect, false, true))
-        })
-
-        realmClass.effects.skills.forEach((effect: Effect): void => {
-            if (effect.increase) return
-
-            summaryData.skills.push(this.createSummaryItem(effect))
-        })
-
-        realmClass.effects.focus.forEach((effect: Effect): void => {
-            if (effect.increase) return
-
-            summaryData.focus.push(this.createSummaryItem(effect))
+        Object.values(realmClass.effects).map((effects: Effect[]): void => {
+            effects.map((effect: Effect): void => {
+                const summaryItem: SummaryItem = this.createSummaryItem(effect)
+                const bonus: number | undefined = race.resists[effect.code]
+                if (bonus) summaryItem.summaryDetail.value += bonus
+                summaryData[effect.type].push(summaryItem)
+            })
         })
 
         return summaryData
     }
 
-    private createSummaryItem(effect: Effect, error: boolean = false, removeOnZero: boolean = false): SummaryItem {
+    private createSummaryItem(effect: Effect, error: boolean = false): SummaryItem {
         return {
             name: effect.name,
             effects: [effect],
             color: Color.summaryDefault,
-            removeOnZero: removeOnZero,
             value: 0,
             maxValue: 0,
             percent: 0,

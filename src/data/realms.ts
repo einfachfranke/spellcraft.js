@@ -1,8 +1,12 @@
 import {race} from "./race";
 import {effectTypes} from "./effects";
-import {Effect, EffectTypeMythStatCode, EffectTypeStatCode} from "../types/effects";
-import {Realm, RealmClass} from "../types/realm";
+import {Effect} from "../types/effects";
+import {Realm} from "../types/realm";
 import {weapon} from "./weapon";
+
+const resists: Effect[] = Object.values(effectTypes.resists.effects)
+const resistCaps: Effect[] = Object.values(effectTypes.resistCaps.effects)
+const bonus: Effect[] = Object.values(effectTypes.bonus.effects)
 
 export const realms: Realm[] = [
     {
@@ -18,14 +22,10 @@ export const realms: Realm[] = [
                     race.halfOgre,
                     race.highlander,
                     race.inconnu,
+                    race.minotaur,
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -33,7 +33,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.crushing,
                         effectTypes.skills.effects.slashing,
@@ -45,7 +59,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.crossbow,
                         effectTypes.skills.effects.allMeleeAlbion
                     ],
-                    focus: []
+                    bonus: bonus,
                 }
             },
             {
@@ -60,11 +74,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -74,7 +83,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.matterMagic,
                         effectTypes.skills.effects.bodyMagic,
@@ -86,7 +112,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.bodyMagic,
                         effectTypes.focus.effects.spiritMagic,
                         effectTypes.focus.effects.allFocus
-                    ]
+                    ],
+                    bonus: bonus,
                 }
             },
             {
@@ -99,11 +126,6 @@ export const realms: Realm[] = [
                     race.highlander,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -113,14 +135,31 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.rejuvenation,
                         effectTypes.skills.effects.enhancements,
                         effectTypes.skills.effects.smite,
                         effectTypes.skills.effects.allMagicAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             },
             {
@@ -131,11 +170,6 @@ export const realms: Realm[] = [
                     race.briton,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -146,7 +180,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.rejuvenation,
                         effectTypes.skills.effects.enhancements,
@@ -155,7 +208,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeAlbion,
                         effectTypes.skills.effects.allMagicAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Heretic',
@@ -165,13 +218,9 @@ export const realms: Realm[] = [
                     race.avalonian,
                     race.briton,
                     race.inconnu,
+                    race.minotaur,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -181,7 +230,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.rejuvenation,
                         effectTypes.skills.effects.enhancements,
@@ -191,7 +257,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMagicAlbion,
                         effectTypes.skills.effects.allMeleeAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Infiltrator',
@@ -203,11 +269,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -215,7 +276,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.slashing,
@@ -225,7 +300,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.dualWield,
                         effectTypes.skills.effects.allMeleeAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Mercenary',
@@ -237,14 +312,10 @@ export const realms: Realm[] = [
                     race.halfOgre,
                     race.highlander,
                     race.inconnu,
+                    race.minotaur,
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -252,7 +323,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.crushing,
                         effectTypes.skills.effects.slashing,
@@ -262,7 +347,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.parry,
                         effectTypes.skills.effects.allMeleeAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Minstrel',
@@ -274,11 +359,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -289,7 +369,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.charisma,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.charisma,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.slashing,
@@ -298,7 +397,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeAlbion,
                         effectTypes.skills.effects.allMagicAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Necromancer',
@@ -310,11 +409,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -324,7 +418,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.deathsight,
                         effectTypes.skills.effects.painworking,
@@ -336,7 +447,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.painworking,
                         effectTypes.focus.effects.deathservant,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus,
                 }
             }, {
                 name: 'Paladin',
@@ -349,11 +461,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -364,7 +471,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.crushing,
                         effectTypes.skills.effects.slashing,
@@ -376,7 +502,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeAlbion,
                         effectTypes.skills.effects.allMagicAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Reaver',
@@ -388,11 +514,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -403,7 +524,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.crushing,
                         effectTypes.skills.effects.slashing,
@@ -415,7 +555,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeAlbion,
                         effectTypes.skills.effects.allMagicAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Scout',
@@ -428,11 +568,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -440,7 +575,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.slashing,
@@ -449,7 +598,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.archeryAlbion,
                         effectTypes.skills.effects.allMeleeAlbion,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Sorcerer',
@@ -463,11 +612,6 @@ export const realms: Realm[] = [
                     race.saracen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -477,7 +621,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.matterMagic,
                         effectTypes.skills.effects.mindMagic,
@@ -489,7 +650,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.mindMagic,
                         effectTypes.focus.effects.bodyMagic,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Theurgist',
@@ -501,11 +663,6 @@ export const realms: Realm[] = [
                     race.halfOgre,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -515,7 +672,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.earthMagic,
                         effectTypes.skills.effects.coldMagic,
@@ -527,7 +701,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.coldMagic,
                         effectTypes.focus.effects.windMagic,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Wizard',
@@ -539,11 +714,6 @@ export const realms: Realm[] = [
                     race.halfOgre,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -553,7 +723,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.earthMagic,
                         effectTypes.skills.effects.fireMagic,
@@ -565,7 +752,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.fireMagic,
                         effectTypes.focus.effects.coldMagic,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             },
         ]
@@ -583,11 +771,6 @@ export const realms: Realm[] = [
                     race.sylvan,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -597,7 +780,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.arborealPath,
                         effectTypes.skills.effects.creepingPath,
@@ -609,7 +809,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.creeping,
                         effectTypes.focus.effects.verdant,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Bainshee',
@@ -621,11 +822,6 @@ export const realms: Realm[] = [
                     race.lurikeen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -635,7 +831,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.spectralGuard,
                         effectTypes.skills.effects.phantasmalWail,
@@ -647,7 +860,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.phantasmalWail,
                         effectTypes.focus.effects.etherealShriek,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Bard',
@@ -658,11 +872,6 @@ export const realms: Realm[] = [
                     race.firbolg
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -673,7 +882,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.charisma,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.charisma,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.regrowth,
                         effectTypes.skills.effects.nurture,
@@ -683,7 +911,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeHibernia,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Blademaster',
@@ -693,14 +921,10 @@ export const realms: Realm[] = [
                     race.celt,
                     race.elf,
                     race.firbolg,
+                    race.minotaur,
                     race.shar,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -708,7 +932,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.blades,
                         effectTypes.skills.effects.blunt,
@@ -717,7 +955,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.celticDual,
                         effectTypes.skills.effects.allMeleeHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Champion',
@@ -730,11 +968,6 @@ export const realms: Realm[] = [
                     race.shar,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -745,7 +978,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.blades,
                         effectTypes.skills.effects.blunt,
@@ -757,7 +1009,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeHibernia,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Druid',
@@ -769,11 +1021,6 @@ export const realms: Realm[] = [
                     race.sylvan,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -783,14 +1030,31 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.empathy,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.empathy,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.regrowth,
                         effectTypes.skills.effects.nurture,
                         effectTypes.skills.effects.nature,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Eldritch',
@@ -801,11 +1065,6 @@ export const realms: Realm[] = [
                     race.lurikeen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -815,7 +1074,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.lightMagic,
                         effectTypes.skills.effects.manaMagic,
@@ -827,7 +1103,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.mana,
                         effectTypes.focus.effects.voidFocus,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Enchanter',
@@ -838,11 +1115,6 @@ export const realms: Realm[] = [
                     race.lurikeen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -852,7 +1124,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.lightMagic,
                         effectTypes.skills.effects.manaMagic,
@@ -864,7 +1153,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.mana,
                         effectTypes.focus.effects.enchantments,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Hero',
@@ -874,15 +1164,11 @@ export const realms: Realm[] = [
                     race.celt,
                     race.firbolg,
                     race.lurikeen,
+                    race.minotaur,
                     race.shar,
                     race.sylvan,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -890,7 +1176,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.blades,
                         effectTypes.skills.effects.blunt,
@@ -901,7 +1201,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.parry,
                         effectTypes.skills.effects.allMeleeHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Mentalist',
@@ -914,11 +1214,6 @@ export const realms: Realm[] = [
                     race.shar,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -928,7 +1223,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.lightMagic,
                         effectTypes.skills.effects.mentalism,
@@ -940,7 +1252,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.mentalism,
                         effectTypes.focus.effects.mana,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Nightshade',
@@ -951,11 +1264,6 @@ export const realms: Realm[] = [
                     race.lurikeen,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -966,7 +1274,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.blades,
@@ -975,7 +1302,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.celticDual,
                         effectTypes.skills.effects.allMeleeHibernia
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Ranger',
@@ -988,11 +1315,6 @@ export const realms: Realm[] = [
                     race.shar,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1001,7 +1323,22 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.blades,
@@ -1011,7 +1348,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeHibernia,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Valewalker',
@@ -1023,11 +1360,6 @@ export const realms: Realm[] = [
                     race.sylvan,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1038,7 +1370,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.intelligence,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.intelligence,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.arborealPath,
                         effectTypes.skills.effects.parry,
@@ -1046,7 +1397,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeHibernia,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Warden',
@@ -1055,14 +1406,10 @@ export const realms: Realm[] = [
                     race.none,
                     race.celt,
                     race.firbolg,
+                    race.minotaur,
                     race.sylvan,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1073,7 +1420,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.empathy,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.empathy,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.regrowth,
                         effectTypes.skills.effects.nurture,
@@ -1083,7 +1449,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeHibernia,
                         effectTypes.skills.effects.allMagicHibernia,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             },
         ]
@@ -1098,15 +1464,11 @@ export const realms: Realm[] = [
                     race.none,
                     race.dwarf,
                     race.troll,
+                    race.minotaur,
                     race.norseman,
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1114,7 +1476,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.axe,
                         effectTypes.skills.effects.hammer,
@@ -1123,7 +1499,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.leftAxe,
                         effectTypes.skills.effects.allMeleeMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Bonedancer',
@@ -1135,11 +1511,6 @@ export const realms: Realm[] = [
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1149,7 +1520,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.darkness,
                         effectTypes.skills.effects.suppression,
@@ -1161,7 +1549,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.suppression,
                         effectTypes.focus.effects.bonedancing,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Healer',
@@ -1173,11 +1562,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1187,14 +1571,31 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.mending,
                         effectTypes.skills.effects.pacification,
                         effectTypes.skills.effects.augmentation,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Hunter',
@@ -1208,11 +1609,6 @@ export const realms: Realm[] = [
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1221,7 +1617,22 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.sword,
@@ -1231,7 +1642,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeMidgard,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Runemaster',
@@ -1244,11 +1655,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1258,7 +1664,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.darkness,
                         effectTypes.skills.effects.suppression,
@@ -1270,7 +1693,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.suppression,
                         effectTypes.focus.effects.runecarving,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Savage',
@@ -1284,11 +1708,6 @@ export const realms: Realm[] = [
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1296,7 +1715,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.axe,
                         effectTypes.skills.effects.hammer,
@@ -1305,7 +1738,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.parry,
                         effectTypes.skills.effects.allMeleeMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Shadowblade',
@@ -1317,11 +1750,6 @@ export const realms: Realm[] = [
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1329,7 +1757,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.stealth,
                         effectTypes.skills.effects.axe,
@@ -1339,7 +1781,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.envenom,
                         effectTypes.skills.effects.allMeleeMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Shaman',
@@ -1348,14 +1790,10 @@ export const realms: Realm[] = [
                     race.none,
                     race.frostalf,
                     race.kobold,
+                    race.minotaur,
                     race.troll,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1365,14 +1803,31 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.mending,
                         effectTypes.skills.effects.subterranean,
                         effectTypes.skills.effects.augmentation,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Skald',
@@ -1385,11 +1840,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1400,7 +1850,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.charisma,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.charisma,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.axe,
                         effectTypes.skills.effects.hammer,
@@ -1410,7 +1879,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeMidgard,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Spiritmaster',
@@ -1422,11 +1891,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1436,7 +1900,24 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.darkness,
                         effectTypes.skills.effects.suppression,
@@ -1448,7 +1929,8 @@ export const realms: Realm[] = [
                         effectTypes.focus.effects.suppression,
                         effectTypes.focus.effects.summoning,
                         effectTypes.focus.effects.allFocus,
-                    ]
+                    ],
+                    bonus: bonus
                 }
             }, {
                 name: 'Thane',
@@ -1461,11 +1943,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1476,7 +1953,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.axe,
                         effectTypes.skills.effects.hammer,
@@ -1487,7 +1983,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeMidgard,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus,
                 }
             }, {
                 name: 'Valkyrie',
@@ -1499,11 +1995,6 @@ export const realms: Realm[] = [
                     race.norseman,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1514,7 +2005,26 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.hits,
                         effectTypes.stats.effects.power,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.piety,
+                        effectTypes.statCaps.effects.acuity,
+                        effectTypes.statCaps.effects.hits,
+                        effectTypes.statCaps.effects.power,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness,
+                        effectTypes.mythStatCaps.effects.piety,
+                        effectTypes.mythStatCaps.effects.acuity
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.sword,
                         effectTypes.skills.effects.spear,
@@ -1525,7 +2035,7 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.allMeleeMidgard,
                         effectTypes.skills.effects.allMagicMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             }, {
                 name: 'Warrior',
@@ -1535,15 +2045,11 @@ export const realms: Realm[] = [
                     race.dwarf,
                     race.kobold,
                     race.troll,
+                    race.minotaur,
                     race.norseman,
                     race.valkyn,
                 ],
                 effects: {
-                    unused: [],
-                    mythStatCaps: [],
-                    resists: [],
-                    resistCaps: [],
-                    bonus: [],
                     stats: [
                         effectTypes.stats.effects.strength,
                         effectTypes.stats.effects.constitution,
@@ -1551,7 +2057,21 @@ export const realms: Realm[] = [
                         effectTypes.stats.effects.quickness,
                         effectTypes.stats.effects.hits,
                     ],
-                    statCaps: [],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.hits,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
                     skills: [
                         effectTypes.skills.effects.axe,
                         effectTypes.skills.effects.hammer,
@@ -1561,28 +2081,9 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.thrownWeapons,
                         effectTypes.skills.effects.allMeleeMidgard,
                     ],
-                    focus: []
+                    bonus: bonus
                 }
             },
         ]
     }
 ]
-
-const statKeys: string[] = Object.keys(effectTypes.stats.effects)
-const statValues: Effect[] = Object.values(effectTypes.stats.effects)
-
-realms.forEach((realm: Realm): void => {
-    realm.realmClasses.forEach((realmClass: RealmClass): void => {
-        realmClass.effects.stats.forEach((effect: Effect): void => {
-            const key: string = statKeys[statValues.indexOf(effect)]
-
-            if (effectTypes.statCaps.effects[key as EffectTypeStatCode]) {
-                realmClass.effects.statCaps.push(effectTypes.statCaps.effects[key as EffectTypeStatCode])
-            }
-
-            if (effectTypes.mythStatCaps.effects[key as EffectTypeMythStatCode]) {
-                realmClass.effects.mythStatCaps.push(effectTypes.mythStatCaps.effects[key as EffectTypeMythStatCode])
-            }
-        })
-    })
-})

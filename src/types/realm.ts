@@ -1,7 +1,8 @@
 import {Effect, EffectTypeCode} from "./effects";
 
 import {Weapon} from "./weapon";
-import {Race} from "./race";
+
+import {Race} from "../data/race";
 
 export type RealmName = 'Albion' | 'Hibernia' | 'Midgard'
 
@@ -58,5 +59,5 @@ export type RealmClass = {
     name: RealmClassName
     defaultWeapons: Weapon
     races: Race[]
-    effects: Record<EffectTypeCode, Effect[]>
+    effects: Partial<Record<EffectTypeCode, Effect[]>>
 }
