@@ -9,7 +9,7 @@ import {SummaryType, TemplateInfo} from "./summary";
 import {PlayerLevel} from "./levels";
 import {Race} from "../data/race";
 
-export type StoreSet = (partial: (Partial<Store> | ((state: Store) => (Partial<Store> | Store)) | Store), replace?: (boolean | undefined)) => void
+export type StoreSet = {(partial: (Store | Partial<Store> | ((state: Store) => (Store | Partial<Store>))), replace?: (false | undefined)): void; (state: (Store | ((state: Store) => Store)), replace: true): void }
 
 export type StoreGet = () => Store
 
