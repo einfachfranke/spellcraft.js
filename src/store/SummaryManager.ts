@@ -320,7 +320,7 @@ export class SummaryManager {
             case 50:
                 return level;
             case 25:
-                return level / 2;
+                return Math.floor(level / 2)
             case 200:
                 return level * 4;
             case 11:
