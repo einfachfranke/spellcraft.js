@@ -192,6 +192,16 @@ export class ItemManager {
     clearable(): boolean {
         const item: Item = this.getActiveItem()
 
+        if (item.level !== 51 || item.quality !== 99 || item.itemName !== '') {
+            return true
+        }
+
+        const defaultType: ItemType = item.craft ? itemType.craft : itemType.drop
+
+        if (item.itemType !== defaultType) {
+            return true
+        }
+
         if (item.bonusOption && item.bonusOption.effectValue.value > 0) {
             return true
         }
