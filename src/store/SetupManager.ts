@@ -84,7 +84,7 @@ export class SetupManager {
     }
 
     updateTitle(): void {
-        document.title = this.getTitle()
+        document.title = this.getTitle().trim()
     }
 
     initLoadSaveParamString(): void {
@@ -243,6 +243,9 @@ export class SetupManager {
         Object.values(items).forEach((item: Item): void => {
             const itemName: string = String(params[`${item.code}Name`])
             item.itemName = itemName === '0' ? '' : itemName
+                .replace(/[^A-Za-z0-9\s]/g,'')
+                .replace(/\s\s+/g, ' ')
+                .replace(/^\s*/gm, '')
             item.level = Number(params[`${item.code}Level`]) as ItemLevel
             item.itemType = Object.values(itemType).find((itemType: ItemType): boolean => (
                 itemType.value === params[`${item.code}Type`]
@@ -316,7 +319,10 @@ export class SetupManager {
             realmClass: realmClass,
             race: race,
             level: Number(params[`level`]) as PlayerLevel,
-            name: String(params[`name`] === 'none' ? '' : params[`name`]),
+            name: String(params[`name`] === 'none' ? '' : params[`name`])
+                .replace(/[^A-Za-z0-9\s]/g,'')
+                .replace(/\s\s+/g, ' ')
+                .replace(/^\s*/gm, ''),
             items: [...items],
             activeItem: item
         }

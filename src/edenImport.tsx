@@ -1152,7 +1152,7 @@ export const EdenImport: React.FC = (): React.JSX.Element => {
         activeItem.level = json.level
         activeItem.quality = json.quality
         activeItem.itemType = itemType.drop
-        activeItem.itemName = json.name.replace(/[^A-Za-z0-9\s]/g,'').trim()
+        activeItem.itemName = json.name.replace(/[^A-Za-z0-9\s]/g,'').replace(/\s\s+/g, ' ').replace(/^\s*/gm, '')
         activeItem.options = []
         activeItem.bonusOption = null
 

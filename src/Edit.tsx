@@ -99,7 +99,10 @@ export const Edit: React.FC = (): React.JSX.Element => {
                         value={item.itemName}
                         autoComplete={'off'}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-                            itemManager.itemName = e.target.value.replace(/[^A-Za-z0-9\s]/g,'').replace(/^\s*/gm, '')
+                            itemManager.itemName = e.target.value
+                                .replace(/[^A-Za-z0-9\s]/g,'')
+                                .replace(/\s\s+/g, ' ')
+                                .replace(/^\s*/gm, '')
                         }}
                     />
                 </div>

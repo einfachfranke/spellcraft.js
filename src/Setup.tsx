@@ -115,7 +115,10 @@ const Setup: React.FC = (): React.JSX.Element => {
                     value={name}
                     autoComplete={'off'}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
-                        setupManager.setName(e.target.value.replace(/[^A-Za-z0-9\s]/g, '').replace(/^\s*/gm, ''))
+                        setupManager.setName(e.target.value
+                            .replace(/[^A-Za-z0-9\s]/g,'')
+                            .replace(/\s\s+/g, ' ')
+                            .replace(/^\s*/gm, ''))
                     }}
                 />
             </div>
