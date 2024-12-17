@@ -8,8 +8,32 @@ export const config: Config = {
     useArcheryAsSkillName: true,
     useEdenImport: true,
     excludeEffectTypes: [],
-    excludeEffects: [],
-    excludeClasses: [],
-    excludeRaces: ['minotaur']
+    excludeEffects: [
+        '86',
+        '87',
+        '88',
+        'xa',
+        'xb',
+        'xc',
+        'xd',
+        'xe',
+        'xf',
+        'xg',
+        'xh',
+        'xi',
+        'xj',
+        'xk',
+        'xl',
+        'xm',
+        'xn',
+        'xo',
+    ],
+    excludeClasses: [
+        'Mauler',
+        'Vampiir'
+    ],
+    excludeRaces: [
+        'minotaur'
+    ]
 }
 
