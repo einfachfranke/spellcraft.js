@@ -210,7 +210,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Heretic',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -259,7 +260,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Infiltrator',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -302,7 +304,53 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
+                name: 'Mauler',
+                defaultWeapons: weapon.rightAndLeftHand,
+                races: [
+                    race.none,
+                    race.briton,
+                    race.minotaur,
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.quickness,
+                        effectTypes.stats.effects.power,
+                        effectTypes.stats.effects.hits
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.power,
+                        effectTypes.statCaps.effects.hits
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.fistWrapAlbion,
+                        effectTypes.skills.effects.maulerStaffAlbion,
+                        effectTypes.skills.effects.magnetismAlbion,
+                        effectTypes.skills.effects.powerStrikeAlbion,
+                        effectTypes.skills.effects.auraManipulationAlbion,
+                        effectTypes.skills.effects.allMeleeAlbion,
+                        effectTypes.skills.effects.allMagicAlbion,
+                    ],
+                    bonus: bonus,
+                }
+            },
+            {
                 name: 'Mercenary',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -349,7 +397,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Minstrel',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -399,7 +448,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Necromancer',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -450,7 +500,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus,
                 }
-            }, {
+            },
+            {
                 name: 'Paladin',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -504,7 +555,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Reaver',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -557,7 +609,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Scout',
                 defaultWeapons: weapon.ranged,
                 races: [
@@ -600,7 +653,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Sorcerer',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -653,7 +707,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Theurgist',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -704,7 +759,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Wizard',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -812,7 +868,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Bainshee',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -863,7 +920,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Bard',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -913,7 +971,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Blademaster',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -957,7 +1016,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Champion',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1011,7 +1071,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Druid',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1056,7 +1117,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Eldritch',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1106,7 +1168,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Enchanter',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1156,7 +1219,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Hero',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1203,7 +1267,53 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
+                name: 'Mauler',
+                defaultWeapons: weapon.rightAndLeftHand,
+                races: [
+                    race.none,
+                    race.celt,
+                    race.minotaur,
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.quickness,
+                        effectTypes.stats.effects.power,
+                        effectTypes.stats.effects.hits
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.power,
+                        effectTypes.statCaps.effects.hits
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.fistWrapHibernia,
+                        effectTypes.skills.effects.maulerStaffHibernia,
+                        effectTypes.skills.effects.magnetismHibernia,
+                        effectTypes.skills.effects.powerStrikeHibernia,
+                        effectTypes.skills.effects.auraManipulationHibernia,
+                        effectTypes.skills.effects.allMeleeHibernia,
+                        effectTypes.skills.effects.allMagicHibernia,
+                    ],
+                    bonus: bonus,
+                }
+            },
+            {
                 name: 'Mentalist',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1255,7 +1365,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Nightshade',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1304,7 +1415,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Ranger',
                 defaultWeapons: weapon.ranged,
                 races: [
@@ -1350,7 +1462,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Valewalker',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1399,7 +1512,53 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
+                name: 'Vampiir',
+                defaultWeapons: weapon.rightAndLeftHand,
+                races: [
+                    race.none,
+                    race.celt,
+                    race.lurikeen,
+                    race.shar
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.quickness,
+                        effectTypes.stats.effects.power,
+                        effectTypes.stats.effects.hits
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.power,
+                        effectTypes.statCaps.effects.hits
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.piercing,
+                        effectTypes.skills.effects.shadowMastery,
+                        effectTypes.skills.effects.vampiiricEmbrace,
+                        effectTypes.skills.effects.dementia,
+                        effectTypes.skills.effects.allMeleeHibernia,
+                        effectTypes.skills.effects.allMagicHibernia,
+                    ],
+                    bonus: bonus,
+                }
+            },
+            {
                 name: 'Warden',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1501,7 +1660,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Bonedancer',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1552,7 +1712,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Healer',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1597,7 +1758,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Hunter',
                 defaultWeapons: weapon.ranged,
                 races: [
@@ -1644,7 +1806,53 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
+                name: 'Mauler',
+                defaultWeapons: weapon.rightAndLeftHand,
+                races: [
+                    race.none,
+                    race.norseman,
+                    race.minotaur,
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.quickness,
+                        effectTypes.stats.effects.power,
+                        effectTypes.stats.effects.hits
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strength,
+                        effectTypes.statCaps.effects.constitution,
+                        effectTypes.statCaps.effects.dexterity,
+                        effectTypes.statCaps.effects.quickness,
+                        effectTypes.statCaps.effects.power,
+                        effectTypes.statCaps.effects.hits
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strength,
+                        effectTypes.mythStatCaps.effects.constitution,
+                        effectTypes.mythStatCaps.effects.dexterity,
+                        effectTypes.mythStatCaps.effects.quickness
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.fistWrapMidgard,
+                        effectTypes.skills.effects.maulerStaffMidgard,
+                        effectTypes.skills.effects.magnetismMidgard,
+                        effectTypes.skills.effects.powerStrikeMidgard,
+                        effectTypes.skills.effects.auraManipulationMidgard,
+                        effectTypes.skills.effects.allMeleeMidgard,
+                        effectTypes.skills.effects.allMagicMidgard,
+                    ],
+                    bonus: bonus,
+                }
+            },
+            {
                 name: 'Runemaster',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1696,7 +1904,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Savage',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1740,7 +1949,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Shadowblade',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1783,7 +1993,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Shaman',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1829,7 +2040,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Skald',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1881,7 +2093,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Spiritmaster',
                 defaultWeapons: weapon.twoHand,
                 races: [
@@ -1932,7 +2145,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Thane',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1985,7 +2199,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus,
                 }
-            }, {
+            },
+            {
                 name: 'Valkyrie',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -2037,7 +2252,8 @@ export const realms: Realm[] = [
                     ],
                     bonus: bonus
                 }
-            }, {
+            },
+            {
                 name: 'Warrior',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [

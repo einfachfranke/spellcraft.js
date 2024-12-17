@@ -2476,6 +2476,228 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            auraManipulationAlbion: {
+                name: 'Aura Manipulation',
+                code: 'xe',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Albion',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Radiant Fervor Sigil',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Radiant Fervor Sigil',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Radiant Fervor Sigil',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Radiant Fervor Sigil',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Radiant Fervor Sigil',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Radiant Fervor Sigil',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Radiant Fervor Sigil',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Radiant Fervor Sigil',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Radiant Fervor Sigil',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Radiant Fervor Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            auraManipulationHibernia: {
+                name: 'Aura Manipulation',
+                code: 'xj',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Radiant War Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Radiant War Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Radiant War Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Radiant War Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Radiant War Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Radiant War Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Radiant War Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Radiant War Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Radiant War Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Radiant War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            auraManipulationMidgard: {
+                name: 'Aura Manipulation',
+                code: 'xo',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Radiant War Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Radiant War Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Radiant War Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Radiant War Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Radiant War Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Radiant War Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Radiant War Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Radiant War Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Radiant War Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Radiant War Rune',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             axe: {
                 name: 'Axe',
                 code: '62',
@@ -3810,6 +4032,80 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            dementia: {
+                name: 'Dementia',
+                code: '88',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia'
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Aberrant Arcane Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Aberrant Arcane Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Aberrant Arcane Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Aberrant Arcane Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Aberrant Arcane Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Aberrant Arcane Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Aberrant Arcane Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Aberrant Arcane Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Aberrant Arcane Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Aberrant Arcane Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             dualWield: {
                 name: 'Dual Wield',
                 code: '12',
@@ -4324,6 +4620,228 @@ export const effectTypes: EffectTypes = {
                     10: {
                         imbue: 22.5,
                         gem: 'Perfect Fiery Evocation Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            fistWrapAlbion: {
+                name: 'Fist Wraps',
+                code: 'xa',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Albion',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Glacier War Sigil',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Glacier War Sigil',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Glacier War Sigil',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Glacier War Sigil',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Glacier War Sigil',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Glacier War Sigil',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Glacier War Sigil',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Glacier War Sigil',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Glacier War Sigil',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Glacier War Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            fistWrapHibernia: {
+                name: 'Fist Wraps',
+                code: 'xf',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Glacier War Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Glacier War Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Glacier War Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Glacier War Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Glacier War Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Glacier War Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Glacier War Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Glacier War Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Glacier War Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Glacier War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            fistWrapMidgard: {
+                name: 'Fist Wraps',
+                code: 'xk',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Glacier War Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Glacier War Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Glacier War Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Glacier War Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Glacier War Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Glacier War Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Glacier War Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Glacier War Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Glacier War Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Glacier War Rune',
                         value: 10,
                         price: 296860
                     }
@@ -4848,6 +5366,228 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            magnetismAlbion: {
+                name: 'Magnetism',
+                code: 'xc',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Albion',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Magnetic Fervor Sigil',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Magnetic Fervor Sigil',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Magnetic Fervor Sigil',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Magnetic Fervor Sigil',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Magnetic Fervor Sigil',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Magnetic Fervor Sigil',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Magnetic Fervor Sigil',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Magnetic Fervor Sigil',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Magnetic Fervor Sigil',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Magnetic Fervor Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            magnetismHibernia: {
+                name: 'Magnetism',
+                code: 'xh',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Magnetic War Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Magnetic War Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Magnetic War Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Magnetic War Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Magnetic War Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Magnetic War Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Magnetic War Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Magnetic War Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Magnetic War Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Magnetic War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            magnetismMidgard: {
+                name: 'Magnetism',
+                code: 'xm',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Magnetic War Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Magnetic War Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Magnetic War Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Magnetic War Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Magnetic War Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Magnetic War Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Magnetic War Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Magnetic War Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Magnetic War Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Magnetic War Rune',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             manaMagic: {
                 name: 'Mana Magic',
                 code: '48',
@@ -4990,6 +5730,228 @@ export const effectTypes: EffectTypes = {
                     10: {
                         imbue: 22.5,
                         gem: 'Perfect Dusty Evocation Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            maulerStaffAlbion: {
+                name: 'Mauler Staff',
+                code: 'xb',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Albion',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Cinder War Sigil',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Cinder War Sigil',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Cinder War Sigil',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Cinder War Sigil',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Cinder War Sigil',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Cinder War Sigil',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Cinder War Sigil',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Cinder War Sigil',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Cinder War Sigil',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Cinder War Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            maulerStaffHibernia: {
+                name: 'Mauler Staff',
+                code: 'xg',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Cinder War Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Cinder War Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Cinder War Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Cinder War Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Cinder War Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Cinder War Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Cinder War Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Cinder War Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Cinder War Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Cinder War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            maulerStaffMidgard: {
+                name: 'Mauler Staff',
+                code: 'xl',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Cinder War Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Cinder War Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Cinder War Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Cinder War Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Cinder War Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Cinder War Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Cinder War Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Cinder War Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Cinder War Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Cinder War Rune',
                         value: 10,
                         price: 296860
                     }
@@ -5960,6 +6922,228 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            powerStrikeAlbion: {
+                name: 'Power Strike',
+                code: 'xd',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Albion',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Clout Fervor Sigil',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Clout Fervor Sigil',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Clout Fervor Sigil',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Clout Fervor Sigil',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Clout Fervor Sigil',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Clout Fervor Sigil',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Clout Fervor Sigil',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Clout Fervor Sigil',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Clout Fervor Sigil',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Clout Fervor Sigil',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            powerStrikeHibernia: {
+                name: 'Power Strike',
+                code: 'xi',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Clout War Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Clout War Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Clout War Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Clout War Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Clout War Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Clout War Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Clout War Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Clout War Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Clout War Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Clout War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            powerStrikeMidgard: {
+                name: 'Power Strike',
+                code: 'xn',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard',
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Clout War Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Clout War Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Clout War Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Clout War Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Clout War Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Clout War Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Clout War Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Clout War Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Clout War Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Clout War Rune',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             regrowth: {
                 name: 'Regrowth',
                 code: '43',
@@ -6250,6 +7434,80 @@ export const effectTypes: EffectTypes = {
                     10: {
                         imbue: 22.5,
                         gem: 'Perfect Light War Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            shadowMastery: {
+                name: 'Shadow Mastery',
+                code: '86',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia'
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Shadow Arcane Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Shadow Arcane Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Shadow Arcane Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Shadow Arcane Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Shadow Arcane Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Shadow Arcane Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Shadow Arcane Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Shadow Arcane Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Shadow Arcane Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Shadow Arcane Spell Stone',
                         value: 10,
                         price: 296860
                     }
@@ -7592,6 +8850,80 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            vampiiricEmbrace: {
+                name: 'Vampiiric Embrace',
+                code: '87',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Hibernia'
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Embracing Arcane Spell Stone',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Embracing Arcane Spell Stone',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Embracing Arcane Spell Stone',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Embracing Arcane Spell Stone',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Embracing Arcane Spell Stone',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Embracing Arcane Spell Stone',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Embracing Arcane Spell Stone',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Embracing Arcane Spell Stone',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Embracing Arcane Spell Stone',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Embracing Arcane Spell Stone',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             verdantPath: {
                 name: 'Verdant Path',
                 code: '55',
@@ -7813,7 +9145,7 @@ export const effectTypes: EffectTypes = {
                     }
                 },
                 type: 'skills'
-            }
+            },
         }
     },
     focus: {
@@ -10342,6 +11674,8 @@ effectTypes.skills.effects.allMeleeAlbion.increase = {
             effectTypes.skills.effects.twoHanded,
             effectTypes.skills.effects.staff,
             effectTypes.skills.effects.flexible,
+            effectTypes.skills.effects.fistWrapAlbion,
+            effectTypes.skills.effects.maulerStaffAlbion,
         ],
         Hibernia: [],
         Midgard: [],
@@ -10358,6 +11692,8 @@ effectTypes.skills.effects.allMeleeHibernia.increase = {
             effectTypes.skills.effects.largeWeapons,
             effectTypes.skills.effects.celticSpear,
             effectTypes.skills.effects.scythe,
+            effectTypes.skills.effects.fistWrapHibernia,
+            effectTypes.skills.effects.maulerStaffHibernia,
         ],
         Midgard: [],
     }
@@ -10372,7 +11708,9 @@ effectTypes.skills.effects.allMeleeMidgard.increase = {
             effectTypes.skills.effects.hammer,
             effectTypes.skills.effects.sword,
             effectTypes.skills.effects.spear,
-            effectTypes.skills.effects.handToHand
+            effectTypes.skills.effects.handToHand,
+            effectTypes.skills.effects.fistWrapMidgard,
+            effectTypes.skills.effects.maulerStaffMidgard,
         ],
     }
 }
@@ -10397,6 +11735,9 @@ effectTypes.skills.effects.allMagicAlbion.increase = {
             effectTypes.skills.effects.coldMagic,
             effectTypes.skills.effects.windMagic,
             effectTypes.skills.effects.fireMagic,
+            effectTypes.skills.effects.magnetismAlbion,
+            effectTypes.skills.effects.powerStrikeAlbion,
+            effectTypes.skills.effects.auraManipulationAlbion,
         ],
         Hibernia: [],
         Midgard: [],
@@ -10420,6 +11761,12 @@ effectTypes.skills.effects.allMagicHibernia.increase = {
             effectTypes.skills.effects.voidMagic,
             effectTypes.skills.effects.enchantments,
             effectTypes.skills.effects.mentalism,
+            effectTypes.skills.effects.magnetismHibernia,
+            effectTypes.skills.effects.powerStrikeHibernia,
+            effectTypes.skills.effects.auraManipulationHibernia,
+            effectTypes.skills.effects.shadowMastery,
+            effectTypes.skills.effects.vampiiricEmbrace,
+            effectTypes.skills.effects.dementia,
         ],
         Midgard: [],
     }
@@ -10440,7 +11787,10 @@ effectTypes.skills.effects.allMagicMidgard.increase = {
             effectTypes.skills.effects.subterranean,
             effectTypes.skills.effects.battlesongs,
             effectTypes.skills.effects.summoning,
-            effectTypes.skills.effects.stormcalling
+            effectTypes.skills.effects.stormcalling,
+            effectTypes.skills.effects.magnetismMidgard,
+            effectTypes.skills.effects.powerStrikeMidgard,
+            effectTypes.skills.effects.auraManipulationMidgard,
         ],
     }
 }
@@ -10517,6 +11867,7 @@ effectTypes.stats.effects.acuity.increase = {
         Nightshade: effectTypes.stats.effects.intelligence,
         Ranger: effectTypes.stats.effects.acuity,
         Valewalker: effectTypes.stats.effects.intelligence,
+        Vampiir: effectTypes.stats.effects.acuity,
         Warden: effectTypes.stats.effects.empathy,
 
         Berserker: effectTypes.stats.effects.acuity,
@@ -10531,7 +11882,9 @@ effectTypes.stats.effects.acuity.increase = {
         Spiritmaster: effectTypes.stats.effects.piety,
         Thane: effectTypes.stats.effects.piety,
         Valkyrie: effectTypes.stats.effects.piety,
-        Warrior: effectTypes.stats.effects.acuity
+        Warrior: effectTypes.stats.effects.acuity,
+
+        Mauler: effectTypes.stats.effects.acuity,
     }
 }
 
@@ -10686,6 +12039,7 @@ effectTypes.statCaps.effects.acuity.increase = {
         Nightshade: effectTypes.statCaps.effects.intelligence,
         Ranger: effectTypes.statCaps.effects.acuity,
         Valewalker: effectTypes.statCaps.effects.intelligence,
+        Vampiir: effectTypes.statCaps.effects.acuity,
         Warden: effectTypes.statCaps.effects.empathy,
 
         Berserker: effectTypes.statCaps.effects.acuity,
@@ -10700,7 +12054,9 @@ effectTypes.statCaps.effects.acuity.increase = {
         Spiritmaster: effectTypes.statCaps.effects.piety,
         Thane: effectTypes.statCaps.effects.piety,
         Valkyrie: effectTypes.statCaps.effects.piety,
-        Warrior: effectTypes.statCaps.effects.acuity
+        Warrior: effectTypes.statCaps.effects.acuity,
+
+        Mauler: effectTypes.statCaps.effects.acuity
     }
 }
 effectTypes.statCaps.effects.hits.increase = {
@@ -10885,6 +12241,7 @@ effectTypes.mythStatCaps.effects.acuity.increase = {
         Nightshade: effectTypes.statCaps.effects.intelligence,
         Ranger: effectTypes.statCaps.effects.acuity,
         Valewalker: effectTypes.statCaps.effects.intelligence,
+        Vampiir: effectTypes.statCaps.effects.acuity,
         Warden: effectTypes.statCaps.effects.empathy,
 
         Berserker: effectTypes.statCaps.effects.acuity,
@@ -10899,7 +12256,9 @@ effectTypes.mythStatCaps.effects.acuity.increase = {
         Spiritmaster: effectTypes.statCaps.effects.piety,
         Thane: effectTypes.statCaps.effects.piety,
         Valkyrie: effectTypes.statCaps.effects.piety,
-        Warrior: effectTypes.statCaps.effects.acuity
+        Warrior: effectTypes.statCaps.effects.acuity,
+
+        Mauler: effectTypes.statCaps.effects.acuity
     }
 }
 
