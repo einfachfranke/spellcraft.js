@@ -744,33 +744,33 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "182": {
         name: "Mythical: Strength Cap",
-        Albion: effectTypes.mythStatCaps.effects.strength,
-        Hibernia: effectTypes.mythStatCaps.effects.strength,
-        Midgard: effectTypes.mythStatCaps.effects.strength
+        Albion: effectTypes.mythStatCaps.effects.strengthMythCap,
+        Hibernia: effectTypes.mythStatCaps.effects.strengthMythCap,
+        Midgard: effectTypes.mythStatCaps.effects.strengthMythCap
     },
     "183": {
         name: "Mythical: Constitution Cap",
-        Albion: effectTypes.mythStatCaps.effects.constitution,
-        Hibernia: effectTypes.mythStatCaps.effects.constitution,
-        Midgard: effectTypes.mythStatCaps.effects.constitution
+        Albion: effectTypes.mythStatCaps.effects.constitutionMythCap,
+        Hibernia: effectTypes.mythStatCaps.effects.constitutionMythCap,
+        Midgard: effectTypes.mythStatCaps.effects.constitutionMythCap
     },
     "184": {
         name: "Mythical: Dexterity Cap",
-        Albion: effectTypes.mythStatCaps.effects.dexterity,
-        Hibernia: effectTypes.mythStatCaps.effects.dexterity,
-        Midgard: effectTypes.mythStatCaps.effects.dexterity
+        Albion: effectTypes.mythStatCaps.effects.dexterityMythCap,
+        Hibernia: effectTypes.mythStatCaps.effects.dexterityMythCap,
+        Midgard: effectTypes.mythStatCaps.effects.dexterityMythCap
     },
     "185": {
         name: "Mythical: Quickness Cap",
-        Albion: effectTypes.mythStatCaps.effects.quickness,
-        Hibernia: effectTypes.mythStatCaps.effects.quickness,
-        Midgard: effectTypes.mythStatCaps.effects.quickness
+        Albion: effectTypes.mythStatCaps.effects.quicknessMythCap,
+        Hibernia: effectTypes.mythStatCaps.effects.quicknessMythCap,
+        Midgard: effectTypes.mythStatCaps.effects.quicknessMythCap
     },
     "186": {
         name: "Mythical: Acuity Cap",
-        Albion: effectTypes.mythStatCaps.effects.acuity,
-        Hibernia: effectTypes.mythStatCaps.effects.acuity,
-        Midgard: effectTypes.mythStatCaps.effects.acuity
+        Albion: effectTypes.mythStatCaps.effects.acuityMythCap,
+        Hibernia: effectTypes.mythStatCaps.effects.acuityMythCap,
+        Midgard: effectTypes.mythStatCaps.effects.acuityMythCap
     },
     "188": {
         name: "ToA: Archery Speed",
@@ -840,69 +840,69 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "201": {
         name: "Cap Bonus: Strength",
-        Albion: effectTypes.statCaps.effects.strength,
-        Hibernia: effectTypes.statCaps.effects.strength,
-        Midgard: effectTypes.statCaps.effects.strength
+        Albion: effectTypes.statCaps.effects.strengthCap,
+        Hibernia: effectTypes.statCaps.effects.strengthCap,
+        Midgard: effectTypes.statCaps.effects.strengthCap
     },
     "202": {
         name: "Cap Bonus: Dexterity",
-        Albion: effectTypes.statCaps.effects.dexterity,
-        Hibernia: effectTypes.statCaps.effects.dexterity,
-        Midgard: effectTypes.statCaps.effects.dexterity
+        Albion: effectTypes.statCaps.effects.dexterityCap,
+        Hibernia: effectTypes.statCaps.effects.dexterityCap,
+        Midgard: effectTypes.statCaps.effects.dexterityCap
     },
     "203": {
         name: "Cap Bonus: Constitution",
-        Albion: effectTypes.statCaps.effects.constitution,
-        Hibernia: effectTypes.statCaps.effects.constitution,
-        Midgard: effectTypes.statCaps.effects.constitution
+        Albion: effectTypes.statCaps.effects.constitutionCap,
+        Hibernia: effectTypes.statCaps.effects.constitutionCap,
+        Midgard: effectTypes.statCaps.effects.constitutionCap
     },
     "204": {
         name: "Cap Bonus: Quickness",
-        Albion: effectTypes.statCaps.effects.quickness,
-        Hibernia: effectTypes.statCaps.effects.quickness,
-        Midgard: effectTypes.statCaps.effects.quickness
+        Albion: effectTypes.statCaps.effects.quicknessCap,
+        Hibernia: effectTypes.statCaps.effects.quicknessCap,
+        Midgard: effectTypes.statCaps.effects.quicknessCap
     },
     "205": {
         name: "Cap Bonus: Intelligence",
-        Albion: effectTypes.statCaps.effects.intelligence,
-        Hibernia: effectTypes.statCaps.effects.intelligence,
-        Midgard: effectTypes.statCaps.effects.intelligence
+        Albion: effectTypes.statCaps.effects.intelligenceCap,
+        Hibernia: effectTypes.statCaps.effects.intelligenceCap,
+        Midgard: effectTypes.statCaps.effects.intelligenceCap
     },
     "206": {
         name: "Cap Bonus: Piety",
-        Albion: effectTypes.statCaps.effects.piety,
-        Hibernia: effectTypes.statCaps.effects.piety,
-        Midgard: effectTypes.statCaps.effects.piety
+        Albion: effectTypes.statCaps.effects.pietyCap,
+        Hibernia: effectTypes.statCaps.effects.pietyCap,
+        Midgard: effectTypes.statCaps.effects.pietyCap
     },
     "207": {
         name: "Cap Bonus: Empathy",
-        Albion: effectTypes.statCaps.effects.empathy,
-        Hibernia: effectTypes.statCaps.effects.empathy,
-        Midgard: effectTypes.statCaps.effects.empathy
+        Albion: effectTypes.statCaps.effects.empathyCap,
+        Hibernia: effectTypes.statCaps.effects.empathyCap,
+        Midgard: effectTypes.statCaps.effects.empathyCap
     },
     "208": {
         name: "Cap Bonus: Charisma",
-        Albion: effectTypes.statCaps.effects.charisma,
-        Hibernia: effectTypes.statCaps.effects.charisma,
-        Midgard: effectTypes.statCaps.effects.charisma
+        Albion: effectTypes.statCaps.effects.charismaCap,
+        Hibernia: effectTypes.statCaps.effects.charismaCap,
+        Midgard: effectTypes.statCaps.effects.charismaCap
     },
     "209": {
         name: "Cap Bonus: Acuity",
-        Albion: effectTypes.statCaps.effects.acuity,
-        Hibernia: effectTypes.statCaps.effects.acuity,
-        Midgard: effectTypes.statCaps.effects.acuity
+        Albion: effectTypes.statCaps.effects.acuityCap,
+        Hibernia: effectTypes.statCaps.effects.acuityCap,
+        Midgard: effectTypes.statCaps.effects.acuityCap
     },
     "210": {
         name: "Cap Bonus: Max Health",
-        Albion: effectTypes.statCaps.effects.hits,
-        Hibernia: effectTypes.statCaps.effects.hits,
-        Midgard: effectTypes.statCaps.effects.hits
+        Albion: effectTypes.statCaps.effects.hitsCap,
+        Hibernia: effectTypes.statCaps.effects.hitsCap,
+        Midgard: effectTypes.statCaps.effects.hitsCap
     },
     "211": {
         name: "Cap Bonus: Power Pool",
-        Albion: effectTypes.statCaps.effects.power,
-        Hibernia: effectTypes.statCaps.effects.power,
-        Midgard: effectTypes.statCaps.effects.power
+        Albion: effectTypes.statCaps.effects.powerCap,
+        Hibernia: effectTypes.statCaps.effects.powerCap,
+        Midgard: effectTypes.statCaps.effects.powerCap
     },
     "218": {
         name: "ToA: Spell Level",
@@ -912,57 +912,57 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     },
     "221": {
         name: "Cap Bonus: Body Resist",
-        Albion: effectTypes.resistCaps.effects.body,
-        Hibernia: effectTypes.resistCaps.effects.body,
-        Midgard: effectTypes.resistCaps.effects.body
+        Albion: effectTypes.resistCaps.effects.bodyCap,
+        Hibernia: effectTypes.resistCaps.effects.bodyCap,
+        Midgard: effectTypes.resistCaps.effects.bodyCap
     },
     "222": {
         name: "Cap Bonus: Cold Resist",
-        Albion: effectTypes.resistCaps.effects.cold,
-        Hibernia: effectTypes.resistCaps.effects.cold,
-        Midgard: effectTypes.resistCaps.effects.cold
+        Albion: effectTypes.resistCaps.effects.coldCap,
+        Hibernia: effectTypes.resistCaps.effects.coldCap,
+        Midgard: effectTypes.resistCaps.effects.coldCap
     },
     "223": {
         name: "Cap Bonus: Crush Resist",
-        Albion: effectTypes.resistCaps.effects.crush,
-        Hibernia: effectTypes.resistCaps.effects.crush,
-        Midgard: effectTypes.resistCaps.effects.crush
+        Albion: effectTypes.resistCaps.effects.crushCap,
+        Hibernia: effectTypes.resistCaps.effects.crushCap,
+        Midgard: effectTypes.resistCaps.effects.crushCap
     },
     "224": {
         name: "Cap Bonus: Energy Resist",
-        Albion: effectTypes.resistCaps.effects.energy,
-        Hibernia: effectTypes.resistCaps.effects.energy,
-        Midgard: effectTypes.resistCaps.effects.energy
+        Albion: effectTypes.resistCaps.effects.energyCap,
+        Hibernia: effectTypes.resistCaps.effects.energyCap,
+        Midgard: effectTypes.resistCaps.effects.energyCap
     },
     "225": {
         name: "Cap Bonus: Heat Resist",
-        Albion: effectTypes.resistCaps.effects.heat,
-        Hibernia: effectTypes.resistCaps.effects.heat,
-        Midgard: effectTypes.resistCaps.effects.heat
+        Albion: effectTypes.resistCaps.effects.heatCap,
+        Hibernia: effectTypes.resistCaps.effects.heatCap,
+        Midgard: effectTypes.resistCaps.effects.heatCap
     },
     "226": {
         name: "Cap Bonus: Matter Resist",
-        Albion: effectTypes.resistCaps.effects.matter,
-        Hibernia: effectTypes.resistCaps.effects.matter,
-        Midgard: effectTypes.resistCaps.effects.matter
+        Albion: effectTypes.resistCaps.effects.matterCap,
+        Hibernia: effectTypes.resistCaps.effects.matterCap,
+        Midgard: effectTypes.resistCaps.effects.matterCap
     },
     "227": {
         name: "Cap Bonus: Slash Resist",
-        Albion: effectTypes.resistCaps.effects.slash,
-        Hibernia: effectTypes.resistCaps.effects.slash,
-        Midgard: effectTypes.resistCaps.effects.slash
+        Albion: effectTypes.resistCaps.effects.slashCap,
+        Hibernia: effectTypes.resistCaps.effects.slashCap,
+        Midgard: effectTypes.resistCaps.effects.slashCap
     },
     "228": {
         name: "Cap Bonus: Spirit Resist",
-        Albion: effectTypes.resistCaps.effects.spirit,
-        Hibernia: effectTypes.resistCaps.effects.spirit,
-        Midgard: effectTypes.resistCaps.effects.spirit
+        Albion: effectTypes.resistCaps.effects.spiritCap,
+        Hibernia: effectTypes.resistCaps.effects.spiritCap,
+        Midgard: effectTypes.resistCaps.effects.spiritCap
     },
     "229": {
         name: "Cap Bonus: Thrust Resist",
-        Albion: effectTypes.resistCaps.effects.thrust,
-        Hibernia: effectTypes.resistCaps.effects.thrust,
-        Midgard: effectTypes.resistCaps.effects.thrust
+        Albion: effectTypes.resistCaps.effects.thrustCap,
+        Hibernia: effectTypes.resistCaps.effects.thrustCap,
+        Midgard: effectTypes.resistCaps.effects.thrustCap
     },
     "230": {
         name: "Mythical: DPS",

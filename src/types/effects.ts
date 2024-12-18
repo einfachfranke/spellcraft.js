@@ -12,7 +12,7 @@ export type EffectTypeCode =
     | 'focus'
     | 'bonus'
 
-export type EffectTypeMythStatCode =
+export type EffectTypeStatCode =
     'strength'
     | 'constitution'
     | 'dexterity'
@@ -22,10 +22,32 @@ export type EffectTypeMythStatCode =
     | 'charisma'
     | 'empathy'
     | 'acuity'
-
-export type EffectTypeStatCode = EffectTypeMythStatCode
     | 'hits'
     | 'power'
+
+export type EffectTypeStatCapCode =
+    'strengthCap'
+    | 'constitutionCap'
+    | 'dexterityCap'
+    | 'quicknessCap'
+    | 'intelligenceCap'
+    | 'pietyCap'
+    | 'charismaCap'
+    | 'empathyCap'
+    | 'acuityCap'
+    | 'hitsCap'
+    | 'powerCap'
+
+export type EffectTypeMythStatCode =
+    'strengthMythCap'
+    | 'constitutionMythCap'
+    | 'dexterityMythCap'
+    | 'quicknessMythCap'
+    | 'intelligenceMythCap'
+    | 'pietyMythCap'
+    | 'charismaMythCap'
+    | 'empathyMythCap'
+    | 'acuityMythCap'
 
 type EffectTypeResistCode =
     'crush'
@@ -38,7 +60,18 @@ type EffectTypeResistCode =
     | 'spirit'
     | 'energy'
 
-type EffectTypeSkillCode =
+type EffectTypeResistCapCode =
+    'crushCap'
+    | 'slashCap'
+    | 'thrustCap'
+    | 'heatCap'
+    | 'coldCap'
+    | 'matterCap'
+    | 'bodyCap'
+    | 'spiritCap'
+    | 'energyCap'
+
+export type EffectTypeSkillCode =
     'twoHanded'
     | 'polearm'
     | 'dualWield'
@@ -141,7 +174,7 @@ type EffectTypeSkillCode =
     | 'vampiiricEmbrace'
     | 'dementia'
 
-type EffectTypeFocusCode =
+export type EffectTypeFocusCode =
     'earthMagic'
     | 'coldMagic'
     | 'fireMagic'
@@ -171,7 +204,7 @@ type EffectTypeFocusCode =
     | 'phantasmalWail'
     | 'etherealShriek'
 
-type EffectTypeBonusCode =
+export type EffectTypeBonusCode =
     'armorFactor'
     | 'armorAbsorption'
     | 'blockChance'
@@ -420,10 +453,10 @@ export type EffectCode =
 export type EffectTypes = {
     unused: EffectTypeUnused
     stats: EffectTypeStats
-    statCaps: EffectTypeStats
+    statCaps: EffectTypeStatCaps
     mythStatCaps: EffectTypeMythStatCaps
     resists: EffectTypeResists
-    resistCaps: EffectTypeResists
+    resistCaps: EffectTypeResistCaps
     skills: EffectTypeSkills
     focus: EffectTypeFocus
     bonus: EffectTypeBonus
@@ -450,6 +483,10 @@ type EffectTypeStats = Type & {
     effects: Record<EffectTypeStatCode, Effect>
 }
 
+type EffectTypeStatCaps = Type & {
+    effects: Record<EffectTypeStatCapCode, Effect>
+}
+
 type EffectTypeMythStatCaps = Type & {
     effects: Record<EffectTypeMythStatCode, Effect>
 }
@@ -458,15 +495,19 @@ type EffectTypeResists = Type & {
     effects: Record<EffectTypeResistCode, Effect>
 }
 
-type EffectTypeSkills = Type & {
+type EffectTypeResistCaps = Type & {
+    effects: Record<EffectTypeResistCapCode, Effect>
+}
+
+export type EffectTypeSkills = Type & {
     effects: Record<EffectTypeSkillCode, Effect>
 }
 
-type EffectTypeFocus = Type & {
+export type EffectTypeFocus = Type & {
     effects: Record<EffectTypeFocusCode, Effect>
 }
 
-type EffectTypeBonus = Type & {
+export type EffectTypeBonus = Type & {
     effects: Record<EffectTypeBonusCode, Effect>
 }
 

@@ -1,7 +1,14 @@
 import imbuePoints from "../data/imbuePoints";
 import {effectTypes} from "../data/effects";
 import {Color} from "../data/color";
-import {Effect, EffectType, EffectValue} from "../types/effects";
+import {
+    Effect,
+    EffectType,
+    EffectTypeBonusCode,
+    EffectTypeFocusCode,
+    EffectTypeSkillCode,
+    EffectValue
+} from "../types/effects";
 import {Realm} from "../types/realm";
 import {Weapon} from "../types/weapon";
 import {Quality} from "../types/quality";
@@ -404,7 +411,8 @@ export class ItemManager {
         const activeItem: Item = this.getActiveItem()
 
         this.get().realmClass.effects[option.effectType.code]?.forEach((effect: Effect): void => {
-            if (config.excludeEffects.indexOf(effect.code) !== -1) return
+            const key: EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode = findKey(effect)
+            if (config.excludeEffects.indexOf(key) !== -1) return
             if (activeItem.itemType.isCraftItem && !effect.craft) return
 
             effects.push(effect)
@@ -427,7 +435,8 @@ export class ItemManager {
         const realm: Realm = this.get().realm
 
         Object.values(option.effectType.effects).forEach((effect: Effect): void => {
-            if (config.excludeEffects.indexOf(effect.code) !== -1) return
+            const key: EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode = findKey(effect)
+            if (config.excludeEffects.indexOf(key) !== -1) return
             if (!option.scBonus && activeItem.itemType.isCraftItem && !effect.craft) return
             if (effect.realm.indexOf(realm.name) === -1) return
             if (effects.indexOf(effect) !== -1) return
@@ -441,4 +450,12 @@ export class ItemManager {
     findEffectValues(option: Option): EffectValue[] {
         return Object.values(option.effect.values)
     }
+}
+
+const findKey = (effect: Effect): EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode => {
+    const object = effectTypes[effect.type].effects
+    const keys = Object.keys(object)
+    const index = Object.values(object).indexOf(effect)
+
+    return keys[index] as EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode
 }

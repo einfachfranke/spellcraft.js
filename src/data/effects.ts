@@ -1,4 +1,11 @@
-import {Effect, EffectType, EffectTypes, IncreaseType} from "../types/effects";
+import {
+    Effect,
+    EffectType, EffectTypeBonusCode,
+    EffectTypeFocusCode,
+    EffectTypes,
+    EffectTypeSkillCode,
+    IncreaseType
+} from "../types/effects";
 import {config} from "../config";
 
 export const effectTypes: EffectTypes = {
@@ -827,7 +834,7 @@ export const effectTypes: EffectTypes = {
         craft: false,
         onlyOnItem: [],
         effects: {
-            strength: {
+            strengthCap: {
                 name: 'Strength Cap',
                 code: 'sl',
                 craft: false,
@@ -842,7 +849,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            constitution: {
+            constitutionCap: {
                 name: 'Constitution Cap',
                 code: 'sm',
                 craft: false,
@@ -857,7 +864,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            dexterity: {
+            dexterityCap: {
                 name: 'Dexterity Cap',
                 code: 'sn',
                 craft: false,
@@ -872,7 +879,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            quickness: {
+            quicknessCap: {
                 name: 'Quickness Cap',
                 code: 'so',
                 craft: false,
@@ -887,7 +894,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            acuity: {
+            acuityCap: {
                 name: 'Acuity Cap',
                 code: 'sv',
                 craft: false,
@@ -902,7 +909,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            charisma: {
+            charismaCap: {
                 name: 'Charisma Cap',
                 code: 'sr',
                 craft: false,
@@ -917,7 +924,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            empathy: {
+            empathyCap: {
                 name: 'Empathy Cap',
                 code: 'ss',
                 craft: false,
@@ -932,7 +939,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            intelligence: {
+            intelligenceCap: {
                 name: 'Intelligence Cap',
                 code: 'sp',
                 craft: false,
@@ -947,7 +954,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            piety: {
+            pietyCap: {
                 name: 'Piety Cap',
                 code: 'sq',
                 craft: false,
@@ -962,7 +969,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            hits: {
+            hitsCap: {
                 name: 'Hits Cap',
                 code: 'st',
                 craft: false,
@@ -977,7 +984,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'statCaps'
             },
-            power: {
+            powerCap: {
                 name: 'Power Cap',
                 code: 'su',
                 craft: false,
@@ -1002,7 +1009,7 @@ export const effectTypes: EffectTypes = {
         craft: false,
         onlyOnItem: ['mythical'],
         effects: {
-            strength: {
+            strengthMythCap: {
                 name: 'Strength Cap',
                 code: 'ma',
                 craft: false,
@@ -1017,7 +1024,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            constitution: {
+            constitutionMythCap: {
                 name: 'Constitution Cap',
                 code: 'mb',
                 craft: false,
@@ -1032,7 +1039,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            dexterity: {
+            dexterityMythCap: {
                 name: 'Dexterity Cap',
                 code: 'mc',
                 craft: false,
@@ -1047,7 +1054,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            quickness: {
+            quicknessMythCap: {
                 name: 'Quickness Cap',
                 code: 'md',
                 craft: false,
@@ -1062,7 +1069,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            acuity: {
+            acuityMythCap: {
                 name: 'Acuity Cap',
                 code: 'mi',
                 craft: false,
@@ -1077,7 +1084,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            charisma: {
+            charismaMythCap: {
                 name: 'Charisma Cap',
                 code: 'mg',
                 craft: false,
@@ -1092,7 +1099,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            empathy: {
+            empathyMythCap: {
                 name: 'Empathy Cap',
                 code: 'mh',
                 craft: false,
@@ -1107,7 +1114,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            intelligence: {
+            intelligenceMythCap: {
                 name: 'Intelligence Cap',
                 code: 'me',
                 craft: false,
@@ -1122,7 +1129,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'mythStatCaps'
             },
-            piety: {
+            pietyMythCap: {
                 name: 'Piety Cap',
                 code: 'mf',
                 craft: false,
@@ -1841,7 +1848,7 @@ export const effectTypes: EffectTypes = {
         craft: false,
         onlyOnItem: [],
         effects: {
-            crush: {
+            crushCap: {
                 name: 'Crush Cap',
                 code: 'rj',
                 craft: false,
@@ -1856,7 +1863,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            slash: {
+            slashCap: {
                 name: 'Slash Cap',
                 code: 'rk',
                 craft: false,
@@ -1871,7 +1878,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            thrust: {
+            thrustCap: {
                 name: 'Thrust Cap',
                 code: 'rl',
                 craft: false,
@@ -1886,7 +1893,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            heat: {
+            heatCap: {
                 name: 'Heat Cap',
                 code: 'rm',
                 craft: false,
@@ -1901,7 +1908,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            cold: {
+            coldCap: {
                 name: 'Cold Cap',
                 code: 'rn',
                 craft: false,
@@ -1916,7 +1923,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            matter: {
+            matterCap: {
                 name: 'Matter Cap',
                 code: 'ro',
                 craft: false,
@@ -1931,7 +1938,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            body: {
+            bodyCap: {
                 name: 'Body Cap',
                 code: 'rp',
                 craft: false,
@@ -1946,7 +1953,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            spirit: {
+            spiritCap: {
                 name: 'Spirit Cap',
                 code: 'rq',
                 craft: false,
@@ -1961,7 +1968,7 @@ export const effectTypes: EffectTypes = {
                 values: {},
                 type: 'resistCaps'
             },
-            energy: {
+            energyCap: {
                 name: 'Energy Cap',
                 code: 'rr',
                 craft: false,
@@ -11651,8 +11658,8 @@ export const effectTypes: EffectTypes = {
 export const effectByCode: Record<string, Effect> = {}
 Object.values(effectTypes).forEach((effectType: EffectType): void => {
     if (config.excludeEffectTypes.indexOf(effectType.code) !== -1) return
-    Object.values(effectType.effects).forEach((effect: Effect): void => {
-        if (config.excludeEffects.indexOf(effect.code) !== -1) return
+    Object.entries(effectType.effects).forEach(([code, effect]): void => {
+        if (config.excludeEffects.indexOf(code as EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode) !== -1) return
         effectByCode[effect.code] = effect
     })
 })
@@ -11888,7 +11895,7 @@ effectTypes.stats.effects.acuity.increase = {
     }
 }
 
-effectTypes.statCaps.effects.strength.increase = {
+effectTypes.statCaps.effects.strengthCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11902,7 +11909,7 @@ effectTypes.statCaps.effects.strength.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.constitution.increase = {
+effectTypes.statCaps.effects.constitutionCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11916,7 +11923,7 @@ effectTypes.statCaps.effects.constitution.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.dexterity.increase = {
+effectTypes.statCaps.effects.dexterityCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11930,7 +11937,7 @@ effectTypes.statCaps.effects.dexterity.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.quickness.increase = {
+effectTypes.statCaps.effects.quicknessCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11944,7 +11951,7 @@ effectTypes.statCaps.effects.quickness.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.intelligence.increase = {
+effectTypes.statCaps.effects.intelligenceCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11958,7 +11965,7 @@ effectTypes.statCaps.effects.intelligence.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.piety.increase = {
+effectTypes.statCaps.effects.pietyCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11972,7 +11979,7 @@ effectTypes.statCaps.effects.piety.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.charisma.increase = {
+effectTypes.statCaps.effects.charismaCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -11986,7 +11993,7 @@ effectTypes.statCaps.effects.charisma.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.empathy.increase = {
+effectTypes.statCaps.effects.empathyCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12000,7 +12007,7 @@ effectTypes.statCaps.effects.empathy.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.acuity.increase = {
+effectTypes.statCaps.effects.acuityCap.increase = {
     type: IncreaseType.acuityCap,
     realm: {Albion: [
             effectTypes.stats.effects.acuity
@@ -12010,56 +12017,56 @@ effectTypes.statCaps.effects.acuity.increase = {
             effectTypes.stats.effects.acuity
         ]},
     realmClass: {
-        Armsman: effectTypes.statCaps.effects.acuity,
-        Cabalist: effectTypes.statCaps.effects.intelligence,
-        Cleric: effectTypes.statCaps.effects.piety,
-        Friar: effectTypes.statCaps.effects.piety,
-        Heretic: effectTypes.statCaps.effects.piety,
-        Infiltrator: effectTypes.statCaps.effects.acuity,
-        Mercenary: effectTypes.statCaps.effects.acuity,
-        Minstrel: effectTypes.statCaps.effects.charisma,
-        Necromancer: effectTypes.statCaps.effects.intelligence,
-        Paladin: effectTypes.statCaps.effects.piety,
-        Reaver: effectTypes.statCaps.effects.piety,
-        Scout: effectTypes.statCaps.effects.acuity,
-        Sorcerer: effectTypes.statCaps.effects.intelligence,
-        Theurgist: effectTypes.statCaps.effects.intelligence,
-        Wizard: effectTypes.statCaps.effects.intelligence,
+        Armsman: effectTypes.statCaps.effects.acuityCap,
+        Cabalist: effectTypes.statCaps.effects.intelligenceCap,
+        Cleric: effectTypes.statCaps.effects.pietyCap,
+        Friar: effectTypes.statCaps.effects.pietyCap,
+        Heretic: effectTypes.statCaps.effects.pietyCap,
+        Infiltrator: effectTypes.statCaps.effects.acuityCap,
+        Mercenary: effectTypes.statCaps.effects.acuityCap,
+        Minstrel: effectTypes.statCaps.effects.charismaCap,
+        Necromancer: effectTypes.statCaps.effects.intelligenceCap,
+        Paladin: effectTypes.statCaps.effects.pietyCap,
+        Reaver: effectTypes.statCaps.effects.pietyCap,
+        Scout: effectTypes.statCaps.effects.acuityCap,
+        Sorcerer: effectTypes.statCaps.effects.intelligenceCap,
+        Theurgist: effectTypes.statCaps.effects.intelligenceCap,
+        Wizard: effectTypes.statCaps.effects.intelligenceCap,
 
-        Animist: effectTypes.statCaps.effects.intelligence,
-        Bainshee: effectTypes.statCaps.effects.intelligence,
-        Bard: effectTypes.statCaps.effects.charisma,
-        Blademaster: effectTypes.statCaps.effects.acuity,
-        Champion: effectTypes.statCaps.effects.intelligence,
-        Druid: effectTypes.statCaps.effects.empathy,
-        Eldritch: effectTypes.statCaps.effects.intelligence,
-        Enchanter: effectTypes.statCaps.effects.intelligence,
-        Hero: effectTypes.statCaps.effects.acuity,
-        Mentalist: effectTypes.statCaps.effects.intelligence,
-        Nightshade: effectTypes.statCaps.effects.intelligence,
-        Ranger: effectTypes.statCaps.effects.acuity,
-        Valewalker: effectTypes.statCaps.effects.intelligence,
-        Vampiir: effectTypes.statCaps.effects.acuity,
-        Warden: effectTypes.statCaps.effects.empathy,
+        Animist: effectTypes.statCaps.effects.intelligenceCap,
+        Bainshee: effectTypes.statCaps.effects.intelligenceCap,
+        Bard: effectTypes.statCaps.effects.charismaCap,
+        Blademaster: effectTypes.statCaps.effects.acuityCap,
+        Champion: effectTypes.statCaps.effects.intelligenceCap,
+        Druid: effectTypes.statCaps.effects.empathyCap,
+        Eldritch: effectTypes.statCaps.effects.intelligenceCap,
+        Enchanter: effectTypes.statCaps.effects.intelligenceCap,
+        Hero: effectTypes.statCaps.effects.acuityCap,
+        Mentalist: effectTypes.statCaps.effects.intelligenceCap,
+        Nightshade: effectTypes.statCaps.effects.intelligenceCap,
+        Ranger: effectTypes.statCaps.effects.acuityCap,
+        Valewalker: effectTypes.statCaps.effects.intelligenceCap,
+        Vampiir: effectTypes.statCaps.effects.acuityCap,
+        Warden: effectTypes.statCaps.effects.empathyCap,
 
-        Berserker: effectTypes.statCaps.effects.acuity,
-        Bonedancer: effectTypes.statCaps.effects.piety,
-        Healer: effectTypes.statCaps.effects.intelligence,
-        Hunter: effectTypes.statCaps.effects.acuity,
-        Runemaster: effectTypes.statCaps.effects.piety,
-        Savage: effectTypes.statCaps.effects.acuity,
-        Shadowblade: effectTypes.statCaps.effects.acuity,
-        Shaman: effectTypes.statCaps.effects.piety,
-        Skald: effectTypes.statCaps.effects.charisma,
-        Spiritmaster: effectTypes.statCaps.effects.piety,
-        Thane: effectTypes.statCaps.effects.piety,
-        Valkyrie: effectTypes.statCaps.effects.piety,
-        Warrior: effectTypes.statCaps.effects.acuity,
+        Berserker: effectTypes.statCaps.effects.acuityCap,
+        Bonedancer: effectTypes.statCaps.effects.pietyCap,
+        Healer: effectTypes.statCaps.effects.intelligenceCap,
+        Hunter: effectTypes.statCaps.effects.acuityCap,
+        Runemaster: effectTypes.statCaps.effects.pietyCap,
+        Savage: effectTypes.statCaps.effects.acuityCap,
+        Shadowblade: effectTypes.statCaps.effects.acuityCap,
+        Shaman: effectTypes.statCaps.effects.pietyCap,
+        Skald: effectTypes.statCaps.effects.charismaCap,
+        Spiritmaster: effectTypes.statCaps.effects.pietyCap,
+        Thane: effectTypes.statCaps.effects.pietyCap,
+        Valkyrie: effectTypes.statCaps.effects.pietyCap,
+        Warrior: effectTypes.statCaps.effects.acuityCap,
 
-        Mauler: effectTypes.statCaps.effects.acuity
+        Mauler: effectTypes.statCaps.effects.acuityCap
     }
 }
-effectTypes.statCaps.effects.hits.increase = {
+effectTypes.statCaps.effects.hitsCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12073,7 +12080,7 @@ effectTypes.statCaps.effects.hits.increase = {
         ],
     }
 }
-effectTypes.statCaps.effects.power.increase = {
+effectTypes.statCaps.effects.powerCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12088,7 +12095,7 @@ effectTypes.statCaps.effects.power.increase = {
     }
 }
 
-effectTypes.mythStatCaps.effects.strength.increase = {
+effectTypes.mythStatCaps.effects.strengthMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12102,7 +12109,7 @@ effectTypes.mythStatCaps.effects.strength.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.constitution.increase = {
+effectTypes.mythStatCaps.effects.constitutionMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12116,7 +12123,7 @@ effectTypes.mythStatCaps.effects.constitution.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.dexterity.increase = {
+effectTypes.mythStatCaps.effects.dexterityMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12130,7 +12137,7 @@ effectTypes.mythStatCaps.effects.dexterity.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.quickness.increase = {
+effectTypes.mythStatCaps.effects.quicknessMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12144,7 +12151,7 @@ effectTypes.mythStatCaps.effects.quickness.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.intelligence.increase = {
+effectTypes.mythStatCaps.effects.intelligenceMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12158,7 +12165,7 @@ effectTypes.mythStatCaps.effects.intelligence.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.piety.increase = {
+effectTypes.mythStatCaps.effects.pietyMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12172,7 +12179,7 @@ effectTypes.mythStatCaps.effects.piety.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.charisma.increase = {
+effectTypes.mythStatCaps.effects.charismaMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12186,7 +12193,7 @@ effectTypes.mythStatCaps.effects.charisma.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.empathy.increase = {
+effectTypes.mythStatCaps.effects.empathyMythCap.increase = {
     type: IncreaseType.mythCap,
     realm: {
         Albion: [
@@ -12200,7 +12207,7 @@ effectTypes.mythStatCaps.effects.empathy.increase = {
         ],
     }
 }
-effectTypes.mythStatCaps.effects.acuity.increase = {
+effectTypes.mythStatCaps.effects.acuityMythCap.increase = {
     type: IncreaseType.mythAcuityCap,
     realm: {
         Albion: [
@@ -12212,57 +12219,57 @@ effectTypes.mythStatCaps.effects.acuity.increase = {
         ]
     },
     realmClass: {
-        Armsman: effectTypes.statCaps.effects.acuity,
-        Cabalist: effectTypes.statCaps.effects.intelligence,
-        Cleric: effectTypes.statCaps.effects.piety,
-        Friar: effectTypes.statCaps.effects.piety,
-        Heretic: effectTypes.statCaps.effects.piety,
-        Infiltrator: effectTypes.statCaps.effects.acuity,
-        Mercenary: effectTypes.statCaps.effects.acuity,
-        Minstrel: effectTypes.statCaps.effects.charisma,
-        Necromancer: effectTypes.statCaps.effects.intelligence,
-        Paladin: effectTypes.statCaps.effects.piety,
-        Reaver: effectTypes.statCaps.effects.piety,
-        Scout: effectTypes.statCaps.effects.acuity,
-        Sorcerer: effectTypes.statCaps.effects.intelligence,
-        Theurgist: effectTypes.statCaps.effects.intelligence,
-        Wizard: effectTypes.statCaps.effects.intelligence,
+        Armsman: effectTypes.statCaps.effects.acuityCap,
+        Cabalist: effectTypes.statCaps.effects.intelligenceCap,
+        Cleric: effectTypes.statCaps.effects.pietyCap,
+        Friar: effectTypes.statCaps.effects.pietyCap,
+        Heretic: effectTypes.statCaps.effects.pietyCap,
+        Infiltrator: effectTypes.statCaps.effects.acuityCap,
+        Mercenary: effectTypes.statCaps.effects.acuityCap,
+        Minstrel: effectTypes.statCaps.effects.charismaCap,
+        Necromancer: effectTypes.statCaps.effects.intelligenceCap,
+        Paladin: effectTypes.statCaps.effects.pietyCap,
+        Reaver: effectTypes.statCaps.effects.pietyCap,
+        Scout: effectTypes.statCaps.effects.acuityCap,
+        Sorcerer: effectTypes.statCaps.effects.intelligenceCap,
+        Theurgist: effectTypes.statCaps.effects.intelligenceCap,
+        Wizard: effectTypes.statCaps.effects.intelligenceCap,
 
-        Animist: effectTypes.statCaps.effects.intelligence,
-        Bainshee: effectTypes.statCaps.effects.intelligence,
-        Bard: effectTypes.statCaps.effects.charisma,
-        Blademaster: effectTypes.statCaps.effects.acuity,
-        Champion: effectTypes.statCaps.effects.intelligence,
-        Druid: effectTypes.statCaps.effects.empathy,
-        Eldritch: effectTypes.statCaps.effects.intelligence,
-        Enchanter: effectTypes.statCaps.effects.intelligence,
-        Hero: effectTypes.statCaps.effects.acuity,
-        Mentalist: effectTypes.statCaps.effects.intelligence,
-        Nightshade: effectTypes.statCaps.effects.intelligence,
-        Ranger: effectTypes.statCaps.effects.acuity,
-        Valewalker: effectTypes.statCaps.effects.intelligence,
-        Vampiir: effectTypes.statCaps.effects.acuity,
-        Warden: effectTypes.statCaps.effects.empathy,
+        Animist: effectTypes.statCaps.effects.intelligenceCap,
+        Bainshee: effectTypes.statCaps.effects.intelligenceCap,
+        Bard: effectTypes.statCaps.effects.charismaCap,
+        Blademaster: effectTypes.statCaps.effects.acuityCap,
+        Champion: effectTypes.statCaps.effects.intelligenceCap,
+        Druid: effectTypes.statCaps.effects.empathyCap,
+        Eldritch: effectTypes.statCaps.effects.intelligenceCap,
+        Enchanter: effectTypes.statCaps.effects.intelligenceCap,
+        Hero: effectTypes.statCaps.effects.acuityCap,
+        Mentalist: effectTypes.statCaps.effects.intelligenceCap,
+        Nightshade: effectTypes.statCaps.effects.intelligenceCap,
+        Ranger: effectTypes.statCaps.effects.acuityCap,
+        Valewalker: effectTypes.statCaps.effects.intelligenceCap,
+        Vampiir: effectTypes.statCaps.effects.acuityCap,
+        Warden: effectTypes.statCaps.effects.empathyCap,
 
-        Berserker: effectTypes.statCaps.effects.acuity,
-        Bonedancer: effectTypes.statCaps.effects.piety,
-        Healer: effectTypes.statCaps.effects.intelligence,
-        Hunter: effectTypes.statCaps.effects.acuity,
-        Runemaster: effectTypes.statCaps.effects.piety,
-        Savage: effectTypes.statCaps.effects.acuity,
-        Shadowblade: effectTypes.statCaps.effects.acuity,
-        Shaman: effectTypes.statCaps.effects.piety,
-        Skald: effectTypes.statCaps.effects.charisma,
-        Spiritmaster: effectTypes.statCaps.effects.piety,
-        Thane: effectTypes.statCaps.effects.piety,
-        Valkyrie: effectTypes.statCaps.effects.piety,
-        Warrior: effectTypes.statCaps.effects.acuity,
+        Berserker: effectTypes.statCaps.effects.acuityCap,
+        Bonedancer: effectTypes.statCaps.effects.pietyCap,
+        Healer: effectTypes.statCaps.effects.intelligenceCap,
+        Hunter: effectTypes.statCaps.effects.acuityCap,
+        Runemaster: effectTypes.statCaps.effects.pietyCap,
+        Savage: effectTypes.statCaps.effects.acuityCap,
+        Shadowblade: effectTypes.statCaps.effects.acuityCap,
+        Shaman: effectTypes.statCaps.effects.pietyCap,
+        Skald: effectTypes.statCaps.effects.charismaCap,
+        Spiritmaster: effectTypes.statCaps.effects.pietyCap,
+        Thane: effectTypes.statCaps.effects.pietyCap,
+        Valkyrie: effectTypes.statCaps.effects.pietyCap,
+        Warrior: effectTypes.statCaps.effects.acuityCap,
 
-        Mauler: effectTypes.statCaps.effects.acuity
+        Mauler: effectTypes.statCaps.effects.acuityCap
     }
 }
 
-effectTypes.resistCaps.effects.crush.increase = {
+effectTypes.resistCaps.effects.crushCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12276,7 +12283,7 @@ effectTypes.resistCaps.effects.crush.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.slash.increase = {
+effectTypes.resistCaps.effects.slashCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12290,7 +12297,7 @@ effectTypes.resistCaps.effects.slash.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.thrust.increase = {
+effectTypes.resistCaps.effects.thrustCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12304,7 +12311,7 @@ effectTypes.resistCaps.effects.thrust.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.heat.increase = {
+effectTypes.resistCaps.effects.heatCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12318,7 +12325,7 @@ effectTypes.resistCaps.effects.heat.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.cold.increase = {
+effectTypes.resistCaps.effects.coldCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12332,7 +12339,7 @@ effectTypes.resistCaps.effects.cold.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.matter.increase = {
+effectTypes.resistCaps.effects.matterCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12346,7 +12353,7 @@ effectTypes.resistCaps.effects.matter.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.body.increase = {
+effectTypes.resistCaps.effects.bodyCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12360,7 +12367,7 @@ effectTypes.resistCaps.effects.body.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.spirit.increase = {
+effectTypes.resistCaps.effects.spiritCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
@@ -12374,7 +12381,7 @@ effectTypes.resistCaps.effects.spirit.increase = {
         ],
     }
 }
-effectTypes.resistCaps.effects.energy.increase = {
+effectTypes.resistCaps.effects.energyCap.increase = {
     type: IncreaseType.cap,
     realm: {
         Albion: [
