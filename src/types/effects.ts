@@ -449,6 +449,7 @@ export type EffectCode =
     | 'xn'
     | 'xo'
 
+export type ExcludableEffectSkillCode = EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode
 
 export type EffectTypes = {
     unused: EffectTypeUnused
@@ -499,15 +500,15 @@ type EffectTypeResistCaps = Type & {
     effects: Record<EffectTypeResistCapCode, Effect>
 }
 
-export type EffectTypeSkills = Type & {
+type EffectTypeSkills = Type & {
     effects: Record<EffectTypeSkillCode, Effect>
 }
 
-export type EffectTypeFocus = Type & {
+type EffectTypeFocus = Type & {
     effects: Record<EffectTypeFocusCode, Effect>
 }
 
-export type EffectTypeBonus = Type & {
+type EffectTypeBonus = Type & {
     effects: Record<EffectTypeBonusCode, Effect>
 }
 

@@ -3,7 +3,7 @@ import {
     EffectTypeBonusCode,
     EffectTypeCode,
     EffectTypeFocusCode,
-    EffectTypeSkillCode,
+    EffectTypeSkillCode, ExcludableEffectSkillCode,
 } from "./effects";
 import {RaceCode} from "../data/race";
 
@@ -15,7 +15,7 @@ export type Config = {
     useArcheryAsSkillName: boolean
     useEdenImport: boolean
     excludeEffectTypes: EffectTypeCode[]
-    excludeEffects: Array<EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode>
+    excludeEffects: Array<ExcludableEffectSkillCode>
     excludeClasses: RealmClassName[]
     excludeRaces: RaceCode[]
 }

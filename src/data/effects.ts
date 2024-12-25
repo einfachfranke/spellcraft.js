@@ -1,9 +1,8 @@
 import {
     Effect,
-    EffectType, EffectTypeBonusCode,
-    EffectTypeFocusCode,
+    EffectType,
     EffectTypes,
-    EffectTypeSkillCode,
+    ExcludableEffectSkillCode,
     IncreaseType
 } from "../types/effects";
 import {config} from "../config";
@@ -11659,7 +11658,7 @@ export const effectByCode: Record<string, Effect> = {}
 Object.values(effectTypes).forEach((effectType: EffectType): void => {
     if (config.excludeEffectTypes.indexOf(effectType.code) !== -1) return
     Object.entries(effectType.effects).forEach(([code, effect]): void => {
-        if (config.excludeEffects.indexOf(code as EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode) !== -1) return
+        if (config.excludeEffects.indexOf(code as ExcludableEffectSkillCode) !== -1) return
         effectByCode[effect.code] = effect
     })
 })

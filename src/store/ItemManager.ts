@@ -7,7 +7,7 @@ import {
     EffectTypeBonusCode,
     EffectTypeFocusCode,
     EffectTypeSkillCode,
-    EffectValue
+    EffectValue, ExcludableEffectSkillCode
 } from "../types/effects";
 import {Realm} from "../types/realm";
 import {Weapon} from "../types/weapon";
@@ -411,7 +411,7 @@ export class ItemManager {
         const activeItem: Item = this.getActiveItem()
 
         this.get().realmClass.effects[option.effectType.code]?.forEach((effect: Effect): void => {
-            const key: EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode = findKey(effect)
+            const key: ExcludableEffectSkillCode = findKey(effect)
             if (config.excludeEffects.indexOf(key) !== -1) return
             if (activeItem.itemType.isCraftItem && !effect.craft) return
 
@@ -435,7 +435,7 @@ export class ItemManager {
         const realm: Realm = this.get().realm
 
         Object.values(option.effectType.effects).forEach((effect: Effect): void => {
-            const key: EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode = findKey(effect)
+            const key: ExcludableEffectSkillCode = findKey(effect)
             if (config.excludeEffects.indexOf(key) !== -1) return
             if (!option.scBonus && activeItem.itemType.isCraftItem && !effect.craft) return
             if (effect.realm.indexOf(realm.name) === -1) return
@@ -452,10 +452,10 @@ export class ItemManager {
     }
 }
 
-const findKey = (effect: Effect): EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode => {
+const findKey: (effect: Effect) => ExcludableEffectSkillCode = (effect: Effect): ExcludableEffectSkillCode => {
     const object = effectTypes[effect.type].effects
-    const keys = Object.keys(object)
-    const index = Object.values(object).indexOf(effect)
+    const keys: string[] = Object.keys(object)
+    const index: number = Object.values(object).indexOf(effect)
 
-    return keys[index] as EffectTypeSkillCode | EffectTypeFocusCode | EffectTypeBonusCode
+    return keys[index] as ExcludableEffectSkillCode
 }
