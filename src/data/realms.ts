@@ -502,6 +502,58 @@ export const realms: Realm[] = [
                 }
             },
             {
+                name: 'Occultist',
+                defaultWeapons: weapon.twoHand,
+                races: [
+                    race.none,
+                    race.briton,
+                    race.inconnu,
+                    race.saracen,
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.intelligence,
+                        effectTypes.stats.effects.acuity,
+                        effectTypes.stats.effects.hits,
+                        effectTypes.stats.effects.power,
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strengthCap,
+                        effectTypes.statCaps.effects.constitutionCap,
+                        effectTypes.statCaps.effects.dexterityCap,
+                        effectTypes.statCaps.effects.intelligenceCap,
+                        effectTypes.statCaps.effects.acuityCap,
+                        effectTypes.statCaps.effects.hitsCap,
+                        effectTypes.statCaps.effects.powerCap,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strengthMythCap,
+                        effectTypes.mythStatCaps.effects.constitutionMythCap,
+                        effectTypes.mythStatCaps.effects.dexterityMythCap,
+                        effectTypes.mythStatCaps.effects.intelligenceMythCap,
+                        effectTypes.mythStatCaps.effects.acuityMythCap
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.deathsight,
+                        effectTypes.skills.effects.deathServant,
+                        effectTypes.skills.effects.painworking,
+                        effectTypes.skills.effects.allMagicAlbion,
+                    ],
+                    focus: [
+                        effectTypes.focus.effects.deathsight,
+                        effectTypes.focus.effects.deathservant,
+                        effectTypes.focus.effects.painworking,
+                        effectTypes.focus.effects.allFocus,
+                    ],
+                    bonus: bonus,
+                }
+            },
+            {
                 name: 'Paladin',
                 defaultWeapons: weapon.rightAndLeftHand,
                 races: [
@@ -1519,6 +1571,7 @@ export const realms: Realm[] = [
                 races: [
                     race.none,
                     race.celt,
+                    race.elf,
                     race.lurikeen,
                     race.shar
                 ],
@@ -2249,6 +2302,55 @@ export const realms: Realm[] = [
                         effectTypes.skills.effects.odinsWill,
                         effectTypes.skills.effects.allMeleeMidgard,
                         effectTypes.skills.effects.allMagicMidgard,
+                    ],
+                    bonus: bonus
+                }
+            },
+            {
+                name: 'Warlock',
+                defaultWeapons: weapon.twoHand,
+                races: [
+                    race.none,
+                    race.kobold,
+                    race.norseman,
+                    race.frostalf
+                ],
+                effects: {
+                    stats: [
+                        effectTypes.stats.effects.strength,
+                        effectTypes.stats.effects.constitution,
+                        effectTypes.stats.effects.dexterity,
+                        effectTypes.stats.effects.piety,
+                        effectTypes.stats.effects.acuity,
+                        effectTypes.stats.effects.hits,
+                        effectTypes.stats.effects.power,
+                    ],
+                    statCaps: [
+                        effectTypes.statCaps.effects.strengthCap,
+                        effectTypes.statCaps.effects.constitutionCap,
+                        effectTypes.statCaps.effects.dexterityCap,
+                        effectTypes.statCaps.effects.pietyCap,
+                        effectTypes.statCaps.effects.acuityCap,
+                        effectTypes.statCaps.effects.hitsCap,
+                        effectTypes.statCaps.effects.powerCap,
+                    ],
+                    mythStatCaps: [
+                        effectTypes.mythStatCaps.effects.strengthMythCap,
+                        effectTypes.mythStatCaps.effects.constitutionMythCap,
+                        effectTypes.mythStatCaps.effects.dexterityMythCap,
+                        effectTypes.mythStatCaps.effects.pietyMythCap,
+                        effectTypes.mythStatCaps.effects.acuityMythCap
+                    ],
+                    resists: resists,
+                    resistCaps: resistCaps,
+                    skills: [
+                        effectTypes.skills.effects.cursing,
+                        effectTypes.skills.effects.hexing,
+                        effectTypes.skills.effects.witchcraft,
+                        effectTypes.skills.effects.allMagicMidgard,
+                    ],
+                    focus: [
+                        effectTypes.focus.effects.cursing,
                     ],
                     bonus: bonus
                 }

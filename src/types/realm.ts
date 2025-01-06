@@ -17,6 +17,7 @@ export type RealmClassName =
     | 'Mercenary'
     | 'Minstrel'
     | 'Necromancer'
+    | 'Occultist'
     | 'Paladin'
     | 'Reaver'
     | 'Scout'
@@ -50,6 +51,7 @@ export type RealmClassName =
     | 'Spiritmaster'
     | 'Thane'
     | 'Valkyrie'
+    | 'Warlock'
     | 'Warrior'
 
 export type Realm = {

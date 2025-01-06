@@ -64,23 +64,17 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: effectTypes.stats.effects.charisma,
         Midgard: effectTypes.stats.effects.charisma
     },
-    "156": {
-        name: "Stat: Acuity",
-        Albion: effectTypes.stats.effects.acuity,
-        Hibernia: effectTypes.stats.effects.acuity,
-        Midgard: effectTypes.stats.effects.acuity
+    "9": {
+        name: "Stat: Mana",
+        Albion: effectTypes.stats.effects.power,
+        Hibernia: effectTypes.stats.effects.power,
+        Midgard: effectTypes.stats.effects.power
     },
     "10": {
         name: "Stat: Health",
         Albion: effectTypes.stats.effects.hits,
         Hibernia: effectTypes.stats.effects.hits,
         Midgard: effectTypes.stats.effects.hits
-    },
-    "9": {
-        name: "Stat: Mana",
-        Albion: effectTypes.stats.effects.power,
-        Hibernia: effectTypes.stats.effects.power,
-        Midgard: effectTypes.stats.effects.power
     },
     "11": {
         name: "Resist: Body",
@@ -136,9 +130,9 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: effectTypes.resists.effects.thrust,
         Midgard: effectTypes.resists.effects.thrust
     },
-    "116": {
-        name: "Resist: Essence",
-        Albion: undefined,
+    "20": {
+        name: "Two Handed",
+        Albion: effectTypes.skills.effects.twoHanded,
         Hibernia: undefined,
         Midgard: undefined
     },
@@ -151,6 +145,42 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
     "22": {
         name: "Magic: Chants",
         Albion: effectTypes.skills.effects.chants,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "23": {
+        name: "Melee: Critical Strike",
+        Albion: effectTypes.skills.effects.criticalStrike,
+        Hibernia: effectTypes.skills.effects.criticalStrike,
+        Midgard: effectTypes.skills.effects.criticalStrike
+    },
+    "24": {
+        name: "Melee: Crossbow",
+        Albion: effectTypes.skills.effects.crossbow,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "25": {
+        name: "Melee: Crushing",
+        Albion: effectTypes.skills.effects.crushing,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "26": {
+        name: "Magic: Death Servant",
+        Albion: effectTypes.skills.effects.deathServant,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "27": {
+        name: "Magic: Deathsight",
+        Albion: effectTypes.skills.effects.deathsight,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "28": {
+        name: "Melee: Dual Wield",
+        Albion: effectTypes.skills.effects.dualWield,
         Hibernia: undefined,
         Midgard: undefined
     },
@@ -178,6 +208,12 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: undefined,
         Midgard: undefined
     },
+    "33": {
+        name: "Melee: Flexible Weapon",
+        Albion: effectTypes.skills.effects.flexible,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
     "34": {
         name: "Magic: Cold",
         Albion: effectTypes.skills.effects.coldMagic,
@@ -189,6 +225,12 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Albion: effectTypes.skills.effects.instruments,
         Hibernia: effectTypes.skills.effects.instruments,
         Midgard: effectTypes.skills.effects.instruments
+    },
+    "36": {
+        name: "Melee: Longbow",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: undefined
     },
     "37": {
         name: "Magic: Matter",
@@ -208,33 +250,33 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: undefined,
         Midgard: undefined
     },
-    "26": {
-        name: "Magic: Death Servant",
-        Albion: effectTypes.skills.effects.deathServant,
+    "40": {
+        name: "Melee: Parry",
+        Albion: effectTypes.skills.effects.parry,
+        Hibernia: effectTypes.skills.effects.parry,
+        Midgard: effectTypes.skills.effects.parry
+    },
+    "41": {
+        name: "Melee: Polearm",
+        Albion: effectTypes.skills.effects.polearm,
         Hibernia: undefined,
         Midgard: undefined
-    },
-    "27": {
-        name: "Magic: Deathsight",
-        Albion: effectTypes.skills.effects.deathsight,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "57": {
-        name: "Magic: Mending",
-        Albion: undefined,
-        Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.mending
-    },
-    "58": {
-        name: "Magic: Augmentation",
-        Albion: undefined,
-        Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.augmentation
     },
     "42": {
         name: "Magic: Rejuvenation",
         Albion: effectTypes.skills.effects.rejuvenation,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "43": {
+        name: "Melee: Shield",
+        Albion: effectTypes.skills.effects.shield,
+        Hibernia: effectTypes.skills.effects.shield,
+        Midgard: effectTypes.skills.effects.shield
+    },
+    "44": {
+        name: "Melee: Slashing",
+        Albion: effectTypes.skills.effects.slashing,
         Hibernia: undefined,
         Midgard: undefined
     },
@@ -256,11 +298,71 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: undefined,
         Midgard: undefined
     },
+    "48": {
+        name: "Melee: Staff",
+        Albion: effectTypes.skills.effects.staff,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "49": {
+        name: "Magic: Stealth",
+        Albion: effectTypes.skills.effects.stealth,
+        Hibernia: effectTypes.skills.effects.stealth,
+        Midgard: effectTypes.skills.effects.stealth
+    },
+    "50": {
+        name: "Melee: Thrusting",
+        Albion: effectTypes.skills.effects.thrusting,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
     "51": {
         name: "Magic: Wind",
         Albion: effectTypes.skills.effects.windMagic,
         Hibernia: undefined,
         Midgard: undefined
+    },
+    "52": {
+        name: "Melee: Sword",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.sword
+    },
+    "53": {
+        name: "Melee: Hammer",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.hammer
+    },
+    "54": {
+        name: "Melee: Axe",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.axe
+    },
+    "55": {
+        name: "Melee: Left Axe",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.leftAxe
+    },
+    "56": {
+        name: "Melee: Spear",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.spear
+    },
+    "57": {
+        name: "Magic: Mending",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.mending
+    },
+    "58": {
+        name: "Magic: Augmentation",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.augmentation
     },
     "60": {
         name: "Magic: Darkness",
@@ -322,6 +424,30 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: effectTypes.skills.effects.enchantments,
         Midgard: undefined
     },
+    "72": {
+        name: "Melee: Blade",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.blades,
+        Midgard: undefined
+    },
+    "73": {
+        name: "Melee: Blunt",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.blunt,
+        Midgard: undefined
+    },
+    "74": {
+        name: "Melee: Piercing",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.piercing,
+        Midgard: undefined
+    },
+    "75": {
+        name: "Melee: Large Weapon",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.largeWeapons,
+        Midgard: undefined
+    },
     "76": {
         name: "Magic: Mentalism",
         Albion: undefined,
@@ -350,6 +476,24 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         name: "Magic: Music",
         Albion: undefined,
         Hibernia: effectTypes.skills.effects.music,
+        Midgard: undefined
+    },
+    "81": {
+        name: "Melee: Celtic Dual",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.celticDual,
+        Midgard: undefined
+    },
+    "82": {
+        name: "Melee: Celtic Spear",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.celticSpear,
+        Midgard: undefined
+    },
+    "83": {
+        name: "Melee: Recurved Bow",
+        Albion: undefined,
+        Hibernia: undefined,
         Midgard: undefined
     },
     "84": {
@@ -388,6 +532,30 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: effectTypes.skills.effects.arborealPath,
         Midgard: undefined
     },
+    "90": {
+        name: "Melee: Scythe",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.scythe,
+        Midgard: undefined
+    },
+    "91": {
+        name: "Melee: Thrown Weapon",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.thrownWeapons
+    },
+    "92": {
+        name: "Melee: Hand to Hand",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: effectTypes.skills.effects.handToHand
+    },
+    "93": {
+        name: "Melee: Short Bow",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
     "94": {
         name: "Magic: Pacification",
         Albion: undefined,
@@ -418,188 +586,80 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Hibernia: undefined,
         Midgard: effectTypes.skills.effects.summoning
     },
-    "49": {
-        name: "Magic: Stealth",
-        Albion: effectTypes.skills.effects.stealth,
-        Hibernia: effectTypes.skills.effects.stealth,
-        Midgard: effectTypes.skills.effects.stealth
-    },
-    "20": {
-        name: "Melee: Two Handed",
-        Albion: effectTypes.skills.effects.twoHanded,
-        Hibernia: undefined,
+    "99": {
+        name: "Dementia",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.dementia,
         Midgard: undefined
     },
-    "23": {
-        name: "Melee: Critical Strike",
-        Albion: effectTypes.skills.effects.criticalStrike,
-        Hibernia: effectTypes.skills.effects.criticalStrike,
-        Midgard: effectTypes.skills.effects.criticalStrike
-    },
-    "24": {
-        name: "Melee: Crossbow",
-        Albion: effectTypes.skills.effects.crossbow,
-        Hibernia: undefined,
+    "100": {
+        name: "Shadow Mastery",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.shadowMastery,
         Midgard: undefined
     },
-    "25": {
-        name: "Melee: Crushing",
-        Albion: effectTypes.skills.effects.crushing,
-        Hibernia: undefined,
+    "101": {
+        name: "Vampiiric Embrace",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.vampiiricEmbrace,
         Midgard: undefined
     },
-    "28": {
-        name: "Melee: Dual Wield",
-        Albion: effectTypes.skills.effects.dualWield,
-        Hibernia: undefined,
+    "102": {
+        name: "Ethereal Shriek",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.etherealShriek,
         Midgard: undefined
     },
-    "33": {
-        name: "Melee: Flexible Weapon",
-        Albion: effectTypes.skills.effects.flexible,
-        Hibernia: undefined,
+    "103": {
+        name: "Phantasmal Wail",
+        Albion: undefined,
+        Hibernia: effectTypes.skills.effects.phantasmalWail,
         Midgard: undefined
     },
-    "36": {
-        name: "Melee: Longbow",
+    "104": {
+        name: "Spectral Force",
         Albion: undefined,
         Hibernia: undefined,
         Midgard: undefined
     },
-    "40": {
-        name: "Melee: Parry",
-        Albion: effectTypes.skills.effects.parry,
-        Hibernia: effectTypes.skills.effects.parry,
-        Midgard: effectTypes.skills.effects.parry
-    },
-    "41": {
-        name: "Melee: Polearm",
-        Albion: effectTypes.skills.effects.polearm,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "43": {
-        name: "Melee: Shield",
-        Albion: effectTypes.skills.effects.shield,
-        Hibernia: effectTypes.skills.effects.shield,
-        Midgard: effectTypes.skills.effects.shield
-    },
-    "44": {
-        name: "Melee: Slashing",
-        Albion: effectTypes.skills.effects.slashing,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "48": {
-        name: "Melee: Staff",
-        Albion: effectTypes.skills.effects.staff,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "50": {
-        name: "Melee: Thrusting",
-        Albion: effectTypes.skills.effects.thrusting,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "52": {
-        name: "Melee: Sword",
+    "105": {
+        name: "Odin's Will",
         Albion: undefined,
         Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.sword
+        Midgard: effectTypes.skills.effects.odinsWill
     },
-    "53": {
-        name: "Melee: Hammer",
+    "106": {
+        name: "Cursing",
         Albion: undefined,
         Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.hammer
+        Midgard: effectTypes.skills.effects.cursing
     },
-    "54": {
-        name: "Melee: Axe",
+    "107": {
+        name: "Hexing",
         Albion: undefined,
         Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.axe
+        Midgard: effectTypes.skills.effects.hexing
     },
-    "55": {
-        name: "Melee: Left Axe",
+    "108": {
+        name: "Witchcfaft",
         Albion: undefined,
         Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.leftAxe
+        Midgard: effectTypes.skills.effects.witchcraft
     },
-    "56": {
-        name: "Melee: Spear",
+    "114": {
+        name: "Spectral Guard",
         Albion: undefined,
-        Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.spear
-    },
-    "72": {
-        name: "Melee: Blade",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.blades,
-        Midgard: undefined
-    },
-    "73": {
-        name: "Melee: Blunt",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.blunt,
-        Midgard: undefined
-    },
-    "74": {
-        name: "Melee: Piercing",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.piercing,
-        Midgard: undefined
-    },
-    "75": {
-        name: "Melee: Large Weapon",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.largeWeapons,
-        Midgard: undefined
-    },
-    "81": {
-        name: "Melee: Celtic Dual",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.celticDual,
-        Midgard: undefined
-    },
-    "82": {
-        name: "Melee: Celtic Spear",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.celticSpear,
-        Midgard: undefined
-    },
-    "83": {
-        name: "Melee: Recurved Bow",
-        Albion: undefined,
-        Hibernia: undefined,
-        Midgard: undefined
-    },
-    "90": {
-        name: "Melee: Scythe",
-        Albion: undefined,
-        Hibernia: effectTypes.skills.effects.scythe,
-        Midgard: undefined
-    },
-    "91": {
-        name: "Melee: Thrown Weapon",
-        Albion: undefined,
-        Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.thrownWeapons
-    },
-    "92": {
-        name: "Melee: Hand to Hand",
-        Albion: undefined,
-        Hibernia: undefined,
-        Midgard: effectTypes.skills.effects.handToHand
-    },
-    "93": {
-        name: "Melee: Short Bow",
-        Albion: undefined,
-        Hibernia: undefined,
+        Hibernia: effectTypes.skills.effects.spectralGuard,
         Midgard: undefined
     },
     "115": {
         name: "Melee: Archery",
+        Albion: undefined,
+        Hibernia: undefined,
+        Midgard: undefined
+    },
+    "116": {
+        name: "Resist: Essence",
         Albion: undefined,
         Hibernia: undefined,
         Midgard: undefined
@@ -651,6 +711,12 @@ export const edenEffectMapping: Record<string, EffectMapping> = {
         Albion: effectTypes.bonus.effects.meleeCombatSpeed,
         Hibernia: effectTypes.bonus.effects.meleeCombatSpeed,
         Midgard: effectTypes.bonus.effects.meleeCombatSpeed
+    },
+    "156": {
+        name: "Stat: Acuity",
+        Albion: effectTypes.stats.effects.acuity,
+        Hibernia: effectTypes.stats.effects.acuity,
+        Midgard: effectTypes.stats.effects.acuity
     },
     "163": {
         name: "Magic: All Skills",
@@ -1074,7 +1140,10 @@ const edenClassMapping: Record<string, RealmClassName> = {
     "49": "Nightshade",
     "50": "Ranger",
     "55": "Animist",
-    "56": "Valewalker"
+    "56": "Valewalker",
+    "58": "Vampiir",
+    "59": "Warlock",
+    "63": "Occultist",
 }
 
 const edenItemMapping: Record<string, ItemCode[]> = {

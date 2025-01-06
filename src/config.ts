@@ -24,16 +24,12 @@ export const config: Config = {
         'magnetismMidgard',
         'powerStrikeMidgard',
         'auraManipulationMidgard',
-        'shadowMastery',
-        'vampiiricEmbrace',
-        'dementia',
     ],
     excludeClasses: [
         'Mauler',
-        'Vampiir'
     ],
     excludeRaces: [
-        'minotaur'
+        'minotaur',
     ]
 }
 

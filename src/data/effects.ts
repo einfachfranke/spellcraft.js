@@ -3816,6 +3816,80 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            cursing: {
+                name: 'Cursing',
+                code: '89',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard'
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Blighted Primal Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Blighted Primal Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Blighted Primal Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Blighted Primal Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Blighted Primal Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Blighted Primal Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Blighted Primal Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Blighted Primal Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Blighted Primal Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Blighted Primal Rune',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
             darkness: {
                 name: 'Darkness',
                 code: '68',
@@ -5070,6 +5144,80 @@ export const effectTypes: EffectTypes = {
                     10: {
                         imbue: 22.5,
                         gem: 'Perfect Lightning Charged War Rune',
+                        value: 10,
+                        price: 296860
+                    }
+                },
+                type: 'skills'
+            },
+            hexing: {
+                name: 'Hexing',
+                code: '90',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard'
+                ],
+                values: {
+                    1: {
+                        imbue: 0.5,
+                        gem: 'Raw Unholy Primal Rune',
+                        value: 1,
+                        price: 160
+                    },
+                    2: {
+                        imbue: 2.5,
+                        gem: 'Uncut Unholy Primal Rune',
+                        value: 2,
+                        price: 920
+                    },
+                    3: {
+                        imbue: 5,
+                        gem: 'Rough Unholy Primal Rune',
+                        value: 3,
+                        price: 3900
+                    },
+                    4: {
+                        imbue: 7.5,
+                        gem: 'Flawed Unholy Primal Rune',
+                        value: 4,
+                        price: 13900
+                    },
+                    5: {
+                        imbue: 10,
+                        gem: 'Imperfect Unholy Primal Rune',
+                        value: 5,
+                        price: 40100
+                    },
+                    6: {
+                        imbue: 12.5,
+                        gem: 'Polished Unholy Primal Rune',
+                        value: 6,
+                        price: 88980
+                    },
+                    7: {
+                        imbue: 15,
+                        gem: 'Faceted Unholy Primal Rune',
+                        value: 7,
+                        price: 133000
+                    },
+                    8: {
+                        imbue: 17.5,
+                        gem: 'Precious Unholy Primal Rune',
+                        value: 8,
+                        price: 198920
+                    },
+                    9: {
+                        imbue: 20,
+                        gem: 'Flawless Unholy Primal Rune',
+                        value: 9,
+                        price: 258240
+                    },
+                    10: {
+                        imbue: 22.5,
+                        gem: 'Perfect Unholy Primal Rune',
                         value: 10,
                         price: 296860
                     }
@@ -9078,6 +9226,19 @@ export const effectTypes: EffectTypes = {
                 },
                 type: 'skills'
             },
+            witchcraft: {
+                name: 'Witchcraft',
+                code: '91',
+                craft: false,
+                hideIfNoValue: false,
+                utility: 5,
+                maxValue: 11,
+                realm: [
+                    'Midgard'
+                ],
+                values: {},
+                type: 'skills'
+            },
             windMagic: {
                 name: 'Wind Magic',
                 code: '21',
@@ -9541,6 +9702,80 @@ export const effectTypes: EffectTypes = {
                     50: {
                         imbue: 0.5,
                         gem: 'Perfect Oozing Stone',
+                        value: 50,
+                        price: 297400
+                    }
+                },
+                type: 'focus'
+            },
+            cursing: {
+                name: 'Cursing focus',
+                code: 'fm',
+                craft: true,
+                hideIfNoValue: false,
+                utility: 0,
+                maxValue: 50,
+                realm: [
+                    'Midgard'
+                ],
+                values: {
+                    5: {
+                        imbue: 0.5,
+                        gem: 'Raw Blighted Rune',
+                        value: 5,
+                        price: 160
+                    },
+                    10: {
+                        imbue: 0.5,
+                        gem: 'Uncut Blighted Rune',
+                        value: 10,
+                        price: 980
+                    },
+                    15: {
+                        imbue: 0.5,
+                        gem: 'Rough Blighted Rune',
+                        value: 15,
+                        price: 4020
+                    },
+                    20: {
+                        imbue: 0.5,
+                        gem: 'Flawed Blighted Rune',
+                        value: 20,
+                        price: 14080
+                    },
+                    25: {
+                        imbue: 0.5,
+                        gem: 'Imperfect Blighted Rune',
+                        value: 25,
+                        price: 40340
+                    },
+                    30: {
+                        imbue: 0.5,
+                        gem: 'Polished Blighted Rune',
+                        value: 30,
+                        price: 89280
+                    },
+                    35: {
+                        imbue: 0.5,
+                        gem: 'Faceted Blighted Rune',
+                        value: 35,
+                        price: 133360
+                    },
+                    40: {
+                        imbue: 0.5,
+                        gem: 'Precious Blighted Rune',
+                        value: 40,
+                        price: 199340
+                    },
+                    45: {
+                        imbue: 0.5,
+                        gem: 'Flawless Blighted Rune',
+                        value: 45,
+                        price: 258720
+                    },
+                    50: {
+                        imbue: 0.5,
+                        gem: 'Perfect Blighted Rune',
                         value: 50,
                         price: 297400
                     }
@@ -11797,6 +12032,9 @@ effectTypes.skills.effects.allMagicMidgard.increase = {
             effectTypes.skills.effects.magnetismMidgard,
             effectTypes.skills.effects.powerStrikeMidgard,
             effectTypes.skills.effects.auraManipulationMidgard,
+            effectTypes.skills.effects.cursing,
+            effectTypes.skills.effects.hexing,
+            effectTypes.skills.effects.witchcraft,
         ],
     }
 }
@@ -11853,6 +12091,7 @@ effectTypes.stats.effects.acuity.increase = {
         Mercenary: effectTypes.stats.effects.acuity,
         Minstrel: effectTypes.stats.effects.charisma,
         Necromancer: effectTypes.stats.effects.intelligence,
+        Occultist: effectTypes.stats.effects.intelligence,
         Paladin: effectTypes.stats.effects.piety,
         Reaver: effectTypes.stats.effects.piety,
         Scout: effectTypes.stats.effects.acuity,
@@ -11888,6 +12127,7 @@ effectTypes.stats.effects.acuity.increase = {
         Spiritmaster: effectTypes.stats.effects.piety,
         Thane: effectTypes.stats.effects.piety,
         Valkyrie: effectTypes.stats.effects.piety,
+        Warlock: effectTypes.stats.effects.piety,
         Warrior: effectTypes.stats.effects.acuity,
 
         Mauler: effectTypes.stats.effects.acuity,
@@ -12025,6 +12265,7 @@ effectTypes.statCaps.effects.acuityCap.increase = {
         Mercenary: effectTypes.statCaps.effects.acuityCap,
         Minstrel: effectTypes.statCaps.effects.charismaCap,
         Necromancer: effectTypes.statCaps.effects.intelligenceCap,
+        Occultist: effectTypes.statCaps.effects.intelligenceCap,
         Paladin: effectTypes.statCaps.effects.pietyCap,
         Reaver: effectTypes.statCaps.effects.pietyCap,
         Scout: effectTypes.statCaps.effects.acuityCap,
@@ -12060,6 +12301,7 @@ effectTypes.statCaps.effects.acuityCap.increase = {
         Spiritmaster: effectTypes.statCaps.effects.pietyCap,
         Thane: effectTypes.statCaps.effects.pietyCap,
         Valkyrie: effectTypes.statCaps.effects.pietyCap,
+        Warlock: effectTypes.statCaps.effects.pietyCap,
         Warrior: effectTypes.statCaps.effects.acuityCap,
 
         Mauler: effectTypes.statCaps.effects.acuityCap
@@ -12227,6 +12469,7 @@ effectTypes.mythStatCaps.effects.acuityMythCap.increase = {
         Mercenary: effectTypes.statCaps.effects.acuityCap,
         Minstrel: effectTypes.statCaps.effects.charismaCap,
         Necromancer: effectTypes.statCaps.effects.intelligenceCap,
+        Occultist: effectTypes.statCaps.effects.intelligenceCap,
         Paladin: effectTypes.statCaps.effects.pietyCap,
         Reaver: effectTypes.statCaps.effects.pietyCap,
         Scout: effectTypes.statCaps.effects.acuityCap,
@@ -12262,6 +12505,7 @@ effectTypes.mythStatCaps.effects.acuityMythCap.increase = {
         Spiritmaster: effectTypes.statCaps.effects.pietyCap,
         Thane: effectTypes.statCaps.effects.pietyCap,
         Valkyrie: effectTypes.statCaps.effects.pietyCap,
+        Warlock: effectTypes.statCaps.effects.pietyCap,
         Warrior: effectTypes.statCaps.effects.acuityCap,
 
         Mauler: effectTypes.statCaps.effects.acuityCap
