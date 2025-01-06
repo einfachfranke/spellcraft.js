@@ -12035,6 +12035,7 @@ effectTypes.skills.effects.allMagicMidgard.increase = {
             effectTypes.skills.effects.cursing,
             effectTypes.skills.effects.hexing,
             effectTypes.skills.effects.witchcraft,
+            effectTypes.skills.effects.odinsWill
         ],
     }
 }
